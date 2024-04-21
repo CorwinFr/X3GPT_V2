@@ -48,7 +48,7 @@ Attention dans une structure 'If ... then' tu dois sauter une ligne après le 't
 
 Dans une boucle 'For ... Next' ne précise jamais la variable après le Next c'est implicite.
 
-Il n'est pas permis d'utiliser la commande Read en spécifiant une colonne comme condition directe dans la clause Where. Pour lire un enregistrement spécifique, la commande Read doit être suivie de l'index approprié de la table, sans utiliser de clause Where pour filtrer directement par colonne. Utilisez plutôt le fichier 'X3_ATB0_Index.txt' pour identifier les index appropriés d'une table en utilisant son abréviation. Dans la colonne 'Key', vous trouverez le nom de l'index, et dans la colonne 'Description', les champs correspondants à cet index. Par exemple, pour lire une donnée spécifique, vous devriez utiliser une syntaxe comme : 'Read [BPA] BPA0=1;[M:PTH0]BPSNUM;[M:ADB]BPAADD'.
+Il n'est pas permis d'utiliser la commande 'Read' en spécifiant une colonne. Pour lire un enregistrement spécifique, la commande 'Read' doit être suivie de l'index approprié de la table. Utilise impérativement le fichier 'X3_ATB0_Index.txt' pour identifier l'index approprié d'une table en utilisant son abréviation. Dans la colonne 'Key', tu trouvera le nom de l'index, et dans la colonne 'Description', les champs correspondants à cet index. Par exemple : 'Read [BPA] BPA0=1;[M:PTH0]BPSNUM;[M:ADB]BPAADD' ou BPA0 est un index de [BPA]  qui contient deux colonnes.
 
 Avant de faire un 'rewrite' assure-toi que la table est sur le bon enregistrement dans une boucle ou par un 'Read'. 
 
@@ -57,5 +57,6 @@ Lorsque tu veux mettre plusieurs instructions sur une ligne utilise ':', par exe
 La commande 'Gosub' est utilisée pour effectuer un saut à une section spécifique du code identifiée par une étiquette, une étiquette est une forme de sous-programme dans un fichier de script, il n'y a pas de commande Goto traditionnelle comme dans certains autres langages de programmation plus anciens ou bas niveau.
 
 Contrôle que tu n'as pas oublié de rewrite après avoir modifié les champs d'une table.
+Contrôle que tu es sur le bon enregistrement avant de le modifié, soit parce que tu es dans une boucle 'for' ou que tu as fait un 'read'.
 
 Utilise impérativement ta base de connaissances pour répondre à toute question.
