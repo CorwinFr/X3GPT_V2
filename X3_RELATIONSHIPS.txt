@@ -1,0 +1,1340 @@
+IMPORTANT :
+
+This document is based on the standard data model of Sage X3 and may contain errors as it is an AI translation from images.
+Throughout the document, tables are generally represented in the form XXX - YYYYYYYYYY where XXX is the abbreviated code of the table and YYYYYYYYYY is the actual code of the table in the database.
+For fields, sometimes the notation AAAA: BBBBBBBBBB is used, where AAAA indicates the index code and BBBBBBBBBB indicates the field code.
+
+This document, though assisted by AI, bears the mark of Guillaume Clément's passionate dedication, which spanned countless hours.
+
+# COMMON DATA 1 - COMPANY AND SITES
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+TCY - TABCOUNTRY | Country table | TCY0 : CPY | CPY | CPY - COMPANY | Company | CPY0 : CPY
+CPY - COMPANY | Company | CPY0 : CPY | TCY0 : CPY | TCY - TABCOUNTRY | Country table | TCY0 : CPY
+CPY - COMPANY | Company | CPY0 : CPY | BPA0.NUM | FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY
+CPY - COMPANY | Company | CPY0 : CPY | FCY0 : CPY | FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY
+CPY - COMPANY | Company | CPY0 : CPY | ACC0.COD | CAC - GACCCODE | Accounting codes | CAC0 : TYPE + CAC0.COD
+CPY - COMPANY | Company | CPY0 : CPY | PAY.BAN | BAN - BANK | Bank accounts | BAN0 : BAN
+CPY - COMPANY | Company | CPY0 : CPY | BPANUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD
+FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY | BPANUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD
+FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY | CPY0 : CPY | CPY - COMPANY | Company | CPY0 : CPY
+FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY | FCY0 : FCY | FCY - FACILITY | Sites | FCY0 : FCY
+FCY - FACILITY | Sites | FCY0 : FCY | BPA.NUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD
+FCY - FACILITY | Sites | FCY0 : FCY | CPY0.FC.Y | FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY
+FCY - FACILITY | Sites | FCY0 : FCY | PAY.BAN | BAN - BANK | Bank accounts | BAN0 : BAN
+BAN - BANK | Bank accounts | BAN0 : BAN | PAY.BAN | FCY - FACILITY | Sites | FCY0 : FCY
+BAN - BANK | Bank accounts | BAN0 : BAN | BPA.NUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD
+BAN - BANK | Bank accounts | BAN0 : BAN | CPY0 : CPY | CPY - COMPANY | Company | CPY0 : CPY
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD | BPA.NUM | BAN - BANK | Bank accounts | BAN0 : BAN
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD | FCY.BPA.NUM | FCY - FACILITY | Sites | FCY0 : FCY
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD | CPY.BPA.NUM | CPY - COMPANY | Company | CPY0 : CPY
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD | FGR.BPANUM | FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY
+CAC - GACCCODE | Accounting codes | CAC0 : TYPE + CAC0.COD | CPY0 : ACC0 | CPY - COMPANY | Company | CPY0 : CPY
+TCY - TABCOUNTRY | Country table | TCY0 : CPY | CPY | CPY - COMPANY | Company | CPY0 : CPY
+TCY - TABCOUNTRY | Country table | TCY0 : CPY | TCUR | TCU - TABCUR | Currency table | TCU0 : CUR
+TCU - TABCUR | Currency table | TCU0 : CUR | RGSCUR | CPY - COMPANY | Company | CPY0 : CPY
+TCU - TABCUR | Currency table | TCU0 : CUR | ACC0CUR | CNT - CONTACT | Contacts | CNT0 : BPATYP + BPANUM + CNCRNM
+CNT - CONTACT | Contacts | CNT0 : BPATYP + BPANUM + CNCRNM | BPANUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD | BPANUM | CNT - CONTACT | Contacts | CNT0 : BPATYP + BPANUM + CNCRNM
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD | BID0 | BID - BID | Bank ID statement | BID0 : BPATYP + BPANUM + BPADD
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD | BPA0.NUM | CPY - COMPANY | Company | CPY0 : CPY
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD | BPA0.NUM | FCY - FACILITY | Sites | FCY0 : FCY
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD | BPA0.NUM | FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY
+CPY - COMPANY | Company | CPY0 : CPY | TCY0 : CPY | TCY - TABCOUNTRY | Country table | TCY0 : CPY
+CPY - COMPANY | Company | CPY0 : CPY | RGSCUR | TCU - TABCUR | Currency table | TCU0 : CUR
+CPY - COMPANY | Company | CPY0 : CPY | 7:ACC0COD | CAC - GACCCODE | Accounting codes | CAC0 : TYPE + ACC0.COD
+CPY - COMPANY | Company | CPY0 : CPY | 8:ACC0COD | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+CPY - COMPANY | Company | CPY0 : CPY | BPA0.NUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD
+CPY - COMPANY | Company | CPY0 : CPY | PAY.BAN | BAN - BANK | Bank accounts | BAN0 : BAN
+CPY - COMPANY | Company | CPY0 : CPY | FCY0 : CPY | FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY
+CPY - COMPANY | Company | CPY0 : CPY | FCY0 : CPY | FCY - FACILITY | Sites | FCY0 : FCY
+CAC - GACCCODE | Accounting codes | CAC0 : TYPE + ACC0.COD | ACC0COD | CPY - COMPANY | Company | CPY0 : CPY
+CAC - GACCCODE | Accounting codes | CAC0 : TYPE + ACC0.COD | 8:ACC0COD | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | CCE0 | CAC - GACCCODE | Accounting codes | CAC0 : TYPE + ACC0.COD
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | 8:ACC0COD | CPY - COMPANY | Company | CPY0 : CPY
+FCY - FACILITY | Sites | FCY0 : FCY | BPA0.NUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD
+FCY - FACILITY | Sites | FCY0 : FCY | PAY.BAN | BAN - BANK | Bank accounts | BAN0 : BAN
+FCY - FACILITY | Sites | FCY0 : FCY | FCY0 : CPY | FGR - FACGROUP | Site grouping | FGR0 : CPY + FCY
+FCY - FACILITY | Sites | FCY0 : FCY | FCY0 : CPY | CPY - COMPANY | Company | CPY0 : CPY
+BAN - BANK | Bank accounts | BAN0 : BAN | BPA0.NUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD
+BAN - BANK | Bank accounts | BAN0 : BAN | PAY.BAN | CPY - COMPANY | Company | CPY0 : CPY
+BAN - BANK | Bank accounts | BAN0 : BAN | PAY.BAN | FCY - FACILITY | Sites | FCY0 : FCY
+BID - BID | Bank ID statement | BID0 : BPATYP + BPANUM + BPADD | BPA0.NUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPANUM + BPADD
+The abbreviations (like CPY0, BPA.NUM, etc.) represent the fields involved in each relationship.
+
+# COMMON DATA 2 - ITEM
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ITS - ITMSALES | Products - sales | ITS0 : ITMREF
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ITH - ITMTHVIS | Total product - site history | ITH0 : ITMREF + STOFCY + PERSTR
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF + STOFCY
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ITK - ITMABCWRK | ABC Class calculation | ITK0 : STOFCY + ITMREF
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF.STOFCY | ITV - ITMMVT | Product-site totals | ITV0 : ITMREF + STOFCY
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF.STOFCY | ITP - ITMBPS | Supplier product | ITP0 : ITMREF + BPSNUM
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF.STOFCY | ITB - ITMBOM | Products - BOMs | ITB0 : ITMREF + BOMALT + LINCTYP
+ITM - ITMMASTER | Products | ITM0 : ITMREF | BPC.NUM | BPC - BPCCUSTOMER | Customers | BPC0 : BPCNUM
+ITM - ITMMASTER | Products | ITM0 : ITMREF | TPLCOD | TLP - TABLINC | Product lines | TLP0 : CFGLIN
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ITU - ITMBPC | Customer product | ITU0 : ITMREF + BPCNUM
+ITS - ITMSALES | Products - sales | ITS0 : ITMREF | BPC.NUM | BPC - BPCCUSTOMER | Customers | BPC0 : BPCNUM
+ITS - ITMSALES | Products - sales | ITS0 : ITMREF | ITMREF | ITM - ITMMASTER | Products | ITM0 : ITMREF
+BPC - BPCCUSTOMER | Customers | BPC0 : BPCNUM | BPC.NUM | ITS - ITMSALES | Products - sales | ITS0 : ITMREF
+BPC - BPCCUSTOMER | Customers | BPC0 : BPCNUM | ITMREF | ITU - ITMBPC | Customer product | ITU0 : ITMREF + BPCNUM
+ITU - ITMBPC | Customer product | ITU0 : ITMREF + BPCNUM | BPC.NUM | BPC - BPCCUSTOMER | Customers | BPC0 : BPCNUM
+ITU - ITMBPC | Customer product | ITU0 : ITMREF + BPCNUM | ITMREF | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF + STOFCY | ITMREF | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF + STOFCY | ITMREF.STOFCY | ITV - ITMMVT | Product-site totals | ITV0 : ITMREF + STOFCY
+ITV - ITMMVT | Product-site totals | ITV0 : ITMREF + STOFCY | ITMREF.STOFCY | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF + STOFCY
+ITV - ITMMVT | Product-site totals | ITV0 : ITMREF + STOFCY | ITMREF | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ITH - ITMTHVIS | Total product - site history | ITH0 : ITMREF + STOFCY + PERSTR | ITMREF | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ITK - ITMABCWRK | ABC Class calculation | ITK0 : STOFCY + ITMREF | ITMREF | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ITP - ITMBPS | Supplier product | ITP0 : ITMREF + BPSNUM | ITMREF.STOFCY | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ITB - ITMBOM | Products - BOMs | ITB0 : ITMREF + BOMALT + LINCTYP | ITMREF.STOFCY | ITM - ITMMASTER | Products | ITM0 : ITMREF
+CAC - GACCCODE | Accounting codes | CAC0 : TYP + ACC0.COD + COA | ACC0.COD | COT - CONTEMPL | Service contract template | COT0 : CONNUM
+COT - CONTEMPL | Service contract template | COT0 : CONNUM | ACC0.COD | CAC - GACCCODE | Accounting codes | CAC0 : TYP + ACC0.COD + COA
+
+# COMMON DATA 3 - BUSINESS PARTNER
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | BPRNUM | BPE - BPEXCEPT | BP-Company exception | BPE0 : BPRNUM + CPY
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | BPRNUM | BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | BPRNUM | BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | BPRNUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | BPRNUM | CNT - CONTACT | Contacts | CNT0 : BPATYP + BPRNUM + CNCRNM
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | REPNUM | REP - SALESREP | Sales rep | REP0 : REPNUM
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | 17:ACCCOD | CAC - GACCCODE | Accounting codes | CAC0 : TYP + ACC0.COD + COA
+BPE - BPEXCEPT | BP-Company exception | BPE0 : BPRNUM + CPY | BPRNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+BPE - BPEXCEPT | BP-Company exception | BPE0 : BPRNUM + CPY | CPY | CPY - COMPANY | Company | CPY0 : CPY
+BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM | BPCNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM | CNCRNM | CNT - CONTACT | Contacts | CNT0 : BPATYP + BPRNUM + CNCRNM
+BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM | BPSNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM | 40:STS | BSG - BPSUPPCATG | Supplier category | BSG0 : BSGCOD
+BSG - BPSUPPCATG | Supplier category | BSG0 : BSGCOD | BSGCOD | BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM
+CPY - COMPANY | Company | CPY0 : CPY | CPY | BPE - BPEXCEPT | BP-Company exception | BPE0 : BPRNUM + CPY
+CNT - CONTACT | Contacts | CNT0 : BPATYP + BPRNUM + CNCRNM | BPATYP + BPRNUM + BPADD | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD
+CNT - CONTACT | Contacts | CNT0 : BPATYP + BPRNUM + CNCRNM | BPCNUM | BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM
+CNT - CONTACT | Contacts | CNT0 : BPATYP + BPRNUM + CNCRNM | BPRNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD | BPATYP + BPRNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD | BPATYP + BPRNUM + CNCRNM | CNT - CONTACT | Contacts | CNT0 : BPATYP + BPRNUM + CNCRNM
+REP - SALESREP | Sales rep | REP0 : REPNUM | REPNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+CAC - GACCCODE | Accounting codes | CAC0 : TYP + ACC0.COD + COA | ACC0.COD | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+FCT - FACTOR | Factors | FCT0 : FCTCOD | FCTCOD | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+FCT - FACTOR | Factors | FCT0 : FCTCOD | CUR | TCU - TABCUR | Currency table | TCU0 : CUR
+TCU - TABCUR | Currency table | TCU0 : CUR | CUR | FCT - FACTOR | Factors | FCT0 : FCTCOD
+TCU - TABCUR | Currency table | TCU0 : CUR | CRY | TCY - TABCOUNTRY | Country table | TCY0 : CRY
+TCY - TABCOUNTRY | Country table | TCY0 : CRY | CRY | TCU - TABCUR | Currency table | TCU0 : CUR
+BID - BID | Bank ID statement | BID0 : BPATYP + BPRNUM + BPADD | BPATYP + BPRNUM + BPADD | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD
+BID - BID | Bank ID statement | BID0 : BPATYP + BPRNUM + BPADD | BPRNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+BPT - BPCARRIER | Carriers | BPT0 : BPTNUM | BPTNUM | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD
+BPT - BPCARRIER | Carriers | BPT0 : BPTNUM | BPRNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+CAP - CARPRICE | Carrier price lists | CAP0 : BPTNUM + BPTATE + RANG | BPTNUM | BPT - BPCARRIER | Carriers | BPT0 : BPTNUM
+MVS - BPSUPPVT | Supplier transactions | MVS0 : BPSKNR + CPY + BPSNUM + CUR | BPSNUM + CUR | FCT - FACTOR | Factors | FCT0 : FCTCOD
+MVS - BPSUPPVT | Supplier transactions | MVS0 : BPSKNR + CPY + BPSNUM + CUR | BPSNUM | BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM
+FCY - FACILITY | Sites | FCY0 : FCY | FINRSFCY | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | MVC - BPSCUSTM | Customer transactions | MVC0 : BPCKNR + FCY + BPCNUM
+MVC - BPSCUSTM | Customer transactions | MVC0 : BPCKNR + FCY + BPCNUM | BPCNUM | BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM
+MVC - BPSCUSTM | Customer transactions | MVC0 : BPCKNR + FCY + BPCNUM | FCY | FCY - FACILITY | Sites | FCY0 : FCY
+BPG - BPGRPCUST | Customer category | BPG0 : BPGCOD | BPGCOD | BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM
+BPV - BPARTNERV | Ship-to-customer | BPV0 : BPCNUM + BPVADD | BPCNUM | BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM
+BPV - BPARTNERV | Ship-to-customer | BPV0 : BPCNUM + BPVADD | BPVADD | BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD | BPATYP + BPRNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD | BPATYP + BPRNUM + CNCRNM | CNT - CONTACT | Contacts | CNT0 : BPATYP + BPRNUM + CNCRNM
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD | BPVADD | BPV - BPARTNERV | Ship-to-customer | BPV0 : BPCNUM + BPVADD
+BPA - BPADDRESS | Addresses | BPA0 : BPATYP + BPRNUM + BPADD | BPRNUM | BPT - BPCARRIER | Carriers | BPT0 : BPTNUM
+BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM | BPCNUM | BPV - BPARTNERV | Ship-to-customer | BPV0 : BPCNUM + BPVADD
+BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM | CNCRNM | CNT - CONTACT | Contacts | CNT0 : BPATYP + BPRNUM + CNCRNM
+BPC - BPCUSTOMER | Customers | BPC0 : BPCNUM | BPGCOD | BPG - BPGRPCUST | Customer category | BPG0 : BPGCOD
+PRV - HNPRV | Service suppliers | PRV0 : PRVNUM | PRVNUM | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+
+# COMMON DATA 4 - COMMON TABLE
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+TLA - TABLAN | Language table | TLA0 : LNN | LAN | TCY - TABCOUNTRY | Country table | TCY0 : GRY
+TCY - TABCOUNTRY | Country table | TCY0 : GRY | POS_COD | POS - POSCOD | Postal codes | POS0 : POSCRY + POSCTY + POSCOD
+TCY - TABCOUNTRY | Country table | TCY0 : GRY | 9,ACCCOD_P | CAC - GACCCODE | Accounting codes | CAC0 : TYP + ACCCOD + COA
+POS - POSCOD | Postal codes | POS0 : POSCRY + POSCTY + POSCOD | CRY | TCY - TABCOUNTRY | Country table | TCY0 : GRY
+TCU - TABCUR | Currency table | TCU0 : CUR | CUR | TCH - TABCHNGE | Currency rate table | TCH0 : CHGTPY + CHGPEN + CHGSTDAT
+TCU - TABCUR | Currency table | TCU0 : CUR | CURDES | TCH - TABCHNGE | Currency rate table | TCH0 : CHGTPY + CHGPEN + CHGSTDAT
+TCH - TABCHNGE | Currency rate table | TCH0 : CHGTPY + CHGPEN + CHGSTDAT | CURPEN | TCU - TABCUR | Currency table | TCU0 : CUR
+TCH - TABCHNGE | Currency rate table | TCH0 : CHGTPY + CHGPEN + CHGSTDAT | CURDES | TCU - TABCUR | Currency table | TCU0 : CUR
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | i+1,CCE0(i) | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+TFO - TABFOR | Formula table | TFO0 : FORPTY + FORCOD | i+1,CCE0(i) | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+TFO - TABFOR | Formula table | TFO0 : FORPTY + FORCOD | VAT | TVT - TABVAT | Tax code table | TVT0 : VAT + LEG
+TVT - TABVAT | Tax code table | TVT0 : VAT + LEG | VATVAC | TVC - TABVAC | Tax determination table | TVC0 : CDD + LEG
+TVT - TABVAT | Tax code table | TVT0 : VAT + LEG | VATDIV | ADI - ATABDIV | Miscellaneous tables | CODE : NUMTAB + CODE
+TVT - TABVAT | Tax code table | TVT0 : VAT + LEG | 10,ACCCOD | CAC - GACCCODE | Accounting codes | CAC0 : TYP + ACCCOD + COA
+TVC - TABVAC | Tax determination table | TVC0 : CDD + LEG | VAT | ADI - ATABDIV | Miscellaneous tables | CODE : NUMTAB + CODE
+TVC - TABVAC | Tax determination table | TVC0 : CDD + LEG | VATCSP | ADI - ATABDIV | Miscellaneous tables | CODE : NUMTAB + CODE
+ADI - ATABDIV | Miscellaneous tables | CODE : NUMTAB + CODE | VATDIV | TVT - TABVAT | Tax code table | TVT0 : VAT + LEG
+ADI - ATABDIV | Miscellaneous tables | CODE : NUMTAB + CODE | VATCSP | TVC - TABVAC | Tax determination table | TVC0 : CDD + LEG
+GAC - GACCOUNT | Accounts | GAC0 : COA + ACC | COA/ACC | CAC - GACCCODE | Accounting codes | CAC0 : TYP + ACCCOD + COA
+CAC - GACCCODE | Accounting codes | CAC0 : TYP + ACCCOD + COA | ACCCOD | GAC - GACCOUNT | Accounts | GAC0 : COA + ACC
+CAC - GACCCODE | Accounting codes | CAC0 : TYP + ACCCOD + COA | ACCCOD | TVT - TABVAT | Tax code table | TVT0 : VAT + LEG
+The dynamic links present in the diagram have been addressed with additional relation fields, such as VATDIV and VATCSP, which indicate that the link between the tables is based on these fields, even though they are not primary keys. Also, the relationship between CUR and CURDES in TCU - TABCUR and TCH - TABCHNGE indicates the destination currency field.
+
+# SALES 1 - QUOTATION
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+TCU - TABCUR | Currency table | TCU0: CUR | CUR | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+TCU - TABCUR | Currency table | TCU0: CUR | CUR | BP - BPPARTNER | Business partner | BPR0: BPRNUM
+TCU - TABCUR | Currency table | TCU0: CUR | CUR | SVF - SVCROOT | Sales document footer | SVF0: VCRNUM + VCRTPY + DTA
+BPR - BPPARTNER | Business partner | BPR0: BPRNUM | BPRNUM | BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD
+BPR - BPPARTNER | Business partner | BPR0: BPRNUM | BPRNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+BPR - BPPARTNER | Business partner | BPR0: BPRNUM | BPRNUM | SQH - SQUOTE | Quote header | SQH0: SQHNUM
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCORD | BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | SQH - SQUOTE | Quote header | SQH0: SQHNUM
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | ITU - ITMBCP | Customer product | ITU0: ITMREF + BPCNUM
+SVF - SVCROOT | Sales document footer | SVF0: VCRNUM + VCRTPY + DTA | VCRNUM | SVW - SVCVRAT | Sales document vario - tax | SVW0: VCRNUM + VAT
+PRS - PRICSTRUCT | Price structure (cust/supp) | PRS0: PRSNUM | PRSNUM | BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD
+SVW - SVCVRAT | Sales document vario - tax | SVW0: VCRNUM + VAT | None | None | None | None
+BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD | BPCNUM | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD | BPRADD | None | None | None
+SQH - SQUOTE | Quote header | SQH0: SQHNUM | SQHNUM | SQD - SQUOTED | Quote detail | SQD0: SQHNUM + SQLIN
+SQH - SQUOTE | Quote header | SQH0: SQHNUM | SQHNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+SQH - SQUOTE | Quote header | SQH0: SQHNUM | SQHNUM | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+SQD - SQUOTED | Quote detail | SQD0: SQHNUM + SQLIN | SQHNUM | SQH - SQUOTE | Quote header | SQH0: SQHNUM
+SQD - SQUOTED | Quote detail | SQD0: SQHNUM + SQLIN | None | None | None | None
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | SQH - SQUOTE | Quote header | SQH0: SQHNUM
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+ADI - ATABDIV | Miscellaneous tables | ADI0: NUMTAB + CODE | NUMTAB + CODE | CPY - COMPANY | Company | CPY0: CPY
+ADI - ATABDIV | Miscellaneous tables | ADI0: NUMTAB + CODE | NUMTAB | TPT - TABPAYTERM | Payment term table | TPT0: PTE + LEG + PTELEN
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | TPT - TABPAYTERM | Payment term table | TPT0: PTE + LEG + PTELEN
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | TDA - TABDEPAGIO | Early discount/late charge table | TDA0: DEP + LEG
+BPR - BPPARTNER | Business partner | BPR0: BPRNUM | BPRNUM | PRS - PRICSTRUCT | Price structure (cust/supp) | PRS0: PRSNUM
+BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD | BPCNUM | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+BPF - BPCARRIER | Carriers | BPF0: BPTNUM | BPTNUM | TPT - TABPAYTERM | Payment term table | TPT0: PTE + LEG + PTELEN
+CCE - CACCAGE | Dimensions | CCE0: DIE + CCE | DIE | DIE - GIEDIM | Dimension types | DIE0: DIE
+CPY - COMPANY | Company | CPY0: CPY | CPY | FCY - FACILITY | Sites | FCY0: FCY
+CPY - COMPANY | Company | CPY0: CPY | CPY | ITU - ITMBCP | Customer product | ITU0: ITMREF + BPCNUM
+CPY - COMPANY | Company | CPY0: CPY | CPY | REP - SALESP | Sales rep | REP0: REPNUM
+DIE - GIEDIM | Dimension types | DIE0: DIE | DIE | CCE - CACCAGE | Dimensions | CCE0: DIE + CCE
+FCY - FACILITY | Sites | FCY0: FCY | FCY | REP - SALESP | Sales rep | REP0: REPNUM
+PRD - PRODSTU | Products structure | PRD0: ITMREF | ITMREF | ITM - ITMMASTER | Products | ITM0: ITMREF
+REP - SALESP | Sales rep | REP0: REPNUM | REPNUM | SOP - SORDERP | Sales orders - prices | SOP0: SONNUM
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | SOQ - SORDERQ | Sales orders - quantities | SOQ0: SONNUM + SQLIN
+SQH - SQUOTE | Quote header | SQH0: SQHNUM | CPY | CPY - COMPANY | Company | CPY0: CPY
+TPT - TABPAYTERM | Payment term table | TPT0: PTE + LEG + PTELEN | PTE | TDA - TABDEPAGIO | Early discount/late charge table | TDA0: DEP + LEG
+TUN - TABUNIT | Table of units of measure | TUN0: UOM | UOM | ITM - ITMMASTER | Products | ITM0: ITMREF
+TVT - TABVAT | Tax code table | TVT0: VAT + LEG | VAT | CAL - CPTANALIN | Analytical accounting lines | CAL0: ABRFIC + VCRTPY + VRNUM + VCRSEQ + CPLCLE + ANLIG
+ITS - ITMSALES | Products - sales | ITS0: ITMREF | ITMREF | ITM - ITMMASTER | Products | ITM0: ITMREF
+ITS - ITMSALES | Products - sales | ITS0: ITMREF | ITMREF | CPY - COMPANY | Company | CPY0: CPY
+
+# SALES 2 - NORMAL SALES ORDER
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD | BPCORD | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD | BPRADD | None | None | None
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCORD | BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | VOH - VSORDER | Sales order history - header | VOH0: SONNUM
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | PRS - PRICSTRUCT | Price structure (cust/supp) | PRS0: PRSNUM
+CPY - COMPANY | Company | CPY0: CPY | CPY | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+CPY - COMPANY | Company | CPY0: CPY | CPY | TMD - TABMDELIV | Delivery methods | TMD0: MDL
+CPY - COMPANY | Company | CPY0: CPY | CPY | ITS - ITMSALES | Products - sales | ITS0: ITMREF
+DIE - GDIE | Dimension types | DIE0: DIE | DIE | CCE - CACCAGE | Dimensions | CCE0: DIE + CCE
+PRS - PRICSTRUCT | Price structure (cust/supp) | PRS0: PRSNUM | PRSNUM | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+REP - SALESP | Sales rep | REP0: REPNUM | REPNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+REP - SALESP | Sales rep | REP0: REPNUM | REPNUM | TMD - TABMDELIV | Delivery methods | TMD0: MDL
+REP - SALESP | Sales rep | REP0: REPNUM | REPNUM | FCY - FACILITY | Sites | FCY0: FCY
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | SOQ - SORDERQ | Sales orders - quantities | SOQ0: SONNUM + SQLIN
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | SOP - SORDERP | Sales orders - prices | SOP0: SONNUM
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | TSO - TABSOHTYP | Order type table | TSO0: SOHTYP
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | VOH - VSORDER | Sales order history - header | VOH0: SONNUM
+SQD - SQUOTED | Quote detail | SQD0: SQHNUM + SQLIN | SQHNUM | SQH - SQUOTE | Quote header | SQH0: SQHNUM
+SQD - SQUOTED | Quote detail | SQD0: SQHNUM + SQLIN | None | None | None | None
+TCU - TABCUR | Currency table | TCU0: CUR | CUR | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+TCU - TABCUR | Currency table | TCU0: CUR | CUR | SVF - SVCFOOT | Sales document footer el. | SVF0: VCRNUM + VCRTPY + DTA
+TDA - TABDEPAGIO | Early discount/late charge table | TDA0: DEP + LEG | DEP | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+TMD - TABMDELIV | Delivery methods | TMD0: MDL | MDL | REP - SALESP | Sales rep | REP0: REPNUM
+TMD - TABMDELIV | Delivery methods | TMD0: MDL | MDL | SoH - SORDER | Sales orders - header | SOH0: SONNUM
+TPT - TABPAYTERM | Payment term table | TPT0: PTE + LEG + PTELEN | PTE | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+TPA - TABPACKAGE | Packaging table | TPA0: PCK | PCK | ITS - ITMSALES | Products - sales | ITS0: ITMREF
+TUN - TABUNIT | Table of units of measure | TUN0: UOM | UOM | ITM - ITMMASTER | Products | ITM0: ITMREF
+BPT - BPCARRIER | Carriers | BPT0: BPTNUM | BPTNUM | TPT - TABPAYTERM | Payment term table | TPT0: PTE + LEG + PTELEN
+POH - PORDER | POs | POH0: POHNUM | POHNUM | ADI - ATABDIV | Miscellaneous tables | ADI0: NUMTAB + CODE
+POH - PORDER | POs | POH0: POHNUM | None | None | None | None
+TDA - TABDEPAGIO | Early discount/late charge table | TDA0: DEP + LEG | DEP + LEG | TPT - TABPAYTERM | Payment term table | TPT0: PTE + LEG + PTELEN
+TSO - TABSOHTYP | Order type table | TSO0: SOHTYP + LEG | SOHTYP | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+VOH - VSORDER | Sales order history - header | VOH0: SONNUM | SONNUM | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+VOH - VSORDER | Sales order history - header | VOH0: SONNUM | SONNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+CCE - CACCAGE | Dimensions | CCE0: DIE + CCE | DIE | DIE - GDIE | Dimension types | DIE0: DIE
+FCY - FACILITY | Sites | FCY0: FCY | FCY | REP - SALESP | Sales rep | REP0: REPNUM
+SOQ - SORDERQ | Sales orders - quantities | SOQ0: SONNUM + SQLIN | SONNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+SOQ - SORDERQ | Sales orders - quantities | SOQ0: SONNUM + SQLIN | None | None | None | None
+SOP - SORDERP | Sales orders - prices | SOP0: SONNUM | SONNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+SOP - SORDERP | Sales orders - prices | SOP0: SONNUM | None | None | None | None
+TVT - TABVAT | Tax code table | TVT0: VAT + LEG | VAT | CAL - CPTANALIN | Analytical accounting lines | CAL0: ABRFIC + VCRTPY + VRNUM + VCRSEQ + CPLCLE + ANLIG
+SQH - SQUOTE | Quote header | SQH0: SQHNUM | SQHNUM | SQD - SQUOTED | Quote detail | SQD0: SQHNUM + SQLIN
+SQH - SQUOTE | Quote header | SQH0: SQHNUM | None | None | None | None
+TPT - TABPAYTERM | Payment term table | TPT0: PTE + LEG + PTELEN | PTE + LEG + PTELEN | TDA - TABDEPAGIO | Early discount/late charge table | TDA0: DEP + LEG
+POQ - PORDERQ | POs quantities | POQ0: POHNUM + POPLIN + POSEQ | POHNUM | POH - PORDER | POs | POH0: POHNUM
+POQ - PORDERQ | POs quantities | POQ0: POHNUM + POPLIN + POSEQ | None | None | None | None
+MFI - MFGITM | Work orders - products | MFI0: MFGNUM | MFGNUM | None | None | None
+SDD - SDELIVRD | Delivery detail | SDD0: SDHNUM + SDLIN | SDHNUM | SID - SINVOCED | Sales invoices | SID0: SIVNUM + SDLIN
+SDD - SDELIVRD | Delivery detail | SDD0: SDHNUM + SDLIN | None | None | None | None
+PRH - PRDPREH | Pick ticket header | PRH0: PRHNUM | PRHNUM | None | None | None
+SID - SINVOCED | Bill of sale | SID0: SIVNUM + SDLIN | SIVNUM + SDLIN | SDD - SDELIVRD | Delivery detail | SDD0: SDHNUM + SDLIN
+SID - SINVOCED | Bill of sale | SID0: SIVNUM + SDLIN | None | None | None | None
+TMD - TABMDELIV | Delivery methods | TMD0: MDL | MDL | REP - SALESP | Sales rep | REP0: REPNUM
+TPA - TABPACKAGE | Packaging table | TPA0: PCK | PCK | ITS - ITMSALES | Products - sales | ITS0: ITMREF
+
+# SALES 3 - CUMULATIVE SALES ORDER
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | SOC - SORDERC | Sales orders - early/late | SOCO: SCHNUM + SOLIN
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | VOH - VSORDER | Sales order history - header | VOH0: SCHNUM + REVNUM
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | SOQ - SORDERQ | Sales orders - quantities | SOQ0: SCHNUM + SQLIN
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | SOP - SORDERP | Sales orders - prices | SOP0: SCHNUM + SOPLIN
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | None | CPY - COMPANY | Company | CPY0: CPY
+SOH - SORDER | Sales orders - header | SOH0: SCHNUM | SCHNUM | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+SOC - SORDERC | Sales orders - early/late | SOCO: SCHNUM + SOLIN | SCHNUM + SOLIN | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+SOC - SORDERC | Sales orders - early/late | SOCO: SCHNUM + SOLIN | None | None | None | None
+SOQ - SORDERQ | Sales orders - quantities | SOQ0: SCHNUM + SQLIN | SCHNUM + SQLIN | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+SOQ - SORDERQ | Sales orders - quantities | SOQ0: SCHNUM + SQLIN | None | None | None | None
+SOP - SORDERP | Sales orders - prices | SOP0: SCHNUM + SOPLIN | SCHNUM + SOPLIN | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+SOP - SORDERP | Sales orders - prices | SOP0: SCHNUM + SOPLIN | None | None | None | None
+ITS - ITMSALES | Products - sales | ITS0: ITMREF | ITMREF | None | None | None
+VOH - VSORDER | Sales order history - header | VOH0: SCHNUM + REVNUM | SCHNUM + REVNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+VOH - VSORDER | Sales order history - header | VOH0: SCHNUM + REVNUM | None | None | None | None
+POH - PORDER | POs | POH0: POHNUM | POHNUM | None | None | None
+POQ - PORDERQ | POs quantities | POQ0: POHNUM + POPLIN + POSEQ | POHNUM | POH - PORDER | POs | POH0: POHNUM
+POQ - PORDERQ | POs quantities | POQ0: POHNUM + POPLIN + POSEQ | None | None | None | None
+FCY - FACILITY | Sites | FCY0: FCY | FCY | CPY - COMPANY | Company | CPY0: CPY
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | None | None | None | None
+CCE - CACCAGE | Dimensions | CCE0: DIE + CCE | DIE + CCE | None | None | None
+TPT - TABPAYTERM | Payment term table | TPT0: PTE + LEG + PTELEN | PTE + LEG + PTELEN | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+TSO - TABSOHTYP | Order type table | TSO0: SOHTYP + LEG | SOHTYP + LEG | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+TCU - TABCUR | Currency table | TCU0: CUR | CUR | None | None | None
+DUD - GACCDUDATE | Open items | DUD0: TYP + NUM + LIG + DUDLIG | TYP + NUM + LIG + DUDLIG | None | None | None
+ADI - ATABDIV | Miscellaneous tables | ADI0: NUMTAB + CODE | NUMTAB + CODE | None | None | None
+SPC - SPRICCONF | Customer pricing parameters | SPC0: PLU | PLU | None | None | None
+TVT - TABVAT | Tax code table | TVT0: VAT + LEG | VAT + LEG | None | None | None
+BPT - BPCARRIER | Carriers | BPT0: BPTNUM | BPTNUM | None | None | None
+REP - SALESP | Sales rep | REP0: REPNUM | REPNUM | None | None | None
+TUN - TABUNIT | Table of units of measure | TUN0: UOM | UOM | None | None | None
+CAL - CPTANALIN | Analytical accounting lines | CAL0: ABRFIC + VCRTPY + VRNUM + VCRSEQ + CPLCLE + ANLIG | ABRFIC + VCRTPY + VRNUM + VCRSEQ + CPLCLE + ANLIG | None | None | None
+PRICSTRUCT - PRS | Price structure (cust/supp) | PRS0: BPCDIS + PLISTC | PLISTC | BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD
+PRICSTRUCT - PRS | Price structure (cust/supp) | PRS0: BPCDIS + PLISTC | BPCDIS | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+TABSOHTYP - TSO | Order type table | TSO0: SOHTYP + LEG | SOHTYP | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+TABPAYTERM - TPT | Payment term table | TPT0: PTE + LEG + PTELEN | PTE | BPD - BPDLVCUST | Ship-to customer | BPD0: BPCNUM + BPRADD
+TABPAYTERM - TPT | Payment term table | TPT0: PTE + LEG + PTELEN | PTE | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+VSORDER - VOH | Sales order history - header | VOH0: SCHNUM + REVNUM | SCHNUM | SOH - SORDER | Sales orders - header | SOH0: SCHNUM
+VSORDER - VOH | Sales order history - header | VOH0: SCHNUM + REVNUM | SOLIN | VSORDERC - VOC | Cumulative sales order history | VOC0: SONNUM + SOLIN
+VSORDERC - VOC | Cumulative sales order history | VOC0: SONNUM + SOLIN | SONNUM | VSORDER - VOH | Sales order history - header | VOH0: SCHNUM + REVNUM
+SORDERQ - SOQ | Sales orders - quantities | SOQ0: SCHNUM + SQLIN | SCHNUM | SORDER - SOH | Sales orders - header | SOH0: SCHNUM
+SORDERC - SOC | Sales orders - early/late | SOCO: SCHNUM + SOLIN | SCHNUM | SORDER - SOH | Sales orders - header | SOH0: SCHNUM
+SORDER - SOH | Sales orders - header | SOH0: SCHNUM | SCHNUM | SORDERC - SOC | Sales orders - early/late | SOCO: SCHNUM + SOLIN
+SORDER - SOH | Sales orders - header | SOH0: SCHNUM | SCHNUM | SORDERQ - SOQ | Sales orders - quantities | SOQ0: SCHNUM + SQLIN
+SORDER - SOH | Sales orders - header | SOH0: SCHNUM | SCHNUM | TABSOHTYP - TSO | Order type table | TSO0: SOHTYP + LEG
+SORDER - SOH | Sales orders - header | SOH0: SCHNUM | SCHNUM | FACILITY - FCY | Sites | FCY0: FCY
+SORDER - SOH | Sales orders - header | SOH0: SCHNUM | SCHNUM | COMPANY - CPY | Company | CPY0: CPY
+COMPANY - CPY | Company | CPY0: CPY | CPY | FACILITY - FCY | Sites | FCY0: FCY
+COMPANY - CPY | Company | CPY0: CPY | CPY | SORDER - SOH | Sales orders - header | SOH0: SCHNUM
+FACILITY - FCY | Sites | FCY0: FCY | FCY | COMPANY - CPY | Company | CPY0: CPY
+FACILITY - FCY | Sites | FCY0: FCY | FCY | SORDER - SOH | Sales orders - header | SOH0: SCHNUM
+BPCUSTOMER - BPC | Customers | BPC0: BPCNUM | BPCNUM | SORDER - SOH | Sales orders - header | SOH0: SCHNUM
+BPCUSTOMER - BPC | Customers | BPC0: BPCNUM | BPCNUM | PRICSTRUCT - PRS | Price structure (cust/supp) | PRS0: BPCDIS + PLISTC
+BPCUSTOMER - BPC | Customers | BPC0: BPCNUM | BPCNUM | TABPAYTERM - TPT | Payment term table | TPT0: PTE + LEG + PTELEN
+BPDLVCUST - BPD | Ship-to customer | BPD0: BPCNUM + BPRADD | BPCNUM | BPCUSTOMER - BPC | Customers | BPC0: BPCNUM
+BPDLVCUST - BPD | Ship-to customer | BPD0: BPCNUM + BPRADD | BPRADD | None | None | None
+PORDER - POH | POs | POH0: POHNUM | POHNUM | PORDERQ - POQ | POs quantities | POQ0: POHNUM + POPLIN + POSEQ
+PORDERQ - POQ | POs quantities | POQ0: POHNUM + POPLIN + POSEQ | POHNUM | PORDER - POH | POs | POH0: POHNUM
+
+# SALES 4 - SALES DELIVERIES
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | SDD - SDELIVERYD | Delivery detail | SDDD: SDHNUM + SDDLN
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | SOH - SORDER | Sales orders - header | SOHD: SOHNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | BPC - BPCUSTOMER | Customers | BPCD: BPCNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | BPV - BPVLCUST | Ship-to customer | BPVD: BPCNUM + BPVADD
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | BPV - BPVLST | Customer location | BPVD: STOFCY + STOLOC
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | BPV - BPVLCUST | Ship-to customer | BPVD: BPCNUM + BPVADD
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | BPV - BPARTNER | Business partner | BPVD: BPRNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | BPRPAY | BPR - BPARTNER | Business partner | BPRD: BPRNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | BPCORD | BPC - BPCUSTOMER | Customers | BPCD: BPCNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | BPYORD | BPY - BPVCUST | Ship-to customer | BPYD: BPCNUM + BPVADD
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | TUNUM | TUN - TABUNIT | Table of units of measure | TUND: UOM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | FCYNUM | FCY - FACILITY | Sites | FCYD: FCY
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | REPNUM | REP - SALESREP | Sales rep | REPD: REPNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | CURNUM | TCU - TABCURC | Currency table | TCUD: CUR
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | CURNUM | SVF - SVCFOOT | Sales document footer el. | SVFD: VCRNUM + VCRTYP + DTA
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SIVNUM | SIV - SIVOICEV | Costing sales invoice | SIVD: NUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | SPD - SPACKD | Delivery package | SPDD: VCRNUM + VCRTYP + PACNUM + PCASEQ
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | SDD - SDELIVERYD | Delivery detail | SDDD: SDHNUM + SDDLN
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SDHNUM | SOH - SORDER | Sales orders - header | SOHD: SOHNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SOHNUM | SOH - SORDER | Sales orders - header | SOHD: SOHNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | BPCNUM | BPC - BPCUSTOMER | Customers | BPCD: BPCNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | REPNUM | REP - SALESREP | Sales rep | REPD: REPNUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | TUNUM | TUN - TABUNIT | Table of units of measure | TUND: UOM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | FCYNUM | FCY - FACILITY | Sites | FCYD: FCY
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | CURNUM | TCU - TABCURC | Currency table | TCUD: CUR
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | PTE | TMD - TABMDLV | Delivery methods | TMDD: MDL
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | VCRNUM, VCRTYP | SVF - SVCFOOT | Sales document footer el. | SVFD: VCRNUM + VCRTYP + DTA
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SIVNUM | SIV - SIVOICEV | Costing sales invoice | SIVD: NUM
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | CPCNUM | CPY - COMPANY | Company code | CPYD: CPY
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | CEE | CCE - CACE | Dimensions | CCED: CEE
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | VCRNUM, VCRTYP, PACNUM, PCASEQ | SPD - SPACKD | Delivery package | SPDD: VCRNUM + VCRTYP + PACNUM + PCASEQ
+SDH - DELIVERY | Delivery header | SDHD: SDHNUM | SHINUM, SESNUM, SEECHC | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+SOH - SORDER | Sales orders - header | SOHD: SOHNUM | SOHNUM | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+SOH - SORDER | Sales orders - header | SOHD: SOHNUM | SOHNUM | SDD - SDELIVERYD | Delivery detail | SDDD: SDHNUM + SDDLN
+SOH - SORDER | Sales orders - header | SOHD: SOHNUM | SOHNUM | SOQ - SORDERQ | Sales orders - quantities | SOQD: SOHNUM + SOLIN + SOQSEQ
+SIV - SIVOICEV | Costing sales invoice | SIVD: NUM | NUM | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+BPC - BPCUSTOMER | Customers | BPCD: BPCNUM | BPCNUM | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+REP - SALESREP | Sales rep | REPD: REPNUM | REPNUM | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+TUN - TABUNIT | Table of units of measure | TUND: UOM | UOM | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+FCY - FACILITY | Sites | FCYD: FCY | FCY | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+TCU - TABCURC | Currency table | TCUD: CUR | CUR | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+TMD - TABMDLV | Delivery methods | TMDD: MDL | MDL | SDH - DELIVERY | Delivery header | SDHD: SDHNUM
+
+# SALES 5 - SALES INVOICE
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+STJ - STOJOU | Stock journal | STJ : NUM | STOJOU.NUM = STOJOU.LIN | SDD - SDELIVERYD | Delivery detail | SDD : NUM
+SRD - SRETURND | Sales return | SRD : SHNUM | SRE.NUM = SRD.SHNUM | SRE - SEREQUEST | Service request | SRE : NUM
+CON - CONTSERV | Service contract | CON : CNUM | CONTSERV.CNUM = CONTSERV.CONNUM | CAL - CATANALIN | Analytical accounting lines | CAL : 0
+SOQ - SORDERQ | Sales orders - quantities | SOQ : SOHNUM | SORDERQ.SOHNUM = SORDERQ.SOQSEQ | PID - PINVOICED | Purchase invoice detail | PID : NUM
+GAC - GACCOUNT | Accounts | GAC : COA & ACC | GACCOUNT.COA = GACCOUNT.ACC | REP - SALESREP | Sales rep | REP : NUM
+SVF - SVCURVAT | Sales document - VAT | SVF : NUM | SVCURVAT.NUM = SVCURVAT.VATNUM | SVI - SINVOICEV | Costing sales invoice | SVI : NUM
+SVI - SINVOICEV | Costing sales invoice | SVI : NUM | SINVOICEV.NUM = SINVOICEV.BPCNUM & SINVOICEV.BPADD | BPC - BPCUSTOMER | Customers | BPC : NUM
+SID - SINVOICED | Bill of sale detail | SID : NUM & SDLIN | SINVOICED.NUM = SINVOICED.NUM_1 | PIH - PINVOICEH | Purchase invoices | PIH : NUM
+BPC - BPCUSTOMER | Customers | BPC : NUM | BPCUSTOMER.NUM = BPCUSTOMER.BPCTYP & BPCUSTOMER.BPCURLED | GLE - GLEDD | Dimension types | GLE : DIE
+SRE - SEREQUEST | Service request | SRE : NUM | SEREQUEST.NUM = SEREQUEST.SREFTO & SEREQUEST.ITMREF | ITM - ITMSALES | Products - sales | ITM : ITMREF
+FCY - FACILITY | Sites | FCY : FCY | FACILITY.FCY = FACILITY.SALFCY | PIH - PINVOICEH | Purchase invoices | PIH : NUM
+ADT - ATADBIV | Miscellaneous tables | ADT : CODE | ATADBIV.CODE = ATADBIV.NUMTAB | TPA - TPATYPE | Payment term | TPA : PTE
+FCY - FACILITY | Sites | FCY : FCY | FACILITY.FCY = FACILITY.SALFCY | PRS - PRICSTRUCT | Price structure (cost/supp) | PRS : BPCSTO & BPC
+BPC - BPCUSTOMER | Customers | BPC : NUM | BPCUSTOMER.NUM = BPCUSTOMER.BPADD | SIV - SINVOICEV | Costing sales invoice | SIV : NUM
+ADI - ATADBIV | Miscellaneous tables | ADI : CODE | ATADBIV.CODE = ATADBIV.TABNAME | TUN - TABUNIT | Table of units of measure | TUN : UOM
+SVI - SINVOICEV | Costing sales invoice | SVI : NUM | SINVOICEV.NUM = SINVOICEV.LEG | JOU - GJOURNAL | Journal codes | JOU : JOU
+SRE - SEREQUEST | Service request | SRE : NUM | SEREQUEST.NUM = SEREQUEST.TSICOD | TSI - TABTSIV | Customer invoice type | TSI : TSIV
+BPR - BPCARRIER | Carriers | BPR : BPTNUM | BPCARRIER.BPTNUM = BPCARRIER.BPRVAT | TCU - TABCUR | Currency table | TCU : CURR
+GHU - GACCDH | Header accounting entries | GHU : NUM | GACCDH.NUM = GACCDH.CURLED | CUR - CURRENCY | Currency codes | CUR : LED
+BPT - BPCARRIER | Carriers | BPT : BPTNUM | BPCARRIER.BPTNUM = BPCARRIER.BPRPAY | PTY - PTYPACC | Payment types | PTY : PTE
+TDA - TABDEPAGIO | Early discount/late charge table | TDA : DEP | TABDEPAGIO.DEP = TABDEPAGIO.LEG | LED - GLED | Dimension types | LED : DIE
+DIE - GDIE | Dimension types | DIE : DIE | GDIE.DIE = GDIE.ALIAS | CCE - CACCE | Dimensions | CCE : DIE
+SIH - SINVOICE | Sales invoices | SIH : NUM | SINVOICE.NUM = SINVOICE.BPCNUM & SINVOICE.BPADD | BPD - BPDLVCUST | Ship-to customer | BPD : BPCNUM & ADDNUM
+
+# SALES 6 - SALES RETURNS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+PND - PRETURND | Detail return | PND : PNHNUM & PNDLIN | PRETURND.PNHNUM = PRETURND.PNDLIN | SRD - SRETURND | Sales return detail | SRD : SHNUM & SRDLIN
+SDD - SDELIVERYD | Delivery detail | SDD : SDHNUM & SDLIN | SDELIVERYD.SDHNUM = SDELIVERYD.SDLIN | SID - SINVOICED | Bill of sale detail | SID : NUM & SDLIN
+SRD - SRETURND | Sales return detail | SRD : SHNUM & SRDLIN | SRETURND.SRDLIN = SRETURND.VCRNUM/VCRDLIN | STJ - STOJOU | Stock journal | STJ : UPMOFCY & UPMNUM & VCRNUM/VCRDLIN
+SRH - SRETURN | Sales return header | SRH : SRHNUM | SRETURN.SRHNUM = SRETURN.FFWNUM | FFW - STFORWARD | Forwarding agent | FFW : NUM
+ITS - ITMSALES | Products - sales | ITS : ITMREF | ITMSALES.ITMREF = ITMSALES.TSID | TUN - TABUNIT | Table of units of measure | TUN : UOM
+FCY - FACILITY | Sites | FCY : FCY | FACILITY.FCY = FACILITY.CPY | CPY - COMPANY | Company | CPY : CPY
+STOFCY | STJ : UPMOFCY | STOCK JOURNAL.UPMOFCY = STOCK JOURNAL.STOFCY | FCY - FACILITY | Sites | FCY : FCY
+AUS - AUTLIS | Users | AUS : USR | AUTLIS.USR = AUTLIS.CODUSR | PRS - PRICSTRUCT | Price structure (cust/supp) | PRS : BPCSTO & PLISTC
+BPC - BPCUSTOMER | Customers | BPC : BPCNUM | BPCUSTOMER.BPCNUM = BPCUSTOMER.BPCORD | BPR - BPPARTNER | Business partner | BPR : BRPNUM
+BPD - BPDLVCUST | Ship-to customer | BPD : BPCNUM & BPADD | BPDLVCUST.BPCNUM = BPDLVCUST.BPADD | SRH - SRETURN | Sales return header | SRH : SRHNUM
+BPT - BPCARRIER | Carriers | BPT : BPTNUM | BPCARRIER.BPTNUM = BPCARRIER.TRINUM | SRD - SRETURND | Sales return detail | SRD : SHNUM & SRDLIN
+ADI - ATADBIV | Miscellaneous tables | ADI : CODE | ATADBIV.CODE = ATADBIV.NUMTAB | DIE - GDIE | Dimension types | DIE : DIE
+SDH - SDELIVERYH | Delivery header | SDH : SDHNUM | SDELIVERYH.SDHNUM = SDELIVERYH.SRDLIN | SRD - SRETURND | Sales return detail | SRD : SHNUM & SRDLIN
+SRD - SRETURND | Sales return detail | SRD : SHNUM & SRDLIN | SRETURND.SRD_SHNUM = SRETURND.SRDHNUM | SRH - SRETURN | Sales return header | SRH : SRHNUM
+STJ - STOJOU | Stock journal | STJ : STOFCY & STJNUM & MVTYPE & MVIND | STOJOU.STOFCY = STOJOU.MVTYPE & STOJOU.MVIND | FCY - FACILITY | Sites | FCY : FCY
+SID - SINVOICED | Bill of sale detail | SID : NUM & SDLIN | SINVOICED.SDLIN = SINVOICED.NUM | STJ - STOJOU | Stock journal | STJ : STOFCY & STJNUM & MVTYPE & MVIND
+BPR - BPPARTNER | Business partner | BPR : BRPNUM | BPPARTNER.BRPNUM = BPPARTNER.BPCNUM | BPC - BPCUSTOMER | Customers | BPC : BPCNUM
+TUN - TABUNIT | Table of units of measure | TUN : UOM | TABUNIT.UOM = TABUNIT.SAU | STU - STUNIT | Stock units | STU : UOM
+ITS - ITMSALES | Products - sales | ITS : ITMREF | ITMSALES.ITMREF = ITMSALES.PNHNUM/PNDLIN | PND - PRETURND | Detail return | PND : PNHNUM & PNDLIN
+STJ - STOJOU | Stock journal | STJ : STOFCY & STJNUM & MVTYPE & MVIND | STOJOU.STJNUM = STOJOU.SDHNUM/SDDLIN | SDD - SDELIVERYD | Delivery detail | SDD : SDHNUM & SDLIN
+FCY - FACILITY | Sites | FCY : FCY | FACILITY.FCSTOFCY = FACILITY.FCSTOFCYDVL | CPY - COMPANY | Company | CPY : CPY
+BPT - BPCARRIER | Carriers | BPT : BPTNUM | BPCARRIER.BPTNUM = BPCARRIER.DIE | DIE - GDIE | Dimension types | DIE : DIE
+AUS - AUTLIS | Users | AUS : USR | AUTLIS.CODUSR = AUTLIS.PRSCOD | PRS - PRICSTRUCT | Price structure (cust/supp) | PRS : BPCSTO & PLISTC
+SRD - SRETURND | Sales return detail | SRD : SHNUM & SRDLIN | SRETURND.VCRNUM/VCRDLIN = SRETURND.CREMEMO | BPT - BPCARRIER | Carriers | BPT : BPTNUM
+CCE - CACCE | Dimensions | CCE : DIE & CCE | CACCE.CCE = CACCE.BPCORD/BPADD | BPD - BPDLVCUST | Ship-to customer | BPD : BPCNUM & ADDNUM
+
+# SALES 7 - SALES PRICE
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+SFI - SFOOTINV | Invoicing elements | SFI0: SFINUM | INVDAT.[1..9] | PRS - PRICSTRUCT | Price structure (cost/supp) | PRS0: PLI/STC
+SPR - SPREASON | Sales price list reasons | SPR0: PRIREN | PRIREN | PRS - PRICSTRUCT | Price structure (cost/supp) | PRS0: PLI/STC
+SPC - SPCONF | Customer pricing parameters | SPC0: PLU | PLU | SPF - SPRICFICH | Customer prices (records) | SPF0: PLU/PLCRD
+SPF - SPRICFICH | Customer prices (records) | SPF0: PLU/PLCRD | PLU/PLCRD | SPL - SPPRICLIST | Customer price lists | SPL0: PLU/PLCRD
+SPL - SPPRICLIST | Customer price lists | SPL0: PLU/PLCRD | PLICRID | ITM - ITMMASTER | Products | ITM0: ITMREF
+SPL - SPPRICLIST | Customer price lists | SPL0: PLU/PLCRD | PLICRID | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+TCU - TABCUR | Currency table | TCU0: CUR | CUR | PRS - PRICSTRUCT | Price structure (cost/supp) | PRS0: PLI/STC
+SFI - SFOOTINV | Invoicing elements | SFI0: SFINUM | INVDAT.[1..9] | PRS - PRICSTRUCT | Price structure (cost/supp) | PRS0: PLI/STC
+PRS - PRICSTRUCT | Price structure (cost/supp) | PRS0: PLI/STC | PLI/STC | SPC - SPCONF | Customer pricing parameters | SPC0: PLU
+PRS - PRICSTRUCT | Price structure (cost/supp) | PRS0: PLI/STC | PLI/STC | TCU - TABCUR | Currency table | TCU0: CUR
+SPR - SPREASON | Sales price list reasons | SPR0: PRIREN | PRIREN | PRS - PRICSTRUCT | Price structure (cost/supp) | PRS0: PLI/STC
+SPC - SPCONF | Customer pricing parameters | SPC0: PLU | PLU | SPF - SPRICFICH | Customer prices (records) | SPF0: PLU/PLCRD
+SPF - SPRICFICH | Customer prices (records) | SPF0: PLU/PLCRD | PLU/PLCRD | SPL - SPPRICLIST | Customer price lists | SPL0: PLU/PLCRD
+SPL - SPPRICLIST | Customer price lists | SPL0: PLU/PLCRD | PLICRID | ITM - ITMMASTER | Products | ITM0: ITMREF
+SPL - SPPRICLIST | Customer price lists | SPL0: PLU/PLCRD | PLICRID | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+ITM - ITMMASTER | Products | ITM0: ITMREF | ITMREF | SPL - SPPRICLIST | Customer price lists | SPL0: PLU/PLCRD
+BPC - BPCUSTOMER | Customers | BPC0: BPCNUM | BPCNUM | SPL - SPPRICLIST | Customer price lists | SPL0: PLU/PLCRD
+
+# PURCHASE 1 - PURCHASE REQUESTS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+AUS - AUTILIS | Users | CODUSR : USR | USR | PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ORD - ORDERS | Work In Progress | ORD0 : WIPNUM + ITMNUM
+BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM | BPSNUM | POH - PORDER | Purchase Orders | POH1 : POHNUM
+PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM | PSHNUM | PSD - PREQUISD | Purchase request detail | PSD0 : PSHNUM + PSDLIN
+PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM | PSHNUM | PSO - PREQUISO | Link purchase requests | PSHNUM + PSDLIN = POHNUM + POPSEQ
+PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM | PSHFACY | FCY - FACILITY | Sites | FCY0 : FCY
+PSD - PREQUISD | Purchase request detail | PSD0 : PSHNUM + PSDLIN | PSHNUM/PSDLIN | PSO - PREQUISO | Link purchase requests | PSHNUM + PSDLIN = POHNUM + POPSEQ
+POH - PORDER | Purchase Orders | POH1 : POHNUM | POHNUM | POP - PORDERP | Purchase Orders price | POP0 : POHNUM + POPLIN + POPSEQ
+POH - PORDER | Purchase Orders | POH1 : POHNUM | POHNUM | POQ - PORDERQ | Purchase Orders quantities | POQ0 : POHNUM + POPLIN + POPSEQ
+POH - PORDER | Purchase Orders | POH1 : POHNUM | BPSNUM | BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM
+POP - PORDERP | Purchase Orders price | POP0 : POHNUM + POPLIN + POPSEQ | POHNUM/POPSEQ | PSO - PREQUISO | Link purchase requests | PSHNUM + PSDLIN = POHNUM + POPSEQ
+POQ - PORDERQ | Purchase Orders quantities | POQ0 : POHNUM + POPLIN + POPSEQ | POHNUM/POPSEQ | PSO - PREQUISO | Link purchase requests | PSHNUM + PSDLIN = POHNUM + POPSEQ
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM
+ORD - ORDERS | Work In Progress | ORD0 : WIPNUM + ITMNUM | WIPNUM + ITMNUM | ITM - ITMMASTER | Products | ITM0 : ITMREF
+TUN - TABUNIT | Table of units of measure | TUN0 : IUOM |  |  |  | 
+CCE - CACCE | Dimensions | CCDIEF : CCE | DIE0/CCE | CAL - CPTANALIN | Analytical accounting lines | CALD0 : ARFIC + ANALIG
+CAL - CPTANALIN | Analytical accounting lines | CALD0 : ARFIC + ANALIG | ARFIC + VCRNUM + VCRSEQ + CRPLINE + ANALIG | CCE - CACCE | Dimensions | CCDIEF : CCE
+AUS - AUTILIS | Users | CODUSR : USR | USR | PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ORD - ORDERS | Work In Progress | ORD0 : WIPNUM + ITMNUM
+BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM | BPSNUM | POH - PORDER | Purchase Orders | POH1 : POHNUM
+PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM | PSHNUM | PSD - PREQUISD | Purchase request detail | PSD0 : PSHNUM + PSDLIN
+PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM | PSHFACY | FCY - FACILITY | Sites | FCY0 : FCY
+PSD - PREQUISD | Purchase request detail | PSD0 : PSHNUM + PSDLIN | PSHNUM/PSDLIN | PSO - PREQUISO | Link purchase requests (Many-to-many with POH - PORDER) | PSHNUM + PSDLIN = POHNUM + POPSEQ
+POH - PORDER | Purchase Orders | POH1 : POHNUM | POHNUM | POP - PORDERP | Purchase Order prices | POP0 : POHNUM + POPLIN + POPSEQ
+POH - PORDER | Purchase Orders | POH1 : POHNUM | POHNUM | POQ - PORDERQ | Purchase Order quantities | POQ0 : POHNUM + POPLIN + POPSEQ
+POH - PORDER | Purchase Orders | POH1 : POHNUM | BPSNUM | BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM
+POP - PORDERP | Purchase Order prices | POP0 : POHNUM + POPLIN + POPSEQ | POHNUM/POPSEQ | PSO - PREQUISO | Link purchase requests (Many-to-many with PSD - PREQUISD) | PSHNUM + PSDLIN = POHNUM + POPSEQ
+POQ - PORDERQ | Purchase Order quantities | POQ0 : POHNUM + POPLIN + POPSEQ | POHNUM/POPSEQ | PSO - PREQUISO | Link purchase requests (Many-to-many with PSD - PREQUISD) | PSHNUM + PSDLIN = POHNUM + POPSEQ
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | PSH - PREQUIS | Purchase requests | PSH0 : PSHNUM
+ORD - ORDERS | Work In Progress | ORD0 : WIPNUM + ITMNUM | WIPNUM + ITMNUM | ITM - ITMMASTER | Products | ITM0 : ITMREF
+TUN - TABUNIT | Table of units of measure | TUN0 : IUOM | | (No direct link visible) | | 
+CCE - CACCE | Dimensions | CCDIEF : CCE | DIE0/CCE | CAL - CPTANALIN | Analytical accounting lines | CALD0 : ARFIC + ANALIG
+CAL - CPTANALIN | Analytical accounting lines | CALD0 : ARFIC + ANALIG | ARFIC + VCRNUM + VCRSEQ + CRPLINE + ANALIG | CCE - CACCE | Dimensions | CCDIEF : CCE
+PSO - PREQUISO | Link purchase requests | (Composite key not directly visible) | PSHNUM + PSDLIN = POHNUM + POPSEQ | PSD - PREQUISD | Purchase request detail | PSD0 : PSHNUM + PSDLIN
+PSO - PREQUISO | Link purchase requests | (Composite key not directly visible) | PSHNUM + PSDLIN = POHNUM + POPSEQ | POH - PORDER | Purchase Orders | POH1 : POHNUM
+PSO - PREQUISO | Link purchase requests | (Composite key not directly visible) | PSHNUM + PSDLIN = POHNUM + POPSEQ | POP - PORDERP | Purchase Order prices | POP0 : POHNUM + POPLIN + POPSEQ
+PSO - PREQUISO | Link purchase requests | (Composite key not directly visible) | PSHNUM + PSDLIN = POHNUM + POPSEQ | POQ - PORDERQ | Purchase Order quantities | POQ0 : POHNUM + POPLIN + POPSEQ
+
+# PURCHASE 2 - REQUEST FOR QUOTATIONS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+AUS - AUTILIS | Users | CODUSR : USR | USR | PQH - PQUOTAT | RFQs | PQH0 : PQHNUM
+CCE - CACCE | Dimensions | CCDIEF : CCE | DIE0/CCE | CAL - CPTANALIN | Analytical accounting lines | CALD0 : ARFIC + ANALIG
+CAL - CPTANALIN | Analytical accounting lines | CALD0 : ARFIC + ANALIG | ARFIC + VCRNUM + VCRSEQ + CRPLINE + ANALIG | CCE - CACCE | Dimensions | CCDIEF : CCE
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | PQH - PQUOTAT | RFQs | PQH0 : PQHNUM
+PQH - PQUOTAT | RFQs | PQH0 : PQHNUM | PQHNUM | PQD - PQUOTATD | RFQ product detail | PQD0 : PQHNUM + PQDLIN
+PQH - PQUOTAT | RFQs | PQH0 : PQHNUM | PQHNUM | PQF - PQUOTAF | RFQ supplier detail | PQF0 : PQHNUM + BPSNUM
+PQD - PQUOTATD | RFQ product detail | PQD0 : PQHNUM + PQDLIN | PQHNUM/PQDLIN | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | PQD - PQUOTATD | RFQ product detail | PQD0 : PQHNUM + PQDLIN
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ITP - ITMBPS | Supplier product | ITP0 : ITMREF + BPSNUM
+ITP - ITMBPS | Supplier product | ITP0 : ITMREF + BPSNUM | ITMREF/BPSNUM | PPH - PRESP | RFQ responses | PPH0 : BPSNUM + PQHNUM + PQDLIN
+ITP - ITMBPS | Supplier product | ITP0 : ITMREF + BPSNUM | ITMREF/BPSNUM | BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM
+PPH - PRESP | RFQ responses | PPH0 : BPSNUM + PQHNUM + PQDLIN | BPSNUM/PQHNUM/PQDLIN | PPD - PRESPD | Detail RFQ responses | PPD0 : BPSNUM + PQHNUM + PQDLIN
+BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM | BPSNUM | PQF - PQUOTAF | RFQ supplier detail | PQF0 : PQHNUM + BPSNUM
+BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM | BPSNUM | PPH - PRESP | RFQ responses | PPH0 : BPSNUM + PQHNUM + PQDLIN
+PPD - PRESPD | Detail RFQ responses | PPD0 : BPSNUM + PQHNUM + PQDLIN | BPSNUM/PQHNUM/PQDLIN | PPH - PRESP | RFQ responses | PPH0 : BPSNUM + PQHNUM + PQDLIN
+PQF - PQUOTAF | RFQ supplier detail | PQF0 : PQHNUM + BPSNUM | PQHNUM/BPSNUM | PQH - PQUOTAT | RFQs | PQH0 : PQHNUM
+
+# PURCHASE 3 - NORMAL PURCHASE ORDERS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+AUS - AUTILIS | Users | CODUSR : USR | BUY | BPR - BPARTNER | Business partner | BPR0 : BPRNUM
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | BPRNUM | BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM
+BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM | BPSNUM | BPT - BPCARRIER | Carriers | BPT0 : BPTNUM
+BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM | BPSNUM | POH - PORDER | Purchase Orders | POH1 : POHNUM
+BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM | BPSNUM | ITM - ITMMASTER | Products | ITM0 : ITMREF
+BPT - BPCARRIER | Carriers | BPT0 : BPTNUM |  | (No direct link visible) | | 
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | POH - PORDER | Purchase Orders | POH1 : POHNUM
+ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF + STOFACY | ITMREF | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF + STOFACY | STOFACY | FCY - FACILITY | Sites | FCY0 : FCY
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | POH - PORDER | Purchase Orders | POH1 : POHNUM
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF + STOFACY
+ITP - ITMBPS | Supplier product | ITP0 : ITMREF + BPSNUM | ITMREF | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ITP - ITMBPS | Supplier product | ITP0 : ITMREF + BPSNUM | BPSNUM | BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM
+POH - PORDER | Purchase Orders | POH1 : POHNUM | POHNUM | POP - PORDERP | POS price | POP0 : POHNUM + POPLIN + POPSEQ
+POH - PORDER | Purchase Orders | POH1 : POHNUM | POHNUM | POQ - PORDERQ | POS quantities | POQ0 : POHNUM + POPLIN + POPSEQ
+POH - PORDER | Purchase Orders | POH1 : POHNUM | BPSNUM | BPS - BPSUPPLIER | Suppliers | BPS0 : BPSNUM
+POH - PORDER | Purchase Orders | POH1 : POHNUM | INVCY | FCY - FACILITY | Sites | FCY0 : FCY
+POH - PORDER | Purchase Orders | POH1 : POHNUM | NUM | TPT - TABPAYTERM | Payment term table | TPT0 : PTE
+POH - PORDER | Purchase Orders | POH1 : POHNUM | CUR | TCU - TABCUR | Currency table | TCU0 : CUR
+POH - PORDER | Purchase Orders | POH1 : POHNUM | MDL | TMD - TABMODELIV | Delivery methods | TMD0 : MDL
+POH - PORDER | Purchase Orders | POH1 : POHNUM | NUM | UOH - UPOREDER | PO history | POH0 : POHNUM + REINUM
+POP - PORDERP | POS price | POP0 : POHNUM + POPLIN + POPSEQ | POHNUM/POPLIN/POPSEQ | POH - PORDER | Purchase Orders | POH1 : POHNUM
+POQ - PORDERQ | POS quantities | POQ0 : POHNUM + POPLIN + POPSEQ | POHNUM/POPLIN/POPSEQ | POH - PORDER | Purchase Orders | POH1 : POHNUM
+TMD - TABMODELIV | Delivery methods | TMD0 : MDL |  | (No direct link visible) | | 
+TCU - TABCUR | Currency table | TCU0 : CUR | CUR | POH - PORDER | Purchase Orders | POH1 : POHNUM
+TPT - TABPAYTERM | Payment term table | TPT0 : PTE | PTE | POH - PORDER | Purchase Orders | POH1 : POHNUM
+UOH - UPOREDER | PO history | POH0 : POHNUM + REINUM | POHNUM/REINUM | POH - PORDER | Purchase Orders | POH1 : POHNUM
+TWT - TVAT | Tax code table | TVT0 : VAT | LEG | TPR - PREASON | Purchase price reasons | TPR0 : PPIREN
+PPR - PREASON | Purchase price reasons | PPR0 : PPIREN | PPIREN | STC - COSTSTCD | Cost structure - document types | STCD0 : CSTCDNUM
+STC - COSTSTCD | Cost structure - document types | STCD0 : CSTCDNUM | CSTCDNUM | TSV - TOSTSTO | Cost structures - storage | TSV0 : STOCNUM + CSTNUM
+SOH - SORDER | Sales orders - header | SOH0 : SONUM | SONUM | ITM - ITMMASTER | Products | ITM0 : ITMREF
+TUN - TABUNIT | Table of units of measure | TUN0 : IUOM | IUOM | UOQ - UPOREDERQ | PO quantity history | POQ0 : POHNUM + LINEHNUM + POPLIN + POPSEQ
+GAC - GACCOUNT | Accounts | GAC0 : ACC | ACC | CAL - CPTANALIN | Analytical accounting lines | CALD0 : ARFIC + ANALIG
+CCE - CACCE | Dimensions | CCDIEF : CCE | DIE/CCE | CAL - CPTANALIN | Analytical accounting lines | CALD0 : ARFIC + ANALIG
+CAL - CPTANALIN | Analytical accounting lines | CALD0 : ARFIC + ANALIG | ARFIC + VCRNUM + VCRSEQ + CRPLINE + ANALIG | CCE - CACCE | Dimensions | CCDIEF : CCE
+ADI - ATADBIV | Miscellaneous tables | CODE : NUMTAB + CODE | NUMTAB/CODE | CCE - CACCE | Dimensions | CCDIEF : CCE
+DUD - GACUPDATE | Open items | DUD0 : TIP + NUM + ILG |  | (No direct link visible) | | 
+PVF - PVCRFOOT | Purchase orders - document footer et al. | PVF0 : VCRNUM + IND | VCRNUM/IND | PVV - PVCRVAT | Purchase documents - taxes | PVV0 : VCRNUM + IND
+PVV - PVCRVAT | Purchase documents - taxes | PVV0 : VCRNUM + IND | VCRNUM/IND | PVF - PVCRFOOT | Purchase orders - document footer et al. | PVF0 : VCRNUM + IND
+
+# PURCHASE 4 - CUMULATIVE PURCHASE ORDERS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+POH - PORDER | POs | POHD: POHNUM | POHNUM | POC - PORDERC | Cumulative POs before returns | POCD: POHNUM, POPLIN
+POH - PORDER | POs | POHD: POHNUM | POHNUM,POPLIN | POP - PORDERP | POs prices | POPD: POHNUM, POPLIN, POPSEQ
+POH - PORDER | POs | POHD: POHNUM | POHNUM,POPLIN | POQ - PORDERQ | POs quantities | POQD: POHNUM, POPLIN, POQSEQ
+POH - PORDER | POs | POHD: POHNUM | POHNUM | UOP - UORDERP | PO price history | UOPD: POHNUM, LINENUM, POPSEQ, UOPSEQ
+POH - PORDER | POs | POHD: POHNUM | POHNUM,POPLIN | STC - COSTSTDC | Cost structure - documents | STCD: WCRNUM, VCRLIN, NUMSEQ
+POH - PORDER | POs | POHD: POHNUM | POHNUM | FCY - FACILITY | Facility | FCYD: FCY
+POH - PORDER | POs | POHD: POHNUM | POHNUM | BPS - BPSUPPLIER | Suppliers | BPSD: BPSNUM
+POH - PORDER | POs | POHD: POHNUM | POHNUM | BPT - BPCARRIER | Carriers | BPTD: BPTNUM
+POH - PORDER | POs | POHD: POHNUM | POHNUM | BPR - BPARTNER | Business partner | BPRD: BPRNUM
+POH - PORDER | POs | POHD: POHNUM | POHNUM | UOH - UORDER | PO history | UOHD: POHNUM
+POH - PORDER | POs | POHD: POHNUM | POHNUM | PTE | Payment term table | PTED: PTE
+POH - PORDER | POs | POHD: POHNUM | POHNUM | MDL | Delivery methods | TMDD: MDL
+POH - PORDER | POs | POHD: POHNUM | POHNUM | CUR | Currency table | TCUD: CUR
+POH - PORDER | POs | POHD: POHNUM | POHNUM | VAT/TJ | Tax code table | TVTD: VAT + LEG
+POH - PORDER | POs | POHD: POHNUM | POHNUM,POPLIN | ITM - ITMMASTER | Products | ITMD: ITMREF
+POC - PORDERC | Cumulative POs before returns | POCD: POHNUM, POPLIN | POHNUM,POPLIN | POH - PORDER | POs | POHD: POHNUM
+POP - PORDERP | POs prices | POPD: POHNUM, POPLIN, POPSEQ | POHNUM,POPLIN | POH - PORDER | POs | POHD: POHNUM
+POP - PORDERP | POs prices | POPD: POHNUM, POPLIN, POPSEQ | POHNUM,POPLIN | PPR - PPREASON | Purchase price reasons | PPRD: PRIEN
+POP - PORDERP | POs prices | POPD: POHNUM, POPLIN, POPSEQ | VATI_TJ | TVT - TABVAT | Tax code table | TVTD: VAT + LEG
+POQ - PORDERQ | POs quantities | POQD: POHNUM, POPLIN, POQSEQ | POHNUM,POPLIN | POH - PORDER | POs | POHD: POHNUM
+STC - COSTSTDC | Cost structure - documents | STCD: WCRNUM, VCRLIN, NUMSEQ | POHNUM,POPLIN | POH - PORDER | POs | POHD: POHNUM
+FCY - FACILITY | Facility | FCYD: FCY | POHNUM | POH - PORDER | POs | POHD: POHNUM
+BPS - BPSUPPLIER | Suppliers | BPSD: BPSNUM | POHNUM | POH - PORDER | POs | POHD: POHNUM
+BPT - BPCARRIER | Carriers | BPTD: BPTNUM | POHNUM | POH - PORDER | POs | POHD: POHNUM
+BPR - BPARTNER | Business partner | BPRD: BPRNUM | POHNUM | POH - PORDER | POs | POHD: POHNUM
+UOH - UORDER | PO history | UOHD: POHNUM | POHNUM | POH - PORDER | POs | POHD: POHNUM
+TPT - TABPAYTERM | Payment term table | TPTD: PTE | PTE_1 | POH - PORDER | POs | POHD: POHNUM
+TMD - TABMODELIV | Delivery methods | TMDD: MDL | MDL | POH - PORDER | POs | POHD: POHNUM
+TCU - TABCUR | Currency table | TCUD: CUR | POHNUM,S1 | POH - PORDER | POs | POHD: POHNUM
+TVT - TABVAT | Tax code table | TVTD: VAT + LEG | POHNUM,POPLIN | POH - PORDER | POs | POHD: POHNUM
+ITM - ITMMASTER | Products | ITMD: ITMREF | POHNUM,POPLIN | POH - PORDER | POs | POHD: POHNUM
+UOP - UORDERP | PO price history | UOPD: POHNUM, LINENUM, POPSEQ, UOPSEQ | POHNUM | POH - PORDER | POs | POHD: POHNUM
+PPR - PPREASON | Purchase price reasons | PPRD: PRIEN | POHNUM,POPLIN | POP - PORDERP | POs prices | POPD: POHNUM, POPLIN, POPSEQ
+
+# PURCHASE 5 - PURCHASE RECEIPTS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+STJ - STOJOU | Stock journal | STJID: STOJCY + STOJNUM + UPDCOD + MVTSEQ + PTJDAT + MYTIND | VCRNUM|VCR|LINNUM| | ITM - ITMMASTER | Products | ITMREF: ITMREF
+POQ - PORQDERA | POs quantities | POQID: POHNUM + POPLIN + POOSEQ | POHNUM|POPLIN; POOSEQ | STJ - STOJOU | Stock journal | STJID: STOJCY + STOJNUM + UPDCOD + MVTSEQ + PTJDAT + MYTIND
+CCE - CACCE | Dimensions | CCEID: DIE + CCE | POHNUM|POPLIN; POOSEQ | GAC - GACCOUNT | Accounts | GACID: CODA + ACC
+PTD - PRECEIPTD | Detail receipts | PTDID: PTHNUM + PTDLIN | PTHNUM; PTDLIN | PTH - PRECEIPT | Receipt | PTHID: PTHNUM
+PTH - PRECEIPT | Receipt | PTHID: PTHNUM | PTHNUM[6j] | PVF - PVFCOOT | Purchases documents - footer + detail + VAT | PVFID: VCRNUM + VCRTPY + IND
+PVF - PVFCOOT | Purchases documents - footer + detail + VAT | PVFID: VCRNUM + VCRTPY + IND | VCRNUM; VCRTPY + IND | PTH - PRECEIPT | Receipt | PTHID: PTHNUM
+BPS - BPSUPPLIER | Suppliers | BPSID: BPSNUM | BPSNUM | PTH - PRECEIPT | Receipt | PTHID: PTHNUM
+BPT - BPCARRIER | Carriers | BPTID: BPTNUM | FFVNUM | PTH - PRECEIPT | Receipt | PTHID: PTHNUM
+TMD - TABMDELIV | Delivery methods | TMDID: MDL | BPTNUM | BPT - BPCARRIER | Carriers | BPTID: BPTNUM
+
+# PURCHASE 6 - PURCHASE RETURNS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+TVT - TABVAT | Tax code table | TVT0: VAT - LEG | VAT[1-N] | PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN
+TCU - TABCUR | Currency table | TCU0: CUR | NETCUR, CRPCUR | PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN
+PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN | PTNUM, PTD1LIN | ITM - ITMMASTER | Products | ITM0: ITMREF
+PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN | PTNUM | PND - PRETURND | Detail return | PND0: PTNUM, PND1: LIN
+ITM - ITMMASTER | Products | ITM0: ITMREF | ITMREF | STJ - STJOU | Stock journal | STJ0: STOFCY, STJ1: ITMREF, STJ2: PTDAT+, STJ3: MYNUMID
+PND - PRETURND | Detail return | PND0: PTNUM, PND1: LIN | PTNUM | PNH - PRETURN | Returns | PNH0: PTNNUM
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | BPS - BPSUPPLIER | Suppliers | BPS0: BPSNUM
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | BPT - BPCARRIER | Carriers | BPT0: BPTNUM
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | ADI - ATABDIV | Miscellaneous | ADI0: NUM, ADI+: CODE
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | TMD - TABMODELIV | Delivery methods | TMD0: MDL
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | TUN - TABUNIT | Table of units of measure | TUN0: UOM
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | FCY - FACILITY | Sites | FCY0: FCY
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | AUS - AUTULIS | Users | CDUSBR: USR
+CAL - CPTANALIN | Analytical accounting lines | CAL0: VCRPTY, CAL1: VCRNUM, CAL2: VCRLIN, CAL3: CPRSEQ, CAL4: ANALIG | VCRNUM, VCRLIN, DIE[0] <-> CCE | CCE - CACCE | Dimensions | CCE0: DIE - CCE
+TVT - TABVAT | Tax code table | TVT0: VAT - LEG | None | | |
+TCU - TABCUR | Currency table | TCU0: CUR | None | | |
+TUN - TABUNIT | Table of units of measure | TUN0: UOM | None | | |
+FCY - FACILITY | Sites | FCY0: FCY | None | | |
+AUS - AUTULIS | Users | CDUSBR: USR | None | | |
+BPS - BPSUPPLIER | Suppliers | BPS0: BPSNUM | None | | |
+BPT - BPCARRIER | Carriers | BPT0: BPTNUM | None | | |
+ADI - ATABDIV | Miscellaneous | ADI0: NUM, ADI+: CODE | None | | |
+TMD - TABMODELIV | Delivery methods | TMD0: MDL | None | | |
+TCY - TABCUNTRY | Country table | TCY0: CRY | None | | |
+PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN | PTNUM | PNH - PRETURN | Returns | PNH0: PTNNUM
+PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN | VAT[1], LIN | TVT - TABVAT | Tax code table | TVT0: VAT - LEG
+PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN | CUR | TCU - TABCUR | Currency table | TCU0: CUR
+PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN | PTNUM, PTD1LIN | ITM - ITMMASTER | Products | ITM0: ITMREF
+ITM - ITMMASTER | Products | ITM0: ITMREF | None | | |
+PND - PRETURND | Detail return | PND0: PTNUM, PND1: LIN | PTNUM | PNH - PRETURN | Returns | PNH0: PTNNUM
+PND - PRETURND | Detail return | PND0: PTNUM, PND1: LIN | PTNUMPTDLIN | PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | BPS - BPSUPPLIER | Suppliers | BPS0: BPSNUM
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | BPT - BPCARRIER | Carriers | BPT0: BPTNUM
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | ADI - ATABDIV | Miscellaneous | ADI0: NUM, ADI+: CODE
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | TMD - TABMODELIV | Delivery methods | TMD0: MDL
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | TUN - TABUNIT | Table of units of measure | TUN0: UOM
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | FCY - FACILITY | Sites | FCY0: FCY
+PNH - PRETURN | Returns | PNH0: PTNNUM | PTNNUM | AUS - AUTULIS | Users | CDUSBR: USR
+PNH - PRETURN | Returns | PNH0: PTNNUM | None | | |
+STJ - STJOU | Stock journal | STJ0: STOFCY, STJ1: ITMREF, STJ2: PTDAT+, STJ3: MYNUMID | None | | |
+CCE - CACCE | Dimensions | CCE0: DIE - CCE | None | | |
+CAL - CPTANALIN | Analytical accounting lines | CAL0: VCRPTY, CAL1: VCRNUM, CAL2: VCRLIN, CAL3: CPRSEQ, CAL4: ANALIG | None | | |
+
+# PURCHASE 7 - PURCHASE INVOICE
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+ITM - ITMMASTER | Products | ITM0: ITMREF | None | | |
+GAC - GACCOUNT | Accounts | GAC0: COA, GAC1: ACC | None | | |
+PND - PRETURND | Detail return | PND0: PTNNUM, PND1: PNDLIN | PTNNUM | PID - PINVOICED | Purchase invoice detail | PID0: NUM, PID1: POLIN
+PND - PRETURND | Detail return | PND0: PTNNUM, PND1: PNDLIN | PTNNUM | PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN
+PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN | PTNUM | PID - PINVOICED | Purchase invoice detail | PID0: NUM, PID1: POLIN
+POQ - PORDERQA | POs quantities | POQ0: PTNUM, POQ1: POLIN, POQ2: POSEQ0 | PTNUM, POLIN | PID - PINVOICED | Purchase invoice detail | PID0: NUM, PID1: POLIN
+PPR - PPREASON | Purchase price reasons | PPR0: PRIEN | None | | |
+CAL - CPTANALIN | Analytical accounting lines | CAL0: VCRPTY, CAL1: VCRNUM, CAL2: VCRLIN, CAL3: CPRSEQ, CAL4: ANALIG | VCRPTY, VCRNUM, VCRLIN | PIV - PINVOICEV | Costing purchase invoices | PIV0: NUM
+CAL - CPTANALIN | Analytical accounting lines | CAL0: VCRPTY, CAL1: VCRNUM, CAL2: VCRLIN, CAL3: CPRSEQ, CAL4: ANALIG | VCRPTY, VCRNUM, VCRLIN | PID - PINVOICED | Purchase invoice detail | PID0: NUM, PID1: POLIN
+PID - PINVOICED | Purchase invoice detail | PID0: NUM, PID1: POLIN | PTNUM, PTD1LIN | PTD - PRECEIPTD | Detail receipts | PTD0: PTNUM, PTD1: LIN
+PID - PINVOICED | Purchase invoice detail | PID0: NUM, PID1: POLIN | PTNUM, POLIN | POQ - PORDERQA | POs quantities | POQ0: PTNUM, POQ1: POLIN, POQ2: POSEQ0
+PID - PINVOICED | Purchase invoice detail | PID0: NUM, PID1: POLIN | NUM | PIH - PINVOICE | Purchase invoices | PIH0: NUM
+PID - PINVOICED | Purchase invoice detail | PID0: NUM, PID1: POLIN | NUM | PIV - PINVOICEV | Costing purchase invoices | PIV0: NUM
+PID - PINVOICED | Purchase invoice detail | PID0: NUM, PID1: POLIN | Die[0] | CCE - CACCE | Dimensions | CCE0: DIE - CCE
+PIH - PINVOICE | Purchase invoices | PIH0: NUM | NUM | PIV - PINVOICEV | Costing purchase invoices | PIV0: NUM
+PIH - PINVOICE | Purchase invoices | PIH0: NUM | None | | |
+PIV - PINVOICEV | Costing purchase invoices | PIV0: NUM | NUM | PIH - PINVOICE | Purchase invoices | PIH0: NUM
+PIV - PINVOICEV | Costing purchase invoices | PIV0: NUM | None | | |
+CCE - CACCE | Dimensions | CCE0: DIE - CCE | None | | |
+ADI - ATABDIV | Miscellaneous tables | ADI0: NUM, ADI+: CODE | None | | |
+FCY - FACILITY | Sites | FCY0: FCY | None | | |
+RTZ - RITENZONE | Table of retention codes | RTZ0: RITCOD | None | | |
+GTE - GTYPACCRDT | Document types | GTE0: TYP, GTE+: LEG | None | | |
+JOU - GJOURNAL | Journal codes | JOU0: JCO, JOU1: LEG | None | | |
+DUD - GACCDUDATE | Open items | DUD0: TYP, DUD1: NUM, DUD2: LIG, DUD3: DUDLIG | DUD[1,5,9] | PFI - PFOTINOV | Purchase invoicing elements | PFI0: INDIVATLI, PFI1: FINNUM
+PFI - PFOTINOV | Purchase invoicing elements | PFI0: INDIVATLI, PFI1: FINNUM | None | | |
+TVT - TABVAT | Tax code table | TVT0: VAT - LEG | None | | |
+TCU - TABCUR | Currency table | TCU0: CUR | None | | |
+TDA - TABDEPAGIO | Early discount/late charge table | TDA0: DEP, TDA1: LEG | None | | |
+BPS - BPSUPPLIER | Suppliers | BPS0: BPSNUM | None | | |
+BPR - BBTPARTNER | Business partner | BPR0: BPRNUM | None | | |
+TPT - TABPAYTERM | Payment term | TPT0: PTE, TPT1: LEG | None | | |
+PWV - PVCRRAT | Purchase documents taxes - VAT | PWV0: VCRNUM, PWV1: VCRPTY, PWV2: ND | VCRNUM, VCRPTY | PVF - PVCRRFOOT | Purchase documents footer elt | PVF0: VCRNUM, PVF1: VCRPTY
+PVF - PVCRRFOOT | Purchase documents footer elt | PVF0: VCRNUM, PVF1: VCRPTY | None | | |
+TUN - TABUNIT | Table of units of measure | TUN0: UOM | None | | |
+
+# PURCHASE 8 - PURCHASE PRICE
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+PFI - PFOTINOV | Purchase invoicing elements | PFI0: PFNUM | None | | |
+PPR - PPREASON | Purchase price reasons | PPR0: PRIEN | None | | |
+PPC - PPRICCONF | Supplier pricing parameters | PPC0: PLI | None | | |
+PPL - PPRICLIST | Supplier price lists | PPL0: PLI, PPL1: PLILCRD, PPL2: PLILN | PLILCRD | PPF - PPRICFICH | Supplier prices (records) | PPF0: FIL, PPF1: PLILCRD
+PPF - PPRICFICH | Supplier prices (records) | PPF0: FIL, PPF1: PLILCRD | PLILCRD | PPL - PPRICLIST | Supplier price lists | PPL0: PLI, PPL1: PLILCRD, PPL2: PLILN
+TCU - TABCUR | Currency table | TCU0: CUR | CUR | PPC - PPRICCONF | Supplier pricing parameters | PPC0: PLI
+ITM - ITMMASTER | Products | ITM0: ITMREF | ITMREF | PPL - PPRICLIST | Supplier price lists | PPL0: PLI, PPL1: PLILCRD, PPL2: PLILN
+BPS - BPSUPPLIER | Suppliers | BPS0: BPSNUM | BPSNUM | PPL - PPRICLIST | Supplier price lists | PPL0: PLI, PPL1: PLILCRD, PPL2: PLILN
+PRS - PRSTRUCT | Price structure (cust/supp) | PRS0: BPCBPS, PRS1: PLISTC | BPCBPS, PLISTC | PPC - PPRICCONF | Supplier pricing parameters | PPC0: PLI
+PRS - PRSTRUCT | Price structure (cust/supp) | PRS0: BPCBPS, PRS1: PLISTC | BPCBPS, PLISTC | PPL - PPRICLIST | Supplier price lists | PPL0: PLI, PPL1: PLILCRD, PPL2: PLILN
+
+# PURCHASE 9 - EXTERNAL ORDERS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+SCS - COSRV | Order sub-contract services | SCS0: SCONUM, SCS1: SCLIN, SCS2: BSLIN | SCONUM, SCLIN, BSLIN | CCE - CACCE | Dimensions | CCE0: DIE - CCE
+SCO - SCOHEAD | Subcontract order | SCO0: SCONUM | SCONUM | FCY - FACILITY | Sites | FCY0: FCY
+SCO - SCOHEAD | Subcontract order | SCO0: SCONUM | SCONUM | BPS - BPSUPPLIER | Suppliers | BPS0: BPSNUM
+SCM - SCOMAT | Order sub-contract materials | SCM0: SCONUM, SCM1: SCLIN, SCM2: SCMLIN | SCONUM, SCLIN, SCMLIN | ITF - ITMFACILIT | Products-sites | ITF0: ITMREF, STOFCY
+SCI - SCOITM | Subcontract order | SCI0: SCONUM, SCI1: SQLIN | SCONUM | ITF - ITMFACILIT | Products-sites | ITF0: ITMREF, STOFCY
+ITF - ITMFACILIT | Products-sites | ITF0: ITMREF, ITF+: STOFCY | ITMREF, STOFCY | SCM - SCOMAT | Order sub-contract materials | SCM0: SCONUM, SCM1: SCLIN, SCM2: SCMLIN
+ITF - ITMFACILIT | Products-sites | ITF0: ITMREF, ITF+: STOFCY | ITMREF | SCI - SCOITM | Subcontract order | SCI0: SCONUM, SCI1: SQLIN
+ITF - ITMFACILIT | Products-sites | ITF0: ITMREF, ITF+: STOFCY | ITMREF | ORD - ORDERS | WIP | ORD0: WIP, ORD1: WIPNUM, ORD2: ITMREF
+FCY - FACILITY | Sites | FCY0: FCY | None | | |
+BPS - BPSUPPLIER | Suppliers | BPS0: BPSNUM | None | | |
+TBO - TABBOMALT | BOM codes | TBO0: BOMALTTY, TBO1: BOMALT | None | | |
+TUN - TABUNIT | Table of units of measure | TUN0: UOM | None | | |
+CCE - CACCE | Dimensions | CCE0: DIE - CCE | None | | |
+ORD - ORDERS | WIP | ORD0: WIP, ORD1: WIPNUM, ORD2: ITMREF | None | | |
+
+# STOCK 1 - STOCK
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | ITM - ITMMASTER | Products | ITMREF: ITMREF
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | ITF - ITMFACILIT | Products-sites | ITMREF: ITMREF, STOFCY
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | STP - STOCOST | Stock FIFO cost | STOCP: ITMREF, STOFCY
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | STS - STOSER | Serial numbers | STOCP: ITMREF, SERNUM
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | STA - STOALL | Allocations | STOCP: ITMREF, STOFCY
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | STE - STOPAR | Stock parameters | STOCP: ITMREF, TCLCOD
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | ITV - ITMMVT | Product-site totals | STOCP: ITMREF, STOFCY
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | ITH - ITMVTHIS | Total product-site history | STOCP: ITMREF, STOFCY
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | ITG - ITMCATEG | Product category | STOCP: ITMREF, TCLCOD
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | TRU - TABRUL | Allocation and issue rules | STOCP: ITMREF, TRUCOD
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | FCY - FACILITY | Sites | STOCP: STOFCY
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | STC - STOLOC | Locations | STOCP: STOFCY, LOC
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | STF - STOLOCAFF | Bin assignment | STOCP: STOFCY, LOC
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | SRG - STOSRG | Storage | STOCP: STOFCY, VCRNUM
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | TCM - TABCUSTOMT | Valuation methods | STOCP: ITMREF, VLTCOD
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | SAC - STOACCPAR | Acting, interface parameter | STOCP: STOFCY, PCRDAT
+STO - STOCK | Stock | STOCP: STOFCY, STOCP | ITMREF, STOFCY | STJ - STOJOU | Stock journal | STOCP: ITMREF, STOFCY, VCRNUM, MYESEQ
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | ITF - ITMFACILIT | Products-sites | ITMREF: ITMREF, STOFCY
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | STS - STOSER | Serial numbers | STOCP: ITMREF, SERNUM
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | ITV - ITMMVT | Product-site totals | STOCP: ITMREF, STOFCY
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | ITH - ITMVTHIS | Total product-site history | STOCP: ITMREF, STOFCY
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | ITG - ITMCATEG | Product category | STOCP: ITMREF, TCLCOD
+STP - STOCOST | Stock FIFO cost | STOCP: ITMREF, STOFCY | ITMREF, STOFCY | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+STS - STOSER | Serial numbers | STOCP: ITMREF, SERNUM | ITMREF, STOFCY, SERNUM | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+STA - STOALL | Allocations | STOCP: ITMREF, STOFCY, SECU | ITMREF, STOFCY | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+FCY - FACILITY | Sites | FCYD: FCY | STOFCY | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+FCY - FACILITY | Sites | FCYD: FCY | STOFCY | ITF - ITMFACILIT | Products-sites | ITMREF: ITMREF, STOFCY
+ITF - ITMFACILIT | Products-sites | ITMREF: ITMREF, STOFCY | ITMREF, STOFCY | ITM - ITMMASTER | Products | ITMREF: ITMREF
+ITF - ITMFACILIT | Products-sites | ITMREF: ITMREF, STOFCY | ITMREF, STOFCY | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+ITF - ITMFACILIT | Products-sites | ITMREF: ITMREF, STOFCY | ITMREF, STOFCY | ITV - ITMMVT | Product-site totals | STOCP: ITMREF, STOFCY
+ITF - ITMFACILIT | Products-sites | ITMREF: ITMREF, STOFCY | ITMREF, STOFCY | FCY - FACILITY | Sites | FCYD: FCY
+ITV - ITMMVT | Product-site totals | ITMREF: ITMREF, STOFCY | ITMREF, STOFCY | ITM - ITMMASTER | Products | ITMREF: ITMREF
+ITV - ITMMVT | Product-site totals | ITMREF: ITMREF, STOFCY | ITMREF, STOFCY | ITF - ITMFACILIT | Products-sites | ITMREF: ITMREF, STOFCY
+ITV - ITMMVT | Product-site totals | ITMREF: ITMREF, STOFCY | ITMREF, STOFCY | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+ITH - ITMVTHIS | Total product-site history | ITMREF: ITMREF, STOFCY | ITMREF, STOFCY | ITM - ITMMASTER | Products | ITMREF: ITMREF
+ITH - ITMVTHIS | Total product-site history | ITMREF: ITMREF, STOFCY | ITMREF, STOFCY | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+ITG - ITMCATEG | Product category | ITMREF: ITMREF, TCLCOD | ITMREF, TCLCOD | ITM - ITMMASTER | Products | ITMREF: ITMREF
+ITG - ITMCATEG | Product category | ITMREF: ITMREF, TCLCOD | ITMREF, TCLCOD | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+TRU - TABRUL | Allocation and issue rules | TRUO: TRUCOD | ITMREF, TRUCOD | ITM - ITMMASTER | Products | ITMREF: ITMREF
+TRU - TABRUL | Allocation and issue rules | TRUO: TRUCOD | ITMREF, TRUCOD | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+STC - STOLOC | Locations | STOCP: STOFCY, LOC | STOFCY, LOC | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+STC - STOLOC | Locations | STOCP: STOFCY, LOC | STOFCY, LOC | STF - STOLOCAFF | Bin assignment | STOCP: STOFCY, LOC
+STC - STOLOC | Locations | STOCP: STOFCY, LOC | STOFCY, LOC | TLO - TABLOCTYP | Location type | STOCP: STOFCY, LOCTYP
+STF - STOLOCAFF | Bin assignment | STOCP: STOFCY, LOC | STOFCY, LOC | STC - STOLOC | Locations | STOCP: STOFCY, LOC
+STF - STOLOCAFF | Bin assignment | STOCP: STOFCY, LOC | STOFCY, LOC | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+SRG - STOSRG | Storage | STOCP: STOFCY, VCRNUM | STOFCY, VCRNUM | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+TCM - TABCUSTOMT | Valuation methods | TCO: VLTCOD | ITMREF, VLTCOD | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+SAC - STOACCPAR | Acting, interface parameter | SACO: PCRDAT | STOFCY, PCRDAT | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+STJ - STOJOU | Stock journal | STJU: STOFCY, ITMREF, VCRNUM, MYESEQ | STOFCY, ITMREF, VCRNUM, MYESEQ | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+STL - STOLOT | Lot numbers | STLO: ITMREF, LOT | ITMREF, LOT, STOFCY | SLF - STOLOTCY | Lots - sites | STOCP: ITMREF, LOT, SLF, STOFCY
+SLF - STOLOTCY | Lots - sites | STOCP: ITMREF, LOT, SLF, STOFCY | ITMREF, LOT, STOFCY | STL - STOLOT | Lot numbers | STOCP: ITMREF, LOT
+SLF - STOLOTCY | Lots - sites | STOCP: ITMREF, LOT, SLF, STOFCY | ITMREF, LOT, STOFCY | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+STR - STOTRK | Traceability | STOCP: ITMREF, LOT, SLO, PEFCY, STOFCY | ITMREF, LOT, SLO, PEFCY, STOFCY | SLF - STOLOTCY | Lots - sites | STOCP: ITMREF, LOT, SLF, STOFCY
+STR - STOTRK | Traceability | STOCP: ITMREF, LOT, SLO, PEFCY, STOFCY | ITMREF, LOT, SLO, PEFCY, STOFCY | STL - STOLOT | Lot numbers | STOCP: ITMREF, LOT
+TST - TABSTATO | Stock status report | TSTO: STASTO | STASTO | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+TUN - TABUNIT | Table of units of measure | TUNG: UOM | UOM | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+STU - STOUC | Stock quantities update | STUC: STOFCY, ITMREF, UOM | STOFCY, ITMREF, UOM | STO - STOCK | Stock | STOCP: STOFCY, STOCP
+
+# STOCK 2 - QUALITY CONTROL
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+QLQ - QLYCRDQST | Quality records - questions | QLQQ: QSTNUM | QSTNUM | TCT - TABCTL | Response table | TCTB: TCT, TCTLIN
+QLA - QLYCRDASW | Quality records - responses | QLAO: QLYTCDEM, VCRNUM, QCSREG, QSTNUM | QLYTCDEM, VCRNUM, QCSREG, QSTNUM | QLD - STOQLYD | Quality control detail | QLDD: VCRTP1, VCRNUM1, VCRILN
+QLC - QLYCRD | Technical sheets | QLCQ: QLYCRD, NUMILN | QLYCRD, MTSEQCO | ITM - ITMMASTER | Products | ITMREF: ITMREF
+QLD - STOQLYD | Quality control detail | QLDD: VCRTP1, VCRNUM1, VCRILN | VCRTP1, VCRNUM1, VCRILN | QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM
+QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM | VCRTP, VCRNUM | ITM - ITMMASTER | Products | ITMREF: ITMREF
+QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM | VCRTP, VCRNUM | STL - STOLOT | Lot numbers | STLD: ITMREF, LOT, SLO
+QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM | VCRTP, VCRNUM | QLD - STOQLYD | Quality control detail | QLDD: VCRTP1, VCRNUM1, VCRILN
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | QLC - QLYCRD | Technical sheets | QLCQ: QLYCRD, NUMILN
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | STL - STOLOT | Lot numbers | STLD: ITMREF, LOT, SLO
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | STO - STOCK | Stock | STOCP: STOFCY, STOCU
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | BPS - BPSUPPLIER | Suppliers | BPSON: BPSNUM
+BPS - BPSUPPLIER | Suppliers | BPSON: BPSNUM | BPSNUM | ITM - ITMMASTER | Products | ITMREF: ITMREF
+STL - STOLOT | Lot numbers | STLD: ITMREF, LOT, SLO | ITMREF, LOT | ITM - ITMMASTER | Products | ITMREF: ITMREF
+STL - STOLOT | Lot numbers | STLD: ITMREF, LOT, SLO | ITMREF, LOT | QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM
+TCU - TABCUR | Currency table | TCUD: CUR | CUR | STO - STOCK | Stock | STOCP: STOFCY, STOCU
+STO - STOCK | Stock | STOCP: STOFCY, STOCU | STOFCY, STOCU | TCU - TABCUR | Currency table | TCUD: CUR
+STO - STOCK | Stock | STOCP: STOFCY, STOCU | STOFCY, STOCU | ITM - ITMMASTER | Products | ITMREF: ITMREF
+STO - STOCK | Stock | STOCP: STOFCY, STOCU | STOFCY, STOCU | FCY - FACILITY | Sites | FCYD: FCY
+STO - STOCK | Stock | STOCP: STOFCY, STOCU | STOFCY, STOCU | TST - TABSTATO | Stock status report | TSTD: STASTO
+FCY - FACILITY | Sites | FCYD: FCY | FCY | STO - STOCK | Stock | STOCP: STOFCY, STOCU
+TST - TABSTATO | Stock status report | TSTD: STASTO | STASTO | STO - STOCK | Stock | STOCP: STOFCY, STOCU
+SRT - STTKTRS | Stock transactions | SRTD: SRTTYP, SRTNUM | SRTTYP, SRTNUM | BPR - BPPARTNER | Business partner | BPRD: BPRNUM
+TCT - TABCTL | Response table | TCTB: TCT, TCTLIN | TCT, TCTLIN | QLQ - QLYCRDQST | Quality records - questions | QLQQ: QSTNUM
+QLQ - QLYCRDQST | Quality records - questions | QLQQ: QSTNUM | QSTNUM | TCT - TABCTL | Response table | TCTB: TCT, TCTLIN
+QLQ - QLYCRDQST | Quality records - questions | QLQQ: QSTNUM | QSTNUM | QLA - QLYCRDASW | Quality records - responses | QLAO: QLYTCDEM, VCRNUM, QCSREG, QSTNUM
+QLA - QLYCRDASW | Quality records - responses | QLAO: QLYTCDEM, VCRNUM, QCSREG, QSTNUM | QLYTCDEM, VCRNUM, QCSREG, QSTNUM | QLD - STOQLYD | Quality control detail | QLDD: VCRTP1, VCRNUM1, VCRILN
+QLA - QLYCRDASW | Quality records - responses | QLAO: QLYTCDEM, VCRNUM, QCSREG, QSTNUM | QLYTCDEM, VCRNUM, QCSREG, QSTNUM | QLQ - QLYCRDQST | Quality records - questions | QLQQ: QSTNUM
+QLC - QLYCRD | Technical sheets | QLCQ: QLYCRD, NUMILN | QLYCRD, MTSEQCO | ITM - ITMMASTER | Products | ITMREF: ITMREF
+QLD - STOQLYD | Quality control detail | QLDD: VCRTP1, VCRNUM1, VCRILN | VCRTP1, VCRNUM1, VCRILN | QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM
+QLD - STOQLYD | Quality control detail | QLDD: VCRTP1, VCRNUM1, VCRILN | VCRTP1, VCRNUM1, VCRILN | QLA - QLYCRDASW | Quality records - responses | QLAO: QLYTCDEM, VCRNUM, QCSREG, QSTNUM
+QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM | VCRTP, VCRNUM | ITM - ITMMASTER | Products | ITMREF: ITMREF
+QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM | VCRTP, VCRNUM | STL - STOLOT | Lot numbers | STLD: ITMREF, LOT, SLO
+QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM | VCRTP, VCRNUM | QLD - STOQLYD | Quality control detail | QLDD: VCRTP1, VCRNUM1, VCRILN
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | QLC - QLYCRD | Technical sheets | QLCQ: QLYCRD, NUMILN
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | STL - STOLOT | Lot numbers | STLD: ITMREF, LOT, SLO
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | STO - STOCK | Stock | STOCP: STOFCY, STOCU
+ITM - ITMMASTER | Products | ITMREF: ITMREF | ITMREF | BPS - BPSUPPLIER | Suppliers | BPSON: BPSNUM
+BPS - BPSUPPLIER | Suppliers | BPSON: BPSNUM | BPSNUM | ITM - ITMMASTER | Products | ITMREF: ITMREF
+STL - STOLOT | Lot numbers | STLD: ITMREF, LOT, SLO | ITMREF, LOT | ITM - ITMMASTER | Products | ITMREF: ITMREF
+STL - STOLOT | Lot numbers | STLD: ITMREF, LOT, SLO | ITMREF, LOT | QLH - STOQLYH | Quality control header | QLHQ: VCRTP, VCRNUM
+TCU - TABCUR | Currency table | TCUD: CUR | CUR | STO - STOCK | Stock | STOCP: STOFCY, STOCU
+STO - STOCK | Stock | STOCP: STOFCY, STOCU | STOFCY, STOCU | TCU - TABCUR | Currency table | TCUD: CUR
+STO - STOCK | Stock | STOCP: STOFCY, STOCU | STOFCY, STOCU | ITM - ITMMASTER | Products | ITMREF: ITMREF
+STO - STOCK | Stock | STOCP: STOFCY, STOCU | STOFCY, STOCU | FCY - FACILITY | Sites | FCYD: FCY
+STO - STOCK | Stock | STOCP: STOFCY, STOCU | STOFCY, STOCU | TST - TABSTATO | Stock status report | TSTD: STASTO
+FCY - FACILITY | Sites | FCYD: FCY | FCY | STO - STOCK | Stock | STOCP: STOFCY, STOCU
+TST - TABSTATO | Stock status report | TSTD: STASTO | STASTO | STO - STOCK | Stock | STOCP: STOFCY, STOCU
+SRT - STTKTRS | Stock transactions | SRTD: SRTTYP, SRTNUM | SRTTYP, SRTNUM | BPR - BPPARTNER | Business partner | BPRD: BPRNUM
+
+# MANUFACTURING 1 - TECHNICAL DATA
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ROH - ROUTING | Routings - header | ROH1 : ITMREF, ROUALT, FCY
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ROS - ROUSCD | Routing - scheduling operation | ROS0 : FCY, ITMREF, ROUALT, OPENUM
+ROH - ROUTING | Routings - header | ROH0 : FCY, ITMREF, ROUALT | FCY, ITMREF, ROUALT | TRO - TABROUALT | BOM routings | TROD : ROUALT
+ROH - ROUTING | Routings - header | ROH0 : FCY, ITMREF, ROUALT | ITMREF, ROUALT | ITM - ITMMASTER | Products | ITM0 : ITMREF
+ROO - ROUOPE | Routing - operations | ROO0 : FCY, ITMREF, ROUALT, OPE | FCY, ITMREF, ROUALT, OPENUM | ROS - ROUSCD | Routing - scheduling operation | ROS0 : FCY, ITMREF, ROUALT, OPENUM
+TRO - TABROUALT | BOM routings | TROD : ROUALT | ROUALT | ROH - ROUTING | Routings - header | ROH0 : FCY, ITMREF, ROUALT
+TRO - TABROUALT | BOM routings | TROD : ROUALT | i-1 to 3 | BOMALT | ITM - ITMMASTER | Products | ITM0 : ITMREF
+MWS - WORKSTATIO | Work centers | WST0 : WST | WST | ROO - ROUOPE | Routing - operations | ROO0 : FCY, ITMREF, ROUALT, OPE
+MWS - WORKSTATIO | Work centers | WST0 : WST | WST, WCFCY | TWC - TABWRKCTR | Work center groups | TWC0 : WCR
+MWS - WORKSTATIO | Work centers | WST0 : WST | WST, WCFCY, STOLOC | STC - STOLOC | Locations | STC0 : STOFCY, LOC
+TWC - TABWRKCTR | Work center groups | TWC0 : WCR | WCR | MWS - WORKSTATIO | Work centers | WST0 : WST
+TWC - TABWRKCTR | Work center groups | TWC0 : WCR | WCR, WCFCY, STOLOC | STC - STOLOC | Locations | STC0 : STOFCY, LOC
+STC - STOLOC | Locations | STC0 : STOFCY, LOC | STOFCY, LOC | MWS - WORKSTATIO | Work centers | WST0 : WST
+STC - STOLOC | Locations | STC0 : STOFCY, LOC | STOFCY, LOC | TWC - TABWRKCTR | Work center groups | TWC0 : WCR
+TUN - TABUNIT | Table of units of measure | TUN0 : UOM | UOM | ROO - ROUOPE | Routing - operations | ROO0 : FCY, ITMREF, ROUALT, OPE
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | ROH - ROUTING | Routings - header | ROH0 : FCY, ITMREF, ROUALT
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | MWS - WORKSTATIO | Work centers | WST0 : WST
+TBO - TABBOMALT | BOM codes | TBO0 : BOMALTTYP, BOMALT | BOMALTTYP, BOMALT | TRO - TABROUALT | BOM routings | TROD : ROUALT
+MWC - WORKCOST | Costing dimension | WCT0 : VLTCCE, VLFCY | VLTCCE, VLFCY | MWS - WORKSTATIO | Work centers | WST0 : WST
+
+# MANUFACTURING 2 - MANUFACTURING ORDERS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGNUM | MFO - MFGOPE | Work order - operations | MFO0 : MFGNUM, OPENUM, OPESPLNUM
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | PLNFCY | FCY - FACILITY | Sites | FCY0 : FCY
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGFCY | FCY - FACILITY | Sites | FCY0 : FCY
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGNUM | MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGNUM | MFM - MFGMAT | Work order - materials | MFM0 : MFGNUM, BOMSEQ, ITMREF
+MFO - MFGOPE | Work order - operations | MFO0 : MFGNUM, OPENUM, OPESPLNUM | MFGNUM, OPENUM | SCH - SCHEDULING | Work order scheduling | SCH0 : MFGNUM, OPENUM, OPESPLNUM
+MFO - MFGOPE | Work order - operations | MFO0 : MFGNUM, OPENUM, OPESPLNUM | MFGNUM, OPENUM, OPESPLNUM | OPS - OPERATIONS | Load in progress | OPS0 : OPSNUM
+MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM | MFGFCY | FCY - FACILITY | Sites | FCY0 : FCY
+MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM | MFGNUM, MFGITM | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, STOFCY
+MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM | BOMALT, MFGITM | TBO - TABBOMALT | BOM codes | TBO0 : BOMALTTYP, BOMALT
+MFM - MFGMAT | Work order - materials | MFM0 : MFGNUM, BOMSEQ, ITMREF | MFGNUM, BOMSEQ, ITMREF | CCE - CACCE | Dimensions | CCE0 : ID - CCE
+ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, STOFCY | ITMREF, MFGFCY | MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM
+ORD - ORDERS | ORD0 | WIPNUM | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, STOFCY
+WIP | Work in progress | WIP0 : WTYPP, WIPNUM, ITMREF | WTYPP, WIPNUM | ORD - ORDERS | ORD0 | None specified
+TRO - TABROUALT | BOM routings | TRO0 : ROUALT | ROUALT | STU | None specified | None specified
+TUN - TABUNIT | Table of units of measure | TUN0 : UOM | UOM | MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM
+BPS - BPSSUPPLIER | Suppliers | BPS0 : BPSNUM | BPSNUM | OPS - OPERATIONS | Load in progress | OPS0 : OPSNUM
+
+# MANUFACTURING 3 - MANUFACTURING TRACKING
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGNUM | MFO - MFGOPE | Work order - operations | MFO0 : MFGNUM, OPENUM, OPESPLNUM
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGNUM | MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGNUM | MTK - MFGHEADTRK | Manufacture tracking - header | MTK0 : MFGTRKNUM
+MFO - MFGOPE | Work order - operations | MFO0 : MFGNUM, OPENUM, OPESPLNUM | MFGNUM, OPENUM, OPESPLNUM | MIK - MFGOPETRK | Manufacture tracking - operation | MIK0 : MFGTRKNUM, OPE TRKLN
+MFO - MFGOPE | Work order - operations | MFO0 : MFGNUM, OPENUM, OPESPLNUM | MFGNUM | MTK - MFGHEADTRK | Manufacture tracking - header | MTK0 : MFGTRKNUM
+MIK - MFGOPETRK | Manufacture tracking - operation | MIK0 : MFGTRKNUM, OPE TRKLN | MFGTRKNUM, OPE TRKLN | MWI - WIPCOST | WIP valuation | MWI0 : WIPVAL, VCRNUM, VCR LIN, WTYPE
+MIK - MFGOPETRK | Manufacture tracking - operation | MIK0 : MFGTRKNUM, OPE TRKLN | MFGTRKNUM | MTK - MFGHEADTRK | Manufacture tracking - header | MTK0 : MFGTRKNUM
+MTA - MTCKRDAWS | Technical sheets - responses | MTA0 : MFGTRKNUM, OPE TRKLN, OPSNUM | MFGTRKNUM, OPE TRKLN, OPSNUM | MIK - MFGOPETRK | Manufacture tracking - operation | MIK0 : MFGTRKNUM, OPE TRKLN
+MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM | MFGNUM, MFGITM | MKI - MFGITMTRK | Manufacture tracking - products | MKI0 : MFGTRKNUM, ITM TRKLN
+MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM | MFGNUM | MTK - MFGHEADTRK | Manufacture tracking - header | MTK0 : MFGTRKNUM
+MKI - MFGITMTRK | Manufacture tracking - products | MKI0 : MFGTRKNUM, ITM TRKLN | MFGTRKNUM, ITM TRKLN | STJ - STOJOU | Stock journal | STJ0 : STOJCY, UPDDOC, ITMREF, PIT, WPTA, MVISEQ, MVITIND
+MTK - MFGHEADTRK | Manufacture tracking - header | MTK0 : MFGTRKNUM | MFGTRKNUM | MKI - MFGITMTRK | Manufacture tracking - products | MKI0 : MFGTRKNUM, ITM TRKLN
+MTK - MFGHEADTRK | Manufacture tracking - header | MTK0 : MFGTRKNUM | MFGTRKNUM | MIK - MFGOPETRK | Manufacture tracking - operation | MIK0 : MFGTRKNUM, OPE TRKLN
+MFM - MFGMAT | Work order - materials | MFM0 : MFGNUM, MFGITM, BOMSEQ, ITMREF | MFGNUM, MFGITM, BOMSEQ, ITMREF | MKM - MFGMATTRK | Manufacture tracking - material | MKM0 : MFGTRKNUM, MATERIAL TRKLN
+MKM - MFGMATTRK | Manufacture tracking - material | MKM0 : MFGTRKNUM, MATERIAL TRKLN | MFGTRKNUM, MATERIAL TRKLN | STJ - STOJOU | Stock journal | STJ0 : STOJCY, UPDDOC, ITMREF, PIT, WPTA, MVISEQ, MVITIND
+MWI - WIPCOST | WIP valuation | MWI0 : WIPVAL, VCRNUM, VCR LIN, WTYPE | WIPVAL, VCRNUM, VCR LIN, WTYPE | MIK - MFGOPETRK | Manufacture tracking - operation | MIK0 : MFGTRKNUM, OPE TRKLN
+
+# MANUFACTURING 4 - MASTER PLANNING SCHEDULE
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ITB - ITMBOM | Products - BOMs | ITB0 : ITMREF, BOMALT, LLTYPE
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ROH - ROUTING | Routings - header | ROH0 : ITMREF, ROUALT, FCY
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | STO - STOCK | Stock | STO0 : STOFCY, STOLOC
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | STL - STOLOT | Lot numbers | STL0 : ITMREF, LOT, SILO
+ROH - ROUTING | Routings - header | ROH0 : ITMREF, ROUALT, FCY | ITMREF, ROUALT, FCY | BOH - BOM | Header BOMs | BOH0 : ITMREF, BOMALT, LLTYPE
+ROH - ROUTING | Routings - header | ROH0 : ITMREF, ROUALT, FCY | ITMREF, ROUALT | ROO - ROUOPE | Routing - operations | ROO0 : ITMREF, ROUALT, OPE
+ROO - ROUOPE | Routing - operations | ROO0 : ITMREF, ROUALT, OPE | ITMREF, ROUALT, OPENUM | ROS - ROUSCD | Routing - scheduling operation | ROS0 : ITMREF, ROUALT, OPENUM
+BOH - BOM | Header BOMs | BOH0 : ITMREF, BOMALT, LLTYPE | ITMREF, BOMALT | BOD - BOMD | Detail BOMs | BOD0 : ITMREF, BOMSEQ, COMPONENT, BOMALT, BOMTYP
+ORD - ORDERS | ORD0 : ORDNUM | WIPNUM, ITMREF | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, MFGFCY
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | PJA - PAJRAL | Scheduling parameters | PJA0 : MFGFCY
+FCY - FACILITY | Sites | FCY0 : FCY | STOFCY, MFGFCY, WRCFCY | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, MFGFCY
+ORD - ORDERS | ORD0 : ORDNUM | STOFCY, ITMREF | PDH - PDHPEA | MPS calculation header | PDH0 : STOFCY, ITMREF
+ORD - ORDERS | ORD0 : ORDNUM | WIPNUM | WIP | Work in progress | WIP0 : WIPNUM, VCRNUM, ITMREF
+PDD - PDDPET | MPS calculation detail | PDD0 : STOFCY, ITMREF, WIPNUM | STOFCY, ITMREF, WIPNUM | PDH - PDHPEA | MPS calculation header | PDH0 : STOFCY, ITMREF
+OPS - OPERATIONS | Load in progress | OPS0 : OPSNUM | OPSNUM | BPS - BPSSUPPLIER | Suppliers | BPS0 : BPSNUM
+SES - SEASON | Trend profiles | SES0 : SESCOD | SESCOD | TRP - TABREOPOL | Reorder table profiles | TRP0 : REOPOL
+STL - STOLOT | Lot numbers | STL0 : ITMREF, LOT, SILO | ITMREF, LOT | STO - STOCK | Stock | STO0 : STOFCY, STOLOC
+TBO - TABBOMALT | BOM codes | TBO0 : BOMALTTYP, BOMALT | BOMALTTYP, BOMALT | ITB - ITMBOM | Products - BOMs | ITB0 : ITMREF, BOMALT, LLTYPE
+TWD - TABWEEDIA | Weekly structures | TWD0 : TWD | TWD | PCB - PARAMRP | Requirements parameters | PCB0 : STOFCY
+WKI - WORKLOAD | Production load | WKI0 : MFGFCY, WST, PEREND | MFGFCY | MWS - WORKSTATIO | Work centers | WST0 : WST
+
+# MANUFACTURING 5 - PRODUCT COST CALCULATION
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | ITC - ITMCOST | Products-costs | ITC0 : STOFCY, ITMREF, CSTE_TYP, CSTE_UID
+ITM - ITMMASTER | Products | ITM0 : ITMREF | ITMREF | OVE - OVERHEAD | Overhead codes | OVE0 : OVECOD
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGNUM | MFO - MFGOPE | Work order - operations | MFO0 : MFGNUM, OPENUM, OPESPLNUM
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGNUM | MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM
+MFG - MFGHEAD | Work order - header | MFG0 : MFGNUM | MFGNUM | MFM - MFGMAT | Work order - materials | MFM0 : MFGNUM, MFGITM, BOMSEQ, ITMREF
+MFI - MFGITM | Work orders - products | MFI0 : MFGNUM, MFGITM | MFGNUM, MFGITM | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, STOFCY
+MFM - MFGMAT | Work order - materials | MFM0 : MFGNUM, MFGITM, BOMSEQ, ITMREF | MFGNUM, ITMREF | MCC - MFGMAT | Material detail | MCC0 : STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, MATREF, UID
+MFO - MFGOPE | Work order - operations | MFO0 : MFGNUM, OPENUM, OPESPLNUM | MFGNUM, OPENUM | MCW - MFGCWST | Operation detail | MCW0 : STOFCY, ITMREF, VCRNUM, VCR LIN, WTYPE, WST, UID
+ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, STOFCY | ITMREF, STOFCY | ITC - ITMCOST | Products-costs | ITC0 : STOFCY, ITMREF, CSTE_TYP, CSTE_UID
+CCE - CACCE | Dimensions | CCE0 : ID - CCE | DIE - CCE | ITM - ITMMASTER | Products | ITM0 : ITMREF
+CCE - CACCE | Dimensions | CCE0 : ID - CCE | DIE - CCE | OVE - OVERHEAD | Overhead codes | OVE0 : OVECOD
+CAC - GACCCODE | Accounting codes | CAC0 : TYP - ACCCOD + COA | TYP, ACCCOD | OVE - OVERHEAD | Overhead codes | OVE0 : OVECOD
+MWC - WORKCOST | Costing dimension | WCT0 : VLTCCE + VLFCY | VLTCCE, VLFCY | ITM - ITMMASTER | Products | ITM0 : ITMREF
+GAU - GAUTACE | Automatic journals | GAU0 : COD | COD | CAC - GACCCODE | Accounting codes | CAC0 : TYP - ACCCOD + COA
+MFC - MFGCOST | Cost price | MFC0 : STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, UID | STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, UID | MCC - MFGMAT | Material detail | MCC0 : STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, MATREF, UID
+MFC - MFGCOST | Cost price | MFC0 : STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, UID | STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, UID | MCW - MFGCWST | Operation detail | MCW0 : STOFCY, ITMREF, VCRNUM, VCR LIN, WTYPE, WST, UID
+MFC - MFGCOST | Cost price | MFC0 : STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, UID | STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, UID | MCN - MFCNAT | Nature detail | MCN0 : STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, NATREF, UID
+MFC - MFGCOST | Cost price | MFC0 : STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, UID | STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, UID | MCS - MFCSCRAP | Scrap cost | MCS0 : STOFCY, ITMREF, VCRNUM, VCR LIN, MCTYP, UID
+
+# MANUFACTURING 6 - STANDARD COST CALCULATION
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+ITC - ITMCOST | Products-costs | ITC0 : STOFCY, ITMREF, CSTE_TYP, UID | ITMREF, STOFCY | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, STOFCY
+ITC - ITMCOST | Products-costs | ITC0 : STOFCY, ITMREF, CSTE_TYP, UID | ITMREF, STOFCY, CSTE_TYP, UID | ICN - TCNAT | Nature detail - costs | ICN0 : STOFCY, ITMREF, CSTE_TYP, CSTE_UID, OVENAT, UID
+ITC - ITMCOST | Products-costs | ITC0 : STOFCY, ITMREF, CSTE_TYP, UID | ITMREF, STOFCY, CSTE_TYP, UID | ICC - ITCMAT | Temporary products - cost | ICC0 : STOFCY, ITMREF, CSTE_TYP, CSTE_UID, MATREF, EXCEVAL, QTYNPT, UID
+ITC - ITMCOST | Products-costs | ITC0 : STOFCY, ITMREF, CSTE_TYP, UID | ITMREF, STOFCY, CSTE_TYP, UID | IWC - ITCWST | Temporary products - cost | IWC0 : STOFCY, ITMREF, CSTE_TYP, CSTE_UID, WST, UID
+ROH - ROUTING | Routings - header | ROH0 : ITMREF, ROUALT, FCY | ITMREF, ROUALT, FCY | TRO - TABROUALT | BOM routings | TRO0 : ROUALT
+ROH - ROUTING | Routings - header | ROH0 : ITMREF, ROUALT, FCY | ITMREF, ROUALT, FCY | BOH - BOM | Header BOMs | BOH0 : ITMREF, BOMALT, LLTYPE
+ROO - ROUOPE | Routing - operations | ROO0 : FCY, ITMREF, ROUALT, OPE | FCY, ITMREF, ROUALT, OPE | MWS - WORKSTATIO | Work centers | WST0 : WST, WRCFCY
+TRO - TABROUALT | BOM routings | TRO0 : ROUALT | ROUALT | ROH - ROUTING | Routings - header | ROH0 : ITMREF, ROUALT, FCY
+TBO - TABBOMALT | BOM codes | TBO0 : BOMALTTYP, BOMALT | BOMALTTYP, BOMALT | BOH - BOM | Header BOMs | BOH0 : ITMREF, BOMALT, LLTYPE
+BOH - BOM | Header BOMs | BOH0 : ITMREF, BOMALT, LLTYPE | ITMREF, BOMALT | BOD - BOMD | Detail BOMs | BOD0 : ITMREF, BOMSEQ, COMPONENT, BOMALT, BOMTYP
+MWS - WORKSTATIO | Work centers | WST0 : WST, WRCFCY | WST | ROO - ROUOPE | Routing - operations | ROO0 : FCY, ITMREF, ROUALT, OPE
+ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, STOFCY | ITMREF, STOFCY | OVE - OVERHEAD | Overhead codes | OVE0 : OVECOD
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | MWS - WORKSTATIO | Work centers | WST0 : WST, WRCFCY
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | ITF - ITMFACILIT | Products-sites | ITF0 : ITMREF, STOFCY
+OVE - OVERHEAD | Overhead codes | OVE0 : OVECOD | OVECOD | MWC - WORKCOST | Costing dimension | WCT0 : VLTCCE, VLFCY
+
+# ACCOUNTING 1 - ACCOUNTING ENTRY
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+GDE - GDIAENTRY | Entry transactions | GDE0 : DIA | DACDIA | CPY - COMPANY | Company | CPY0 : CPY
+GTE - GTYACCENT | Document types | GTE0 : TYP - LEG | TYP | JOU - GJOURNAL | Journal codes | JOU0 : JUD + LEG
+JOU - GJOURNAL | Journal codes | JOU0 : JUD + LEG | JOU | N/A | N/A | N/A
+ADI - ATABDIV | Miscellaneous | CODE : NUMTAB + CODE | CODE | DAE - GACCENTRYD | Accounting entry lines | DAE0 : TYP + NULM + LINE + LEDTYP
+TVT - TABVAT | Tax code table | TYT0 : VAT + LEG | TAX | GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC
+TUN - TABUNIT | Table of units of measure | TUN0 : UOM | UOM | N/A | N/A | N/A
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | BPR | SOI - SOI | Statement creation | SOI0 : SONUM
+SOI - SOI | Statement creation | SOI0 : SONUM | SOI | DUD - GACCDUDATE | Open items | DUD0 : TYP + NULM + LIG + DUDLIG
+DUD - GACCDUDATE | Open items | DUD0 : TYP + NULM + LIG + DUDLIG | ACC | DSP - CADSP | Analytical allocations | DSP0 : DSP
+TDA - TADBEPPAGIO | Early discount/late charge | TDA0 : DEP + LEG | DEP | N/A | N/A | N/A
+CPY - COMPANY | Company | CPY0 : CPY | CPY | FCY - FACILITY | Sites | FCY0 : FCY
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | HAE - GACCENTRY | Accounting entries | HAE0 : TYP + NULM
+TCU - TABCUR | Currency table | TCU0 : CUR | ACM | GCM - GACM | Account core model | GCM0 : GACM
+GCM - GACM | Account core model | GCM0 : GACM | LED | LED - GLED | Ledger | LED0 : LED
+LED - GLED | Ledger | LED0 : LED | COA | COA - GCOA | Chart of accounts | COA0 : COA
+COA - GCOA | Chart of accounts | COA0 : COA | COA | GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC
+GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC | ACC | DAA - GACCENTRYA | Analytical line allocations | DAA0 : TYP + NULM + LIN + LEDTYP
+DIE - GDIE | Dimension types | DIE0 : DIE | DIE | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | DIE | DIE - GDIE | Dimension types | DIE0 : DIE
+CPY - COMPANY | Company | CPY0 : CPY | LEGCPY | FCY - FACILITY | Sites | FCY0 : FCY
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | HAE - GACCENTRY | Accounting entries | HAE0 : TYP + NULM
+TCU - TABCUR | Currency table | TCU0 : CUR | ACCCUR, CURCOSB | CPY - COMPANY, GAC - GACACCOUNT | Company, Accounts | CPY0 : CPY, GAC0 : COA + ACC
+GCM - GACM | Account core model | GCM0 : GACM | LED | LED - GLED | Ledger | LED0 : LED
+LED - GLED | Ledger | LED0 : LED | COA | COA - GCOA | Chart of accounts | COA0 : COA
+COA - GCOA | Chart of accounts | COA0 : COA | COA, ACC | GAC - GACACCOUNT, HAE - GACCENTRY | Accounts, Accounting entries | GAC0 : COA + ACC, HAE0 : TYP + NULM
+GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC | COA, ACC, TYP, NULM, LIN, LEDTYP | COA - GCOA, DAE - GACCENTRYD, DSP - CADSP, DIE - GDIE, DAA - GACCENTRYA | Chart of accounts, Accounting entry lines, Analytical allocations, Dimension types, Analytical line allocations | COA0 : COA, DAE0 : TYP + NULM + LINE + LEDTYP, DSP0 : DSP, DIE0 : DIE, DAA0 : TYP + NULM + LIN + LEDTYP
+DIE - GDIE | Dimension types | DIE0 : DIE | DIE | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | DIE, CCE | DIE - GDIE, DIE - GDIE (self-reference) | Dimension types, Dimension types (self-reference) | DIE0 : DIE, DIE0 : DIE
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | BPR | SOI - SOI | Statement creation | SOI0 : SONUM
+SOI - SOI | Statement creation | SOI0 : SONUM | SOI | DUD - GACCDUDATE | Open items | DUD0 : TYP + NULM + LIG + DUDLIG
+DUD - GACCDUDATE | Open items | DUD0 : TYP + NULM + LIG + DUDLIG | ACC, DEP | DSP - CADSP, TDA - TADBEPPAGIO | Analytical allocations, Early discount/late charge | DSP0 : DSP, TDA0 : DEP + LEG
+JOU - GJOURNAL | Journal codes | JOU0 : JUD + LEG | JOU, 306|BANC|ABT, 351|SIT1, 352|SIT2 | ADI - ATABDIV, TVT - TABVAT, DAE - GACCENTRYD | Miscellaneous, Tax code table, Accounting entry lines | CODE : NUMTAB + CODE, TYT0 : VAT + LEG, DAE0 : TYP + NULM + LINE + LEDTYP
+GDE - GDIAENTRY | Entry transactions | GDE0 : DIA | DACDIA | CPY - COMPANY | Company | CPY0 : CPY
+GTE - GTYACCENT | Document types | GTE0 : TYP - LEG | TYP | JOU - GJOURNAL | Journal codes | JOU0 : JUD + LEG
+ADI - ATABDIV | Miscellaneous | CODE : NUMTAB + CODE | CODE | DAE - GACCENTRYD | Accounting entry lines | DAE0 : TYP + NULM + LINE + LEDTYP
+TVT - TABVAT | Tax code table | TYT0 : VAT + LEG | TAX | GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC
+TUN - TABUNIT | Table of units of measure | TUN0 : UOM | N/A | N/A | N/A | N/A
+DAE - GACCENTRYD | Accounting entry lines | DAE0 : TYP + NULM + LINE + LEDTYP | TYP, NULM, LIN, LEDTYP | HAE - GACCENTRY | Accounting entries | HAE0 : TYP + NULM
+DAA - GACCENTRYA | Analytical line allocations | DAA0 : TYP + NULM + LIN + LEDTYP | TYP, NULM, LIN | HAE - GACCENTRY | Accounting entries | HAE0 : TYP + NULM
+DSP - CADSP | Analytical allocations | DSP0 : DSP | ACC, NBRDSP | GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC
+TDA - TADBEPPAGIO | Early discount/late charge | TDA0 : DEP + LEG | DEP | N/A | N/A | N/A
+
+# ACCOUNTING 2 - ACCOUNTING ENTRY BY LOT
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+JOU - GJOURNAL | Journal codes | JOU0 : JUD + LEG | JOU | GTE - GTYACCENT | Document types | GTE0 : TYP + LEG
+GDE - GDIAENTRY | Entry transactions | GDE0 : DIA | DACDIA | CPY - COMPANY | Company | CPY0 : CPY
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | LOT - GENTLOT | Accounting journal batches | LOT0 : LOT
+GCM - GACM | Account core model | GCM0 : GACM | ACM | CPY - COMPANY | Company | CPY0 : CPY
+LED - GLED | Ledger | LED0 : LED | LED | COA - GCOA | Chart of accounts | COA0 : COA
+TCU - TABCUR | Currency table | TCU0 : CUR | CUR | CPY - COMPANY | Company | CPY0 : CPY
+COA - GCOA | Chart of accounts | COA0 : COA | COA, OFFAC, COAACC | GAC - GACACCOUNT, DIE - GDIE, LED - GLED | Accounts, Dimension types, Ledger | GAC0 : COA + ACC, DIE0 : DIE, LED0 : LED
+GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC | ACC | DSP - CADSP | Analytical allocations | DSP0 : DSP
+DIE - GDIE | Dimension types | DIE0 : DIE | DIE | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | CCE | N/A | N/A | N/A
+GTE - GTYACCENT | Document types | GTE0 : TYP + LEG | TYP | LOT - GENTLOT | Accounting journal batches | LOT0 : LOT
+TVT - TABVAT | Tax code table | TYT0 : VAT + LEG | TAX | N/A | N/A | N/A
+TUN - TABUNIT | Table of units of measure | TUN0 : UOM | UOM | N/A | N/A | N/A
+LOT - GENTLOT | Accounting journal batches | LOT0 : LOT | LOT | LOH - GENTLOTH | Batch entry header | LOH0 : LOT + ORNVCRC
+LOH - GENTLOTH | Batch entry header | LOH0 : LOT + ORNVCRC | LOT, ORNVCRC | LOD - GENTLOTD | General batch entry lines | LOD0 : LOT + ORNVCRC + LIN
+LOD - GENTLOTD | General batch entry lines | LOD0 : LOT + ORNVCRC + LIN | LOT, ORNVCRC, LIN | LOA - GENTLOTA | Analytical batch entry lines | LOA0 : LOT + ORNVCRC + LIN + ANALIN
+LOA - GENTLOTA | Analytical batch entry lines | LOA0 : LOT + ORNVCRC + LIN + ANALIN | LOT, ORNVCRC, LIN, ANALIN | N/A | N/A | N/A
+DSP - CADSP | Analytical allocations | DSP0 : DSP | DSP | GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC
+BPR - BPARTNER | Business partner | BPR0 : BPRNUM | BPR | N/A | N/A | N/A
+ADI - ATABDIV | Miscellaneous tables | CODE : NUMTAB + CODE | 351|STT1, 352|STT2, 353|STT3 | N/A | N/A | N/A
+CPY - COMPANY | Company | CPY0 : CPY | DACDIA | GDE - GDIAENTRY | Entry transactions | GDE0 : DIA
+CPY - COMPANY | Company | CPY0 : CPY | ACCCUR | TCU - TABCUR | Currency table | TCU0 : CUR
+CPY - COMPANY | Company | CPY0 : CPY | ACM | GCM - GACM | Account core model | GCM0 : GACM
+CPY - COMPANY | Company | CPY0 : CPY | LEGCPY | FCY - FACILITY | Sites | FCY0 : FCY
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | LOT - GENTLOT | Accounting journal batches | LOT0 : LOT
+GCM - GACM | Account core model | GCM0 : GACM | LED | LED - GLED | Ledger | LED0 : LED
+LED - GLED | Ledger | LED0 : LED | COA | COA - GCOA | Chart of accounts | COA0 : COA
+TCU - TABCUR | Currency table | TCU0 : CUR | CUR | CPY - COMPANY | Company | CPY0 : CPY
+COA - GCOA | Chart of accounts | COA0 : COA | COAACC | GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC
+GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC | ACC | DSP - CADSP | Analytical allocations | DSP0 : DSP
+GTE - GTYACCENT | Document types | GTE0 : TYP + LEG | TYP | JOU - GJOURNAL | Journal codes | JOU0 : JUD + LEG
+GTE - GTYACCENT | Document types | GTE0 : TYP + LEG | TYP | LOT - GENTLOT | Accounting journal batches | LOT0 : LOT
+JOU - GJOURNAL | Journal codes | JOU0 : JUD + LEG | JOU | GTE - GTYACCENT | Document types | GTE0 : TYP + LEG
+LOT - GENTLOT | Accounting journal batches | LOT0 : LOT | LOT | LOH - GENTLOTH | Batch entry header | LOH0 : LOT + ORNVCRC
+LOH - GENTLOTH | Batch entry header | LOH0 : LOT + ORNVCRC | LOT, ORNVCRC | LOD - GENTLOTD | General batch entry lines | LOD0 : LOT + ORNVCRC + LIN
+LOD - GENTLOTD | General batch entry lines | LOD0 : LOT + ORNVCRC + LIN | LOT, ORNVCRC, LIN | LOA - GENTLOTA | Analytical batch entry lines | LOA0 : LOT + ORNVCRC + LIN + ANALIN
+DIE - GDIE | Dimension types | DIE0 : DIE | DIE | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | CCE | DIE - GDIE | Dimension types | DIE0 : DIE
+DSP - CADSP | Analytical allocations | DSP0 : DSP | ACC | GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC
+
+# ACCOUNTING 3 - ACCOUNTING DATA
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+GCM - GACM | Account core model | GCM0 : GCM | ACM | CPY - COMPANY | Company | CPY0 : CPY
+CPY - COMPANY | Company | CPY0 : CPY | CPY | AGC - AGRCPY | Company groupings | AGC0 : GRP - CPY
+CPY - COMPANY | Company | CPY0 : CPY | ACCCUR | TCU - TABCUR | Currency table | TCU0 : CUR
+CPY - COMPANY | Company | CPY0 : CPY | LEGCPY | FCY - FACILITY | Sites | FCY0 : FCY
+TCU - TABCUR | Currency table | TCU0 : CUR | CUR | GCU - GRPCUR | Currency groups | GCU0 : GRP
+TCU - TABCUR | Currency table | TCU0 : CUR | CUR | CPY - COMPANY | Company | CPY0 : CPY
+FCY - FACILITY | Sites | FCY0 : FCY | FCY | CPY - COMPANY | Company | CPY0 : CPY
+COA - GCOA | Chart of accounts | COA0 : COA | COA | GSC - GRPSAC | Control groups | GSC0 : COA + GRU - NULM
+COA - GCOA | Chart of accounts | COA0 : COA | COA | GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC
+GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC | ACC | GDD - GDIAENTRYD | Journal entry transactions | GDD0 : DIA + FLID
+GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC | ACC | GDE - GDIAENTRY | Entry transactions | GDE0 : DIA
+GDD - GDIAENTRYD | Journal entry transactions | GDD0 : DIA + FLID | DIA | GDE - GDIAENTRY | Entry transactions | GDE0 : DIA
+GDE - GDIAENTRY | Entry transactions | GDE0 : DIA | DIA | CPY - COMPANY | Company | CPY0 : CPY
+GDE - GDIAENTRY | Entry transactions | GDE0 : DIA | DIA | DIE - GDIE | Dimension types | DIE0 : DIE
+GDE - GDIAENTRY | Entry transactions | GDE0 : DIA | DIA | GDA - GDIAACC | Account scheme header | GDA0 : DIA
+DIE - GDIE | Dimension types | DIE0 : DIE | DIE | GDE - GDIAENTRY | Entry transactions | GDE0 : DIA
+DIE - GDIE | Dimension types | DIE0 : DIE | DIE | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | CCE | DIE - GDIE | Dimension types | DIE0 : DIE
+GDA - GDIAACC | Account scheme header | GDA0 : DIA | DIA | GDE - GDIAENTRY | Entry transactions | GDE0 : DIA
+GDA - GDIAACC | Account scheme header | GDA0 : DIA | DIA | GDC - GDIAACCD | Account scheme lines | GDC0 : DIA + LINNUM
+GDC - GDIAACCD | Account scheme lines | GDC0 : DIA + LINNUM | DIA | GDA - GDIAACC | Account scheme header | GDA0 : DIA
+DSP - CADSP | Analytical allocations | DSP0 : DSP + NBRDSP | DSP | GAC - GACACCOUNT | Accounts | GAC0 : COA + ACC
+TVT - TABVAT | Tax code table | TYT0 : VAT + LEG | VAT | DTP - CADISTMP | Budget weighting codes | DTP0 : DTP
+ADI - ATABDIV | Miscellaneous tables | CODE : NUMTAB + CODE | N/A | N/A | N/A | N/A
+AGC - AGRCPY | Company groupings | AGC0 : GRP - CPY | GRP - CPY | CPY - COMPANY | Company | CPY0 : CPY
+GSC - GRPSAC | Control groups | GSC0 : COA + GRU - NULM | GRU - NULM | COA - GCOA | Chart of accounts | COA0 : COA
+GCU - GRPCUR | Currency groups | GCU0 : GRP | GRP | TCU - TABCUR | Currency table | TCU0 : CUR
+
+# ACCOUNTING 4 - BUDGETS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+TCU - TABCUR | Currency table | TCU0 : CUR | CUR | BUD - BUD | Budget table | BUD0 : LEDTYP + BUD + CPY + FCY + VCR + ACC + CCE1 + CCE2 + CCE3
+BUC - BUDFORCAL | Budget calculation formula | BUC0 : BUDFOR + LIN | BUDFOR | BVC - BUDVARCAL | Budget calculation variable | BVC0 : BUDFOR + VARCOD
+BVC - BUDVARCAL | Budget calculation variable | BVC0 : BUDFOR + VARCOD | FCY | CPY - COMPANY | Company | CPY0 : CPY
+CPY - COMPANY | Company | CPY0 : CPY | FCY | FCY - FACILITY | Sites | FCY0 : FCY
+BUP - BUDPAR | Budget setup | BUP0 : BUD | BUD | BUD - BUD | Budget table | BUD0 : LEDTYP + BUD + CPY + FCY + VCR + ACC + CCE1 + CCE2 + CCE3
+BUD - BUD | Budget table | BUD0 : LEDTYP + BUD + CPY + FCY + VCR + ACC + CCE1 + CCE2 + CCE3 | AX12:CCE2, AX13:CCE3, COA:ACC | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+COA - GCOA | Chart of accounts | COA0 : COA | ACC | GAC - GACCOUNT | Accounts | GAC0 : COA + ACC
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | DIE | DIE - GDIE | Dimension types | DIE0 : DIE
+GYM - GACCPYM | Account pyramids | GYM0 : PYM | PYMACC | CYY - GCCEPYM | Dimension pyramids | CYY0 : PYM
+CYY - GCCEPYM | Dimension pyramids | CYY0 : PYM | PYMACC | GYM - GACCPYM | Account pyramids | GYM0 : PYM
+TCU - TABCUR | Currency table | TCU0 : CUR | - | - | - | -
+BUC - BUDFORCAL | Budget calculation formula | BUC0 : BUDFOR + LIN | BUDFOR | BVC - BUDVARCAL | Budget calculation variable | BVC0 : BUDFOR + VARCOD
+BVC - BUDVARCAL | Budget calculation variable | BVC0 : BUDFOR + VARCOD | FCY | FCY - FACILITY | Sites | FCY0 : FCY
+CPY - COMPANY | Company | CPY0 : CPY | LEGCPY | FCY - FACILITY | Sites | FCY0 : FCY
+FCY - FACILITY | Sites | FCY0 : FCY | - | - | - | -
+BUP - BUDPAR | Budget setup | BUP0 : BUD | BUD | BUD - BUD | Budget table | BUD0 : LEDTYP + BUD + CPY + FCY + VCR + ACC + CCE1 + CCE2 + CCE3
+BUD - BUD | Budget table | BUD0 : LEDTYP + BUD + CPY + FCY + VCR + ACC + CCE1 + CCE2 + CCE3 | BUD, FCY, AX12:CCE2, AX13:CCE3, AX14:DIE, COA:ACC | BUP - BUDPAR, FCY - FACILITY, CCE - CACCE, DIE - GDIE, COA - GCOA | Budget setup, Sites, Dimensions, Dimension types, Chart of accounts | BUP0 : BUD, FCY0 : FCY, CCE0 : DIE + CCE, DIE0 : DIE, COA0 : COA
+GYM - GACCPYM | Account pyramids | GYM0 : PYM | PYMACC | CYY - GCCEPYM | Dimension pyramids | CYY0 : PYM
+CYY - GCCEPYM | Dimension pyramids | CYY0 : PYM | PYMACC, PYMCE | GYM - GACCPYM, CCE - CACCE | Account pyramids, Dimensions | GYM0 : PYM, CCE0 : DIE + CCE
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | DIE, AX12:OCE2, AX13:OCE3, COA:ACC | DIE - GDIE, COA - GCOA | Dimension types, Chart of accounts | DIE0 : DIE, COA0 : COA
+COA - GCOA | Chart of accounts | COA0 : COA | ACC | GAC - GACCOUNT | Accounts | GAC0 : COA + ACC
+GAC - GACCOUNT | Accounts | GAC0 : COA + ACC | - | - | - | -
+DIE - GDIE | Dimension types | DIE0 : DIE | - | - | - | -
+
+# ACCOUNTING 5 - PAYMENT
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+TPY - TABPAYTYP | Payment types | TPY0 : PAYTYP + LEG | - | - | - | -
+FCY - FACILITY | Sites | FCY0 : FCY | - | - | - | -
+TCU - TABCUR | Currency table | TCU0 : CUR | - | - | - | -
+PRO - PROROG | Due date extension | PRO0 : NUM | PAYTYP | TPY - TABPAYTYP | Payment types | TPY0 : PAYTYP + LEG
+BES - BILSTA | Statement of bill of exchange | BES0 : FRNUM + LIN | NUM | PYH - PAYMENTH | Payment header | PYH0 : NUM
+UNP - UNPAID | Doubtful receipt entry | UNP0 : NUM + CUR | NUM | PYH - PAYMENTH | Payment header | PYH0 : NUM
+GAC - GACCOUNT | Accounts | GAC0 : COA + ACC | ACC | COA - GCOA | Chart of accounts | COA0 : COA
+COA - GCOA | Chart of accounts | COA0 : COA | COA | GAC - GACCOUNT | Accounts | GAC0 : COA + ACC
+PYH - PAYMENTH | Payment header | PYH0 : NUM | NUM, FCY, CUR, BPR, BAN, PAM/VG/US/CLE | BES - BILSTA, FCY - FACILITY, TCU - TABCUR, BPR - BPRPARTNER, BAN - BANK, ADI - ATABDIV | Statement of bill of exchange, Sites, Currency table, Business partner, Bank accounts, Payment mode table | BES0 : FRNUM + LIN, FCY0 : FCY, TCU0 : CUR, BPR0 : BPRNUM, BAN0 : BAN
+BPR - BPRPARTNER | Business partner | BPR0 : BPRNUM | BPR | PYH - PAYMENTH | Payment header | PYH0 : NUM
+BAN - BANK | Bank accounts | BAN0 : BAN | BAN | PYH - PAYMENTH | Payment header | PYH0 : NUM
+ADI - ATABDIV | Payment mode table | TAD0 : PAM + LEG | PAM/VG/US/CLE | PYH - PAYMENTH | Payment header | PYH0 : NUM
+PYD - PAYMENTD | Payment lines | PYD0 : NUM + LIN | NUM/LIN | PYH - PAYMENTH | Payment header | PYH0 : NUM
+PYA - PAYMENTA | Analytical payment lines | PYA0 : NUM + LIN + LANNAA | NUM/LIN | PYD - PAYMENTD | Payment lines | PYD0 : NUM + LIN
+CDA - GACCDENCOD | Payment attribute | CDA0 : COD + LEG | - | - | - | -
+DUD - GACCDUDATE | Open items | DUD0 : TYP + NUM + LIN + DUDLIG | NUM/LIG | SID - SIVOICED | Bill of sale detail | SID0 : NUM + SIDLIN
+SID - SIVOICED | Bill of sale detail | SID0 : NUM + SIDLIN | NUM/LIG | DUD - GACCDUDATE | Open items | DUD0 : TYP + NUM + LIN + DUDLIG
+DSP - CADSP | Analytical allocations | DSP0 : DSP + NEDRSP | - | - | - | -
+PAN - PAYACCNUM | Payment accounting entry | PAN0 : NUM + STA + ACCNUM | ACCNUM | GAC - GACCOUNT | Accounts | GAC0 : COA + ACC
+POO - POOL | Banking pool | POO0 : POO + LIN | - | - | - | -
+TFB - TABFILBAN | Bank file definitions | TFB0 : CED + BAN + RECTYP + LEG + NUM | - | - | - | -
+RBK - RELBANK | Bank account statement | RBK0 : BAN + RBKNUM + RECINTYP + LEG | - | - | - | -
+PRP - PROROGPCE | Due date extension | PRP0 : ACCNUM | - | - | - | -
+PID - PINVOICED | Purchase invoice detail | PID0 : NUM + PIDLIN | - | - | - | -
+TBT - TABVAT | Tax code table | TBT0 : VAT + LEG | VATLIN | COA - GCOA | Chart of accounts | COA0 : COA
+DIE - GDIE | Dimension types | DIE0 : DIE | - | - | - | -
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | - | - | - | -
+
+# ACCOUNTING 6 - OPERATING BUDGETS
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+BUT - BUDTYP | Budget type | BUT0 : BUDCCD | BUDTYP | PRJ - PROJET | Project | PRJ1 : PRJ
+PRJ - PROJET | Project | PRJ1 : PRJ | PRJ | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | DIE2>ENV | ENV - ENVELOPE | Envelope | ENV0 : ENV
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | DIE2>ENV | BUP - BUDPAR | Budget setup | BUP0 : BUD
+ENT - ENTITÉ | Entity | ENT0 : ENT | DIE|ENT | BUP - BUDPAR | Budget setup | BUP0 : BUD
+ENT - ENTITÉ | Entity | ENT0 : ENT | ENTINMA or ENTAPP or ENTRAT | ENV - ENVELOPE | Envelope | ENV0 : ENV
+ENV - ENVELOPE | Envelope | ENV0 : ENV | ENV | ENF - ENVFIY | Distribute envelope/fiscal year | ENF0 : ENV + FIYNUM
+ENV - ENVELOPE | Envelope | ENV0 : ENV | CCE2>FIY | ENF - ENVFIY | Distribute envelope/fiscal year | ENF0 : ENV + FIYNUM
+ENF - ENVFIY | Distribute envelope/fiscal year | ENF0 : ENV + FIYNUM | ENV/FIY | BUD - BUD | Budget table | BUD0 : LEDTY + BUD + CPY + FYI + VRF + ACC + CECT + CCE2 + CCE3
+BUD - BUD | Budget table | BUD0 : LEDTY + BUD + CPY + FYI + VRF + ACC + CECT + CCE2 + CCE3 | ACCNUM | BOA - BUDAPP | Budget approval | BOA0 : NUM
+BOA - BUDAPP | Budget approval | BOA0 : NUM | NUMAPP | BAD - BUDAPPDET | Approval detail | BAD0 : NUMERO + NUMAPP
+BVD - BUDREVDET | Review detail | BVD0 : NUMERO + NUMREV | NUMREV | BRV - BUDREV | Budget review | BRV0 : NUM
+BUT - BUDTYP | Budget type | BUT0 : BUDCCD | BUDTYP | PRJ - PROJET | Project | PRJ1 : PRJ
+PRJ - PROJET | Project | PRJ1 : PRJ | PRJ | PLJ - PRJLOT | Lot | PLJ0 : PRU + LOT
+PRJ - PROJET | Project | PRJ1 : PRJ | PRJ | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | DIE2>ENV | ENV - ENVELOPE | Envelope | ENV0 : ENV
+CCE - CACCE | Dimensions | CCE0 : DIE + CCE | DIE2>ENV | BUP - BUDPAR | Budget setup | BUP0 : BUD
+BUP - BUDPAR | Budget setup | BUP0 : BUD | DIE|ENT | ENT - ENTITÉ | Entity | ENT0 : ENT
+ENT - ENTITÉ | Entity | ENT0 : ENT | ENTINMA or ENTAPP or ENTRAT | ENV - ENVELOPE | Envelope | ENV0 : ENV
+ENV - ENVELOPE | Envelope | ENV0 : ENV | ENV | ENF - ENVFIY | Distribute envelope/fiscal year | ENF0 : ENV + FIYNUM
+ENV - ENVELOPE | Envelope | ENV0 : ENV | ENV | ENF - ENVFIY | Distribute envelope/fiscal year | ENF0 : ENV + FIYNUM
+ENF - ENVFIY | Distribute envelope/fiscal year | ENF0 : ENV + FIYNUM | ENV/FIY | BUD - BUD | Budget table | BUD0 : LEDTY + BUD + CPY + FYI + VRF + ACC + CECT + CCE2 + CCE3
+ENF - ENVFIY | Distribute envelope/fiscal year | ENF0 : ENV + FIYNUM | CCE2>FY | CCE - CACCE | Dimensions | CCE0 : DIE + CCE
+BUD - BUD | Budget table | BUD0 : LEDTY + BUD + CPY + FYI + VRF + ACC + CECT + CCE2 + CCE3 | ACCNUM | BOA - BUDAPP | Budget approval | BOA0 : NUM
+BOA - BUDAPP | Budget approval | BOA0 : NUM | NUMAPP | BAD - BUDAPPDET | Approval detail | BAD0 : NUMERO + NUMAPP
+BUD - BUD | Budget table | BUD0 : LEDTY + BUD + CPY + FYI + VRF + ACC + CECT + CCE2 + CCE3 | ACCNUM | BVD - BUDREVDET | Review detail | BVD0 : NUMERO + NUMREV
+BOA - BUDAPP | Budget approval | BOA0 : NUM | NUMAPP | BVD - BUDREVDET | Review detail | BVD0 : NUMERO + NUMREV
+BVD - BUDREVDET | Review detail | BVD0 : NUMERO + NUMREV | NUMREV | BRV - BUDREV | Budget review | BRV0 : NUM
+
+# ACCOUNTING 7 - FIXED ASSET
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+CPY - COMPANY | Company | CPYO : CPY | CPY | FCY - FACILITY | Company to Sites relationship | FCYO : FCY
+CPY - COMPANY | Company | CPYO : CPY | CPY | CNX - CONTEXT | Company to Contexts relationship | CNXO : CPY + CNX
+FCY - FACILITY | Sites | FCYO : FCY | FCY | LOF - LAYOUTFAS | Sites to Expenses relationship | LOFP : CDLOCF + LNL0F
+FCY - FACILITY | Sites | FCYO : FCY | FCY | PHY - PHYELT | Sites to Physical assets relationship | PHY01 : PHYREF
+PHY - PHYELT | Physical assets | PHY01 : PHYREF | AASREF | FAS - FXDASSETS | Physical assets to Assets relationship | FASD : AASREF
+LOF - LAYOUTFAS | Expenses | LOFP : CDLOCF + LNL0F | AASREF | FAS - FXDASSETS | Expenses to Assets relationship | FASD : AASREF
+
+# CRM 1 - SERVICE REQUEST
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+SRE - SERREQUEST | Service requests | SRENUM | SRENUM | SRM - SRMAC | Base concerned | SRM1: SRENUM, MACNUM
+SRE - SERREQUEST | Service requests | SRENUM | SRENUM | HDT - HDTTASK | After-sales serv. consumption | HOTD: SRENUM, HOTDNUM
+SRE - SERREQUEST | Service requests | SRENUM | SRENUM | ECE - ESCSRE | Escalation history | ECE0: ESCCOD
+SRE - SERREQUEST | Service requests | SRENUM | SRENUM | CON - CONTSERV | Service contract | CON0: CONNUM
+SRE - SERREQUEST | Service requests | SRENUM | SRENUM | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+SRE - SERREQUEST | Service requests | SRENUM | SRENUM | REP - SALESREP | Sales rep | REP0: REPNUM
+SRE - SERREQUEST | Service requests | SRENUM | SRENUM | OPP - OPPOR | Project | OPP0: OPPNUM
+SRE - SERREQUEST | Service requests | SRENUM | SRENUM | AIN - CONTACTCRM | Contact relationships | AIN1: CNTNUM
+SRM - SRMAC | Base concerned | SRM1: SRENUM, MACNUM | SRENUM | SRE - SERREQUEST | Service requests | SRENUM
+SRM - SRMAC | Base concerned | SRM1: SRENUM, MACNUM | MACNUM | MAC - MACHINES | Installed base | MAC0: MACNUM
+MAC - MACHINES | Installed base | MAC0: MACNUM | MACNUM | SRM - SRMAC | Base concerned | SRM1: SRENUM, MACNUM
+PBL - FAMPB | Skill group | PBLNUM | PBLNUM | MAC - MACHINES | Installed base | MAC0: MACNUM
+SOL - SOLUTION | Solutions | SOLNUM | PBLGRP | PBL - FAMPB | Skill group | PBL0: NUM
+HD3 - HDC3LOB | Solutions text files | HD30: NUM + TYP | NUMPBLDES; TYPPBLDES | SOL - SOLUTION | Solutions | SOL0: NUM
+HD1 - HDC1LOB | Service reqts text files | HD10: NUM + TYP | NUMFILES; TYPFILES | SRE - SERREQUEST | Service requests | SRENUM
+FCY - FACILITY | Sites | FCY0: FCY | SALFCY | SRE - SERREQUEST | Service requests | SRENUM
+FCY - FACILITY | Sites | FCY0: FCY | STOFCY | SRE - SERREQUEST | Service requests | SRENUM
+
+# CRM 2 - SERRVICE CONTRACT
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+CON - CONTSERV | Service contract | COND: CONNUM | CPY | CPY - COMPANY | Company | CPY0: CPY
+CON - CONTSERV | Service contract | COND: CONNUM | SALFCY | FCY - FACILITY | Sites | FCY0: FCY
+CON - CONTSERV | Service contract | COND: CONNUM | SALREP | REP - SALESREP | Sales rep | REP0: REPNUM
+CON - CONTSERV | Service contract | COND: CONNUM | CONNUM;1 | CQL - CONTQUAL | Quality constraints | CQLD: CONNUM + TPL + GRALEV
+CON - CONTSERV | Service contract | COND: CONNUM | CONNUM;1 | COT - CONTTEMPL | Service contract template | COT0: CDNNUM
+CON - CONTSERV | Service contract | COND: CONNUM | CONNUM;1 | CCV - CONTCOV | Service contracts coverage | CCVD: CONNUM + TPL + RECITP + SECRITP + RECCNUM
+CON - CONTSERV | Service contract | COND: CONNUM | CONNUM;1 | CONPJT | OPP - OPPOR | Project | OPP0: OPPNUM
+CON - CONTSERV | Service contract | COND: CONNUM | CONNUM;1 | CONCRN | AIN - CONTACTCRM | Contact relationships | AIN0: CNTNUM
+CON - CONTSERV | Service contract | COND: CONNUM | CONNUM;1 | CONBPCPYR; CONBPCCRV; CONBPCGFW; CONBPCINV; CONCRN | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+CON - CONTSERV | Service contract | COND: CONNUM | CONNUM;2 | CQL - CONTQUAL | Quality constraints | CQLD: CONNUM + TPL + GRALEV
+CON - CONTSERV | Service contract | COND: CONNUM | CONNUM;2 | COT - CONTTEMPL | Service contract template | COT0: CDNNUM
+CON - CONTSERV | Service contract | COND: CONNUM | CONNUM;2 | ITMREF | ITM - ITMMASTER | Products | ITM0: ITMREF
+
+# CRM 3 - SERVICE RESPONSE
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+ITN - INTERVEN | Service response | ITN0: NUM | SRVDENUM | SRE - SEREQUEST | Service requests | SREB: SRENUM
+ITN - INTERVEN | Service response | ITN0: NUM | NUMFIULOBJ;TYPFIULOBJ | HD6 - HDC6LOB | CRM mini text files | HD60: NUM + TYP
+ITN - INTERVEN | Service response | ITN0: NUM | NUMFILPRO;TYPFILPRO | HD2 - HDC2LOB | Actions text files | HD20: NUM + TYP
+ITN - INTERVEN | Service response | ITN0: NUM | ITNUM | HDT - HDTTASK | After-sales serv. consumption | HOTD: HOTDNUM
+ITN - INTERVEN | Service response | ITN0: NUM | ITNUM | MAC - MACHINES | Installed base | MAC0: MACNUM
+ITN - INTERVEN | Service response | ITN0: NUM | SALFCY | FCY - FACILITY | Sites | FCY0: FCY
+ITN - INTERVEN | Service response | ITN0: NUM | SALREP | REP - SALESREP | Sales rep | REP0: REPNUM
+ITN - INTERVEN | Service response | ITN0: NUM | ORDNM | SOH - SORDER | Sales orders - header | SOH0: SOHNUM
+ITN - INTERVEN | Service response | ITN0: NUM | RER | RRS - RESRES | Resource reservations | RRS0: NUM
+ITN - INTERVEN | Service response | ITN0: NUM | RSSNUM | RSS - RESOURCES | Resources | RSS0: NUM
+ITN - INTERVEN | Service response | ITN0: NUM | BPC | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+ITN - INTERVEN | Service response | ITN0: NUM | REP | AUS - AUTILIS | Users | CODUSR: USER
+ITN - INTERVEN | Service response | ITN0: NUM | CCN | AIN - CONTACTCRM | Contact relationships | AIN0: CNTNUM
+ITN - INTERVEN | Service response | ITN0: NUM | SRENUM | CON - CONTSERV | Service contract | CON0: CONNUM
+
+# CRM 4 - INSTALLED BASES
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+MAC - MACHINES | Installed base | MAC0: MACNUM | CCNNUM | AIN - CONTACTCRM | Contact relationships | AIN0: CNTNUM
+MAC - MACHINES | Installed base | MAC0: MACNUM | FCYITN | BPA - BPADDRESS | Addresses | BPAD: BPAINYP + BPANUM + BPADID
+MAC - MACHINES | Installed base | MAC0: MACNUM | MACNUM | MAI - MACITN | Machine installations | MAI0: MACNUM
+MAC - MACHINES | Installed base | MAC0: MACNUM | BPCNUM | BPC - BPCUSTOMER | Customers | BPC0: BPCNUM
+MAC - MACHINES | Installed base | MAC0: MACNUM | MACPTCOD | ITM - ITMMASTER | Products | ITM0: ITMREF
+MAC - MACHINES | Installed base | MAC0: MACNUM | SALFCY | FCY - FACILITY | Sites | FCY0: FCY
+
+# CRM 5 - MARKETING
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+CWG - CMARKETING | Marketing campaign | CMGID: NUM | CMGNUM | HD5 - HD5CLOB | Marketing text files | HD50: NUM + TYP
+CWG - CMARKETING | Marketing campaign | CMGID: NUM | CMGNUM | OMN - MEDIA | Media campaign | OMN0: CMNNUM
+CWG - CMARKETING | Marketing campaign | CMGID: NUM | FCY | OMT - TRADESHOW | Professional trade shows | OMTD: OMTNUM
+CWG - CMARKETING | Marketing campaign | CMGID: NUM | FCY | FCY - FACILITY | Sites | FCY0: FCY
+CWG - CMARKETING | Marketing campaign | CMGID: NUM | FCY | SCL - SELCMGLIS | Marketing selection guide | SCL0: OPGNUM + RECTYPE
+CWG - CMARKETING | Marketing campaign | CMGID: NUM | CMGNUM | OMP - PHONING | Phone campaign | OMP0: OMPNUM
+CWG - CMARKETING | Marketing campaign | CMGID: NUM | CMGNUM | OMM - MAILING | Mass mailing | OMM0: OMNNUM
+HD5 - HD5CLOB | Marketing text files | HD50: NUM + TYP | NUMFIULOBJ;TYPFIULOBJ | CWG - CMARKETING | Marketing campaign | CMGID: NUM
+OMN - MEDIA | Media campaign | OMN0: CMNNUM | CMGNUM | CWG - CMARKETING | Marketing campaign | CMGID: NUM
+OMT - TRADESHOW | Professional trade shows | OMTD: OMTNUM | FCY | CWG - CMARKETING | Marketing campaign | CMGID: NUM
+OMT - TRADESHOW | Professional trade shows | OMTD: OMTNUM | FCY | FCY - FACILITY | Sites | FCY0: FCY
+FCY - FACILITY | Sites | FCY0: FCY | FCY | OMT - TRADESHOW | Professional trade shows | OMTD: OMTNUM
+FCY - FACILITY | Sites | FCY0: FCY | FCY | CWG - CMARKETING | Marketing campaign | CMGID: NUM
+FCY - FACILITY | Sites | FCY0: FCY | FCY | SCL - SELCMGLIS | Marketing selection guide | SCL0: OPGNUM + RECTYPE
+SCL - SELCMGLIS | Marketing selection guide | SCL0: OPGNUM + RECTYPE | CMGNUM | CWG - CMARKETING | Marketing campaign | CMGID: NUM
+OMP - PHONING | Phone campaign | OMP0: OMPNUM | CMGNUM | CWG - CMARKETING | Marketing campaign | CMGID: NUM
+OMM - MAILING | Mass mailing | OMM0: OMNNUM | CMGNUM | CWG - CMARKETING | Marketing campaign | CMGID: NUM
+
+# CRM 6 - CUSTOMER RELATION 1
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+OPP - OPPOR | Project | OPP0: OPPNUM | SALFCY | FCY - FACILITY | Sites | FCY0: FCY
+OPP - OPPOR | Project | OPP0: OPPNUM | OPPREP | REP - SALESREP | Sales rep | REP0: REPNUM
+OPP - OPPOR | Project | OPP0: OPPNUM | OPPCMP | BPR - BPARTNER | Business partner | BPRNUM
+OPP - OPPOR | Project | OPP0: OPPNUM | OPPCON | COR - CORRESPOND | Outlook contact | CORD: CORNUM
+OPP - OPPOR | Project | OPP0: OPPNUM | CNTNUM | AIN - CONTACTCRM | Contact relationships | AIN0: CNTNUM
+OPP - OPPOR | Project | OPP0: OPPNUM | CNTNUM0 | LDS - LEAD | Leads | LDS1: PSTNUM
+REP - SALESREP | Sales rep | REP0: REPNUM | OPPREP | OPP - OPPOR | Project | OPP0: OPPNUM
+FCY - FACILITY | Sites | FCY0: FCY | SALFCY | OPP - OPPOR | Project | OPP0: OPPNUM
+BPR - BPARTNER | Business partner | BPRNUM | OPPCMP | OPP - OPPOR | Project | OPP0: OPPNUM
+COR - CORRESPOND | Outlook contact | CORD: CORNUM | OPPCON | OPP - OPPOR | Project | OPP0: OPPNUM
+AIN - CONTACTCRM | Contact relationships | AIN0: CNTNUM | CNTNUM | OPP - OPPOR | Project | OPP0: OPPNUM
+LDS - LEAD | Leads | LDS1: PSTNUM | CNTNUM0 | OPP - OPPOR | Project | OPP0: OPPNUM
+HD4 - HD4CLOB | Commercial reports text files | HD40: NUM + TYP | NUMFIULPRO;TYPFIULPRO | TSK - TASK | Task | TSK0: TSKID
+TSK - TASK | Task | TSK0: TSKID | NUMFIULPRO;TYPFIULPRO | HD4 - HD4CLOB | Commercial reports text files | HD40: NUM + TYP
+HD6 - HD6CLOB | CRM mini text files | HD60: NUM + TYP | NUMFIULOBJ;TYPFIULOBJ | COR - CORRESPOND | Outlook contact | CORD: CORNUM
+
+# CRM 7 - CUSTOMER RELATION 2
+
+Table | Table name | Primary key | Relation fields | Table linked | Table linked description | Table linked primary key
+FCY - FACILITY | Sites | FCY0 : FCY | NUMFIUL0BJ;TYPUFIUL0BJ | HD5 - HD5CLOB | Marketing text files | HD50 : NUM + TYP
+FCY - FACILITY | Sites | FCY0 : FCY | NUMFILUPRO;TYPFILUPRO | HD6 - HD6CLOB | CRM mini text files | HD60 : NUM + TYP
+FCY - FACILITY | Sites | FCY0 : FCY | SALFCY | REP - SALESREP | Sales rep | REP1 : REPNUM
+FCY - FACILITY | Sites | FCY0 : FCY | APTREPNUM;APTNUM | BAP - BAPPOINT | Appointment | APP0 : APTNUM
+FCY - FACILITY | Sites | FCY0 : FCY | APTREPNUM;APTNUM | REP - SALESREP | Sales rep | REP1 : REPNUM
+REP - SALESREP | Sales rep | REP1 : REPNUM | APTREPNUM;APTNUM | BAP - BAPPOINT | Appointment | APP0 : APTNUM
+REP - SALESREP | Sales rep | REP1 : REPNUM | SALFCY | FCY - FACILITY | Sites | FCY0 : FCY
+BAP - BAPPOINT | Appointment | APP0 : APTNUM | APTREPNUM;APTNUM | REP - SALESREP | Sales rep | REP1 : REPNUM
+BAP - BAPPOINT | Appointment | APP0 : APTNUM | APTREPNUM;APTNUM | FCY - FACILITY | Sites | FCY0 : FCY
+BAP - BAPPOINT | Appointment | APP0 : APTNUM | NUMFILUPRO;TYPFILUPRO | HD6 - HD6CLOB | CRM mini text files | HD60 : NUM + TYP
+HD5 - HD5CLOB | Marketing text files | HD50 : NUM + TYP | NUMFIUL0BJ;TYPUFIUL0BJ | FCY - FACILITY | Sites | FCY0 : FCY
+HD6 - HD6CLOB | CRM mini text files | HD60 : NUM + TYP | NUMFILUPRO;TYPFILUPRO | FCY - FACILITY | Sites | FCY0 : FCY
+HD6 - HD6CLOB | CRM mini text files | HD60 : NUM + TYP | APTREPNUM;APTNUM | BAP - BAPPOINT | Appointment | APP0 : APTNUM
+CLI - PHONECALL | Call | CLI0 : CLINUM | CLILOPP | OPP - OPPOR | Project | OPP0 : OPPNUM
+CLI - PHONECALL | Call | CLI0 : CLINUM | CLICSP | SCP - SCRIPT | Call script | SCP0 : SCPNUM
+CLI - PHONECALL | Call | CLI0 : CLINUM | CLIREP | REP - SALESREP | Sales rep | REP1 : REPNUM
+CLI - PHONECALL | Call | CLI0 : CLINUM | CLICMP | CMP - CAMPAIGN | Campaign info | CMP0 : CMPNUM
+CLI - PHONECALL | Call | CLI0 : CLINUM | CLIORD | ORD - ORDER | Sales order | ORD0 : ORNUM
+OPP - OPPOR | Project | OPP0 : OPPNUM | SPBPT | - | - | -
+OPP - OPPOR | Project | OPP0 : OPPNUM | CLILOPP | CLI - PHONECALL | Call | CLI0 : CLINUM
+SCP - SCRIPT | Call script | SCP0 : SCPNUM | CLICSP | CLI - PHONECALL | Call | CLI0 : CLINUM
+REP - SALESREP | Sales rep | REP1 : REPNUM | CLIREP | CLI - PHONECALL | Call | CLI0 : CLINUM
+REP - SALESREP | Sales rep | REP1 : REPNUM | SALFCY | FCY - FACILITY | Sites | FCY0 : FCY
+REP - SALESREP | Sales rep | REP1 : REPNUM | APTREPNUM;APTNUM | BAP - BAPPOINT | Appointment | APP0 : APTNUM
+CMP - CAMPAIGN | Campaign info | CMP0 : CMPNUM | CLICMP | CLI - PHONECALL | Call | CLI0 : CLINUM
+ORD - ORDER | Sales order | ORD0 : ORNUM | CLIORD | CLI - PHONECALL | Call | CLI0 : CLINUM

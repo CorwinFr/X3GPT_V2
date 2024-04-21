@@ -1,0 +1,2476 @@
+Table	Table Abbreviation	 Description
+AABREV	AAB	 Abréviation
+ABANK	ABN	 Codes de tri bancaires
+ABATABT	ABA	 Serveur batch (tâches récurrentes)
+ABATABTD	ABD	 Serveur batch (tâches récurrentes)
+ABATABTD2	A22	 Serveur batch (tâches récurrentes)
+ABATCAL	ABC	 Calendrier du serveur batch
+ABATGRP	ABG	 Serveur batch (groupes)
+ABATHOR	ABH	 Contraintes horaires
+ABATPAR	ABP	 Serveur batch (paramètres)
+ABATRQT	ABR	 Serveur batch (requêtes)
+ABATRQT2	A11	 Serveur batch (requêtes)
+ABATRQTL	ABL	 Serveur batch (requêtes)
+ABATTAC	ABT	 Serveur batch (tâches)
+ABICOND	AII	 Conditions prédéfinies
+ABIDATMRT	ABM	 Datamart
+ABIDATWRH	ABW	 Entrepôt de données
+ABIDIM	ABI	 Dimensions
+ABIDIMFLD	ABJ	 Dimensions (champs)
+ABIHIERA	AHH	 Hiérarchies
+ABIPRFUSR	AIU	 Profil utilisateur BI
+ABIREGDES	ABY	 Règles de synchronisation (dest)
+ABIREGORG	ABV	 Règles de synchronisation
+ABIREPORT	ABO	 Rapports sur les objets métier
+ABIREPORTD	ABQ	 Rapports sur les objets métier
+ABIREPORTID	ABOID	 Rapports sur les objets métier
+ABITABAGG	ABE	 Table de faits (agrégats)
+ABITABDAT	ABF	 Tableaux de faits
+ABITABFLD	ABZ	 Table de faits (champs)
+ABITABIND	ABX	 Table de faits (index)
+ABITABLNK	ABK	 Tableau de faits (liens)
+ABITRAUNV	ATV	 Traduction du rapport
+ABLBSYS	ASB	 Composants graphiques
+ABLOB	ABB	 Dossiers spéciaux
+ACALCUL	AKL	 Historique de la calculatrice
+ACCCOD	ACS	 Codes d'accès
+ACCES	ACC	 Accès par utilisateur
+ACHANGE	ACG	 Mise en place du changement de clé
+ACLACOL	ACLAC	 Cours (Collections)
+ACLAFLD	ACLAF	 Classes (lignes)
+ACLALNK	ACLAK	 Cours (tableaux)
+ACLAMAP	ACLAKP	 Classes (cartographie)
+ACLAMET	ACLAM	 Cours (méthodes)
+ACLAMETSTD	ACLAT	 Cours (méthodes standards)
+ACLAOPT	ACLAO	 Cours (options)
+ACLAPARDEF	ACLPD	 Classes (paramètres)
+ACLAPARFLD	ACLFP	 Classes (paramètres)
+ACLASSE	ACLA	 Des classes
+ACLBSYS	ASA	 Composants graphiques
+ACLOB	ACB	 Dossiers spéciaux
+ACODIF	ACO	 Codage des sections
+ACODNUM	ANM	 Numéros de séquence des documents
+ACONSTANT	ACST	 Constantes
+ACONSULT	ACN	 Demandes de renseignements
+ACONTEXT	ACTX	 Contexte
+ACTCODPAR	AAR	 Paramètres des actions
+ACTION	ACT	 Dictionnaire d'actions
+ACTIV	ACV	 Codes d'activité
+ACTL	ACL	 Tableaux de contrôle
+ACTLDEV	ACD	 Parenthèses réservées
+ACTLSPE	ASPE	 Audit de personnalisation
+ACTLSPELINE	ASPEL	 Audit de personnalisation
+ACTPAR	ATR	 Paramètres des actions
+ADELETE	ADL	 Effacement
+ADELIVER	ADLV	 Livrable
+ADELIVERB	ADLB	 Livrable
+ADELIVERD	ADLD	 Livrable
+ADELIVERL	ADLL	 Livrable
+ADELIVERO	ADLO	 Livrable
+ADELIVERP	ADLP	 Livrable
+ADELIVERR	ADLR	 Livrable
+ADELIVERT	ADLT	 Livrable
+ADICTRT	ADC	 Dictionnaire des processus
+ADIMENSION	ADM	 Dimensionnement des éléments
+ADOCBLB	ADB	 Documentation (fichiers liés)
+ADOCCLB	ADH	 Documentation (textes)
+ADOCFLD	ADZ	 Documentation de terrain
+ADOCFNC	ADF	 Liens vers la documentation
+ADOCUMENT	ADO	 Documentation
+ADOPAR	ADP	 Paramètres
+ADOSACT	ADA	 Codes d'activité
+ADOSDIM	ADE	 Dimensionnement des éléments
+ADOSLEG	ADLEG	 Législations
+ADOSLIV	ADK	 Livrables
+ADOSSIER	ADS	 Tableau des dossiers
+ADOSSOL	ADD	 Solution par dossier
+ADOVAL	ADW	 Valeurs des paramètres
+ADOVALAUS	ADU	 Valeurs des paramètres utilisateur
+ADOVALGRP	ADG	 Ensembles de valeurs
+ADOVALHIS	AHW	 Valeurs des paramètres
+AECLIDBG	AEG	 Éclipse
+AECLIRDV	AEC	 Éclipse
+AELT	AEL	 Dictionnaire des éléments Web
+AELTLINK	AEK	 Liens vers des éléments Web
+AENCHAINE	AEN	 Séquence d'import/export
+AENTREE	APE	 Points d'entrée
+AENUMBDGH	AENUMH	 En-tête de liaison Enum
+AENUMBDGL	AENUML	 Lignes de liaison d'énumération
+AESPION	AES	 Tracer les transactions du système
+AEXPV3	AEV	 Configuration/importation de tableaux
+AEXPV3D	AED	 Configuration/importation de tableaux
+AFCTCUR	AFU	 Fonction actuelle
+AFCTEXE	AFE	 Dernières fonctions exécutées
+AFCTFCT	AFT	 Profil de fonction utilisateur
+AFCTFCY	AFF	 Fonction de profil de site
+AFCTPRF	AFP	 Autorisation fonctionnelle
+AFONCTION	AFC	 Dictionnaire de fonctions
+AFORDIM	AFO	 Formules de dimensionnement
+AGDPRMAI	AGMAI	#VALEUR!
+AGDPRPHONE	AGPHO	#VALEUR!
+AGDPRSETTING	AGS	 Paramètre RGPD
+AGDPRVCR	AGVCR	 Recherche RGPD
+AGLOBVAR	AGB	 Variables globales
+AGRPCPY	AGC	 Regroupements d'entreprises
+AGRPFCY	AGF	 Regroupements de sites
+AHISTO	AHI	 Historique/purge
+AHISTOD	AHD	 Historique/purge
+AINDEX	ANX	 Indice spécifique
+AIOBENCH	AIOBE	 Résultats de l'indice de performance
+AITRLNK	AIT	 Composants interactifs
+AJSAUDIT	AJA	 Audit
+AJSCONT	AJC	 Contrat Sdata
+AJSEXCEPT	AJE	 Exception
+AJSSYNC	AJS	 Synchronisation
+ALINK	ALI	 Explorateur de liens
+ALISTEC	ALC	 Outil de requête graphique
+ALISTED	ALD	 Outil de requête
+ALISTEH	ALH	 Outil de requête
+ALISTEL	ALL	 Outil de requête graphique
+ALISTER	ALR	 Outil de requête
+ALISTET	ALT	 Outil de requête graphique
+ALNKSUB	ALB	 Liens de lotissement
+ALOGIN	ALO	 Tableau de connexion
+ALSTRD	ALS	 Derniers enregistrements lus
+AMAINT	AMI	 Mise à jour massive de la base de données
+AMEMO	AMM	 Note
+AMENLOC	AML	 Messages d'en-tête
+AMENUSER	AMU	 Menu du profil utilisateur
+AMETUTI	AME	 Profil professionnel
+AMIGKEY	AMY	 Clés
+AMOTCLE	AMC	 Mots clés de l'aide
+AMOULIN	AI0	 Processus de migration
+AMOULIN1	AI1	 Projet de migration
+AMOULIN2	AI2	 Détails du plan de migration
+AMSK	AMK	 Dictionnaire d'écran
+AMSKACT	AMA	 Table d'affectation action-objet
+AMSKPAR	AMP	 Paramètres de l'objet action
+AMSKZON	AMZ	 Dictionnaire des champs d'écran
+ANAVCRE	ANI	 La navigation
+ANAVFIL	ANH	 La navigation
+ANAVIG	ANG	 La navigation
+ANNUAIRE	ANU	 Annuaire des utilisateurs
+ANODCPS	ANODCP	 Références composites
+ANODCPT	ANODCT	 Propriétés calculées
+ANODE	ANODE	 Nœud (API)
+ANODEBDG	ANODEB	 Liaison de nœud
+ANODGVAR	ANGV	 Variable globale pour l'API
+ANODPBDG	ANODPB	 Propriétés de liaison de nœud
+ANODPROP	ANODP	 Propriétés du nœud
+ANODREF	ANODRF	 Références de nœuds
+AOBJBUR	AOA	 Documents de bureau
+AOBJBURMOD	AON	 Documents par défaut
+AOBJET	AOB	 Objets de base
+AOBJEXT	AOE	 Modèles d'importation/exportation
+AOBJEXTD	AOD	 Lignes d'import/export d'objet
+AOBJEXTMP	AOW	 Importer/exporter un espace de stockage temporaire
+AOBJEXTMPB	AOZ	 Importer/exporter un espace de stockage temporaire
+AOBJEXTMPC	AOY	 Importer/exporter un espace de stockage temporaire
+AOBJEXTMPD	AOV	 Importer/exporter un espace de stockage temporaire
+AOBJEXTMPE	AOU	 Importer/exporter un espace de stockage temporaire
+AOBJEXTR	AOR	 Transcrire l'import/export
+AOBJLNK	AOK	 Explorateur de liens
+AOBJLST	AOL	 Objets de base
+AOBJPROP	AOP	 Propriétés de l'objet
+AOBJSEL	AOS	 Sélectionnez le fichier mémo
+AOBJTAB	AOT	 Tableau d'objets
+AOBJTXT	AOX	 Pièces jointes
+AOBJTXTA	AOM	 Tableau des mots clés
+APACKACV	APACACV	 Code d'activité pour les packages
+APACKAGE	APACK	 Nom du package (API)
+APARIMPEXP	APX	 Paramètres d'import/export
+APATCH	APT	 Suivi des correctifs
+APATCHLOG	APL	 Suivi des correctifs
+APATCHLOGD	APLD	 Suivi des correctifs
+APATCHMOD	APH	 Modèles de configuration
+APATCHTMP	APATMP	 Intégration des correctifs
+APIOPE	APIOPE	 Fonctionnement (API)
+APLCOM	ACM	 Définition du numéro de séquence
+APLCOMH	ACMH	 Définition du numéro de séquence
+APLLCK	ALK	 Table de verrouillage
+APLSTD	AST	 Menus locaux
+APOOLBRG	APB	 Pool de ponts Java
+APOOLWS	APW	 Pool de services Web
+APORTMOD	AMO	 Modules de tableau de bord
+APORTTAB	APA	 Gadgets du tableau de bord
+APORTTYP	ATP	 Groupe de gadgets
+APORTUSER	APU	 Tableau de bord utilisateur
+APORTVIG	AVP	 Gadgets
+APRINTDES	AID	 Descriptif de l'imprimante
+APRINTER	AIM	 Destinations
+APROCESSUS	APR	 Processus
+APROCTEXTE	AXP	 Traiter les textes
+APROFIL	APF	 Profil de l'utilisateur
+APROMEN	APO	 Menu Processus
+APRTAUS	AIA	 Destinations par utilisateur
+APRTBRW	AP2	 Multilistes
+APTLPAGE	APS	 Pages du tableau de bord
+APTLPAR	APP	 Paramètres d'affichage du tableau de bord
+APTLVW	APV	 Vues du tableau de bord
+ARCHPAR	ARC	 Règles d'archivage
+ARCHPARE	ARE	 Paramètres d'archivage
+ARCHPARU	ARU	 Profil utilisateur GED
+ARCHPARW	ARW	 Paramètres d'archivage
+AREFAML	ARN	 Références croisées de texte
+AREFTXT	ART	 Références croisées de texte
+AREPORT	ARP	 Dictionnaire de rapports
+AREPORTA	ARA	 Configuration de l'imprimante
+AREPORTD	ARD	 Paramètres du rapport
+AREPORTG	ARG	 Configuration de l'imprimante
+AREPORTM	ARM	 Tableau des touches d'impression temporaire
+AREPORTS	ARO	 Rapports - sources de données
+AREPORTV	ARV	 Rapports
+AREPORTX	ARX	 Rapports
+AREPORTZ	ARZ	 Rapports ZPL
+AROLE	ARL	 Autorisations au niveau des lignes
+ASHW	ASW	 Représentations
+ASHWBLC	ASWB	 Représentation (blocs)
+ASHWCOL	ASWC	 Représentations (Collections)
+ASHWEXPPRO	ASWR	 Représentations (affichées)
+ASHWFLD	ASWF	 Représentations (Lignes)
+ASHWLNK	ASWK	 Représentations (ancres)
+ASHWMENU	ASWMN	 Représentations (Menus)
+ASHWMET	ASWM	 Représentation (méthodes)
+ASHWOPT	ASWO	 Représentations (Options)
+ASHWPAR	ASWP	 Représentation (paramètres)
+ASHWPARMET	ASWMP	 Représentation (paramètre de méthode)
+ASHWSEC	ASWS	 Représentation (Sections)
+ASTYLE	ASY	 Styles de présentation
+ASTYLEC	ASL	 Styles conditionnels
+ASTYLEP	AYP	 Styles personnalisés
+ASUBPROG	ASU	 Tableau des sous-programmes
+ASUBPROGD	ASP	 Sous-programme (champs)
+ASYSSMDBASSO	ASM3	 X3
+ASYSSMEXTERN	ASM1	 X3
+ASYSSMINTERN	ASM0	 X3
+ASYSSMPROCES	ASM2	 X3
+ATABAUD	ATA	 Champs audités
+ATABDIV	ADI	 Tableaux divers
+ATABIND	ATI	 Dictionnaire d'index
+ATABLE	ATB	 Dictionnaire de tableaux
+ATABTAB	ADV	 Mise en place diverses des tables
+ATABZON	ATZ	 Dictionnaire de terrain
+ATEXMOD	ATM	 Numéro de séquence de texte par module
+ATEXTE	ATX	 Messages du dictionnaire
+ATEXTEXCEP	AEX	 Exceptions (traductions)
+ATEXTRA	AXX	 Textes à traduire
+ATMPTRA	ATT	 Fichier de trace temporaire
+ATRADIS	TAT	 Suivi import/export
+ATRANSAC	ATN	 Type de transaction
+ATYPE	ATY	 Types de données
+ATYPELNK	ATYL	 Liens de types de données
+ATYPELPAR	ATYLP	 Paramètres de type de données
+ATYPEPRO	ATYP	 Type de contenu
+ATYPERPAR	ATYRP	 Paramètres de type de données
+ATYPERUL	ATYR	 Règles de type de données
+AUDITBI	AUI	 Audit bl
+AUDITH	AUD	 Audit - en-tête
+AUDITL	AUL	 Audit - lignes
+AUPDATE	AUPD	 Mise à jour
+AUPDATELINE	AUPDL	 Mise à jour
+AUPDATEPATH	AUPDP	 Mise à jour
+AURL	AUR	 Définition de l'URL
+AUSRBPR	AUB	 Utilisateurs BP
+AUSRSOL	AUO	 Utilisateurs des solutions
+AUSRSTA	AUA	 Statistiques
+AUTILIS	AUS	 Utilisateurs
+AUTILITY	AUTI	 Utilitaires
+AVALATT	AVA	 Valeurs des numéros de séquence
+AVALNUM	AVN	 Valeurs des numéros de séquence
+AVARLOC	AVR	 Configuration de l'assistant de formule
+AVIEW	AVW	 Dictionnaire de vues
+AVIEWB	AVB	 Dictionnaire de vues
+AVIEWC	AVC	 Dictionnaire des clés
+AVIEWD	AVD	 Dictionnaire de vues
+AVIEWE	AVE	 Liste des tables et vues
+AVOCAB	AVO	 Vocabulaire personnalisé
+AVOLUME	AVL	 Volume
+AWEBSERDES	AWY	 Cartographie des services Web
+AWEBSERVIC	AWE	 services Web
+AWINBOUT	AWT	 Dictionnaire des boutons de fenêtre
+AWINBRO	AWB	 Dictionnaire de la fenêtre du navigateur
+AWINDOW	AWI	 Dictionnaire des fenêtres
+AWINPAR	AWP	 Paramètres de la fenêtre
+AWRKHISDES	AWO	 Historique du flux de travail
+AWRKHISJOI	AWJ	 Historique du flux de travail
+AWRKHISMES	AWG	 Historique des messages du flux de travail
+AWRKHISSUI	AWS	 Archives de suivi du flux de travail
+AWRKLNK	AWM	 Modèles de données
+AWRKPAR	AWA	 Règles de flux de travail
+AWRKPARC	AWC	 Règles de workflow (actions)
+AWRKPARF	AWF	 Règles de workflow (signature)
+AWRKPARH	AWH	 Règles de workflow (destinataire)
+AWRKPARX	AWX	 Flux de travail simplifié
+AWRKREG	AWR	 Règles d'affectation
+AWRKREGVAL	AWV	 Affectation des utilisateurs
+AWRKTAB	AWK	 Modèles de données
+AWRKTRN	AWW	 Établi de flux de travail
+AWRKTRND	AWD	 Établi de flux de travail
+AWRKUSR	AWU	 Délégués utilisateurs
+AWSDL	AXL	 services Web
+AWSDL1	AX1	 Structure des services Web
+AYTACT	AYA	 Action Web
+AYTADVPAR	AYU	 Configuration avancée
+AYTBASKED	AYK	 Ligne de panier
+AYTDOC	AYY	 Document HTML
+AYTELTBLC	AYB	 Blocs
+AYTELTBLCW	AYW	 Blocs conditionnés
+AYTELTDLK	AYL	 Liens dynamiques
+AYTELTFLD	AYF	 Jeton de champ
+AYTELTSPE	AYX	 Champs spéciaux
+AYTENT	AYE	 Entité
+AYTFCY	AYS	 Sites Internet
+AYTFRM	AYZ	 Formulaire
+AYTINT	AYI	 Interface
+AYTLINES	AYN	 Lignes par types
+AYTMEN	AYC	 Liste de valeurs
+AYTMES	AYM	 messages
+AYTPAG	AYG	 les pages Web
+AYTPOOWEB	AYO	 Pools de services Web
+AYTPRF	AYD	 Profil du site Internet
+AYTPRFUSR	AYH	 Profil Safe X3 WAS
+AYTPRFX3	AYR	 Utilisateur du site Web
+AYTTEST	AYT	 Essais
+BADDTER	BAT	 Conditions de créance irrécouvrables
+BALAGEEOY	BGY	 Liste des factures en souffrance EOFY
+BALANA	BLA	 Balance analytique
+BALANCE	BAL	 Bilan général
+BALCONSO	BLC	 Balance de vérification de consolidation
+BALDEM	BAM	 Solde en double entrée
+BALDEMIDT	BAI	 Indice de solde en double entrée
+BALPRECSL	BLP	 Soldes de pré-consolidation
+BANK	BAN	 comptes bancaires
+BANKCASHREG	BCREG	 Banque/Caisse enregistreuse
+BANKPOSD	BPL	 Situation bancaire
+BANREC	BEH	 Relevé de rapprochement bancaire
+BANRECD	BED	 Lignes de relevé bancaire
+BAPPOINT	BAP	 Rendez-vous
+BASGEN	BAS	 Assiette de participation aux bénéfices
+BASIND	HRBAI	 Individuel. Base du schéma DPS
+BATCH	BTC	 Paramètres du travail par lots
+BBLOB	BBB	 Dossiers spéciaux
+BCKITOREN	BREN	 Raison de l'intégration de la sauvegarde
+BCLOB	BCB	 Dossiers spéciaux
+BDTTRK	BDT	 Mauvaises dettes
+BENCHTRS	BTS	 Planification d'opération
+BETCPY	BCH	 Paramètres intersociétés
+BETCPYL	BCL	 Paramètres intersociétés
+BGRBAN	BGR	 Groupe bancaire
+BID	BID	 Relevé d'identification bancaire
+BIDXT	BIDXT	 Relevé d'identification bancaire
+BILIND	BIN	 Indicateurs du rapport annuel des salariés
+BILLLADC	BOLC	 Contenu du connaissement
+BILLLADD	BOLD	 Détail du connaissement
+BILLLADH	BOLH	 En-tête du connaissement
+BILLLADWRK	BOLW	 Rapport sur le connaissement
+BILRES	BIL	 Rapport annuel des employés
+BILSTA	BES	 Relevé BOE et billet à ordre
+BILTXT	BIX	 Rapport annuel des employés
+BITMPPORDERP	BIPOP	 Prix ??des bons de commande
+BITMPPORDERQ	BIPOQ	 Quantités de bons de commande
+BITMPSORDERP	BISOP	 Commandes clients - prix
+BITMPSORDERQ	BISOQ	 Commandes clients - quantités
+BLACMM	BLM	 Solde analytique des engagements
+BLAQTY	BLQ	 Bilan quantitatif analytique
+BLOBEXPENSES	BEXP	 Photo de note de frais
+BNKTRSIMP	BTI	 Importer des transferts depuis la trésorerie de Sage
+BOM	BOH	 Nomenclatures d'en-tête
+BOMCREF	BCR	 Référence du composant
+BOMD	BOD	 Nomenclatures détaillées
+BOMPRN	BOP	 Imprimer les nomenclatures
+BOMRET	BMR	 Kit d'essai
+BOMWUS	BOW	 Nomenclature d'utilisation
+BOSIMP	BOSI	 Nomenclature de sous-traitance
+BOX1099	BX9	 1099 boîte
+BP1096PRN	B96R	 1096 table d'impression
+BP1099BEGBAL	B9B	 1099 solde d'ouverture
+BP1099PRN	B9R	 1099 tableaux d'impression
+BPADDRESS	BPA	 Adresses
+BPADDRESSPOR	BPAPOR	 Adresses
+BPADDRESSSA	BPASA	 Adresses
+BPADDRESSXT	BPAXT	 Adresses
+BPARTNER	BPR	 Associé
+BPCARRIER	BPT	 Transporteurs
+BPCCATEG	BCG	 Catégorie de client
+BPCINVLIG	SIL	 Lignes de facture client
+BPCINVLIGA	SIA	 Ligne analytique client
+BPCINVLIGLOC	SILLOC	 Lignes de facture client
+BPCINVVAT	SIT	 Les taux d'imposition
+BPCUSTMVT	MVC	 Transactions clients
+BPCUSTOMER	BPC	 Clients
+BPCUSTOMERXT	BPCTX	 Clients
+BPDLVCUST	BPD	 Client livré
+BPDLVCUSTXT	BPDXT	 Client livré
+BPEXCEPT	BPE	 Exception de la société BP
+BPMISC	BPM	 Donneur d'ordre / tiers divers
+BPMISCCGF	BPG	 Configuration BP divers
+BPS1099GEN	B9G	 Génération 1099
+BPS1099MNT	B9M	 Maintenance fournisseur 1099
+BPS1099PAY	B9P	 Paiements fournisseur 1099
+BPSCATEG	BSG	 Catégorie de fournisseur
+BPSHISUPLN	BSL	 Adresses de livraison
+BPSHISUPP	BSS	 Fournisseurs de sites d'expédition
+BPSINVLIG	PIL	 Lignes de facture fournisseur
+BPSINVLIGA	PIA	 Ligne analytique fournisseur
+BPSUPPLIER	BPS	 Fournisseurs
+BPSUPPMVT	MVS	 Opérations fournisseurs
+BRDKEY	BRD	 Clé de répartition
+BSEINQ	BSI	 Enquête sur le bilan
+BSIBPRNUM	BSIBPN	 Définition du numéro BP
+BSIBPRNUMD	BSIBPND	 Détail de la définition du numéro BP
+BSIDUD	BSIDUD	 Éléments ouverts
+BSIELTMAP	BSIELT	 Détails du mappage des éléments Camt
+BSIELTMAPD	BSIELTD	 Mappage des éléments Camt
+BSIFILFMT	BSIFFM	 Définition du format d'import bancaire
+BSIFILFMTD	BSIFFD	 Format d'importation bancaire déf. détail
+BSIIMP	BSIIMP	 Importation de relevé bancaire
+BSIIMPD	BSIIMPD	 Détail de l'importation du relevé bancaire
+BSIIMPDS	BSIIMPS	 Relevé bancaire imp. sous-détail
+BSIIMPPAR	BSIIP	 Paramètres d'importation bancaire
+BSIIMPTC	BSITC	 Codes de type d'importation bancaire
+BSIINVDIO	BSIIND	 Définition du numéro de facture
+BSIINVDIOD	BSIINDD	 Numéro de facture déf. détail
+BSIITCD	BSIITCD	 Codes de type d'importation bancaire
+BSIMANENT	BSIMAN	 Saisie manuelle
+BSIPAY	BSIPAY	 Paiements
+BSISCT	BSISCT	 Segment d'importation bancaire
+BSISCTD	BSISCTD	 Détail du segment d'importation bancaire
+BSISEAEXD	BSISEA	 Termes exclus
+BSISEALIS	BSILIS	 Liste des termes de recherche
+BSISEALISD	BSILISD	 Détail de la liste des termes de recherche
+BUD	BUD	 Tableau budgétaire
+BUDAPP	BOA	 Approbation du budget
+BUDAPPDET	BAD	 Détail de l'approbation
+BUDFORCAL	BUC	 Formule de calcul du budget
+BUDOD	BDE	 Divers budgets. opérations
+BUDODS	BDO	 Divers budgets. opérations
+BUDPAR	BUP	 Configuration budgétaire
+BUDPURAUD	BUA	 Audit
+BUDREF	BUR	 Budget de référence
+BUDREV	BRV	 Révision budgétaire
+BUDREVDET	BVD	 Détails de l'examen
+BUDTYP	BUT	 Type de budget
+BUDVARCAL	BVC	 Variable de calcul budgétaire
+BUDVER	BUV	 Versions budgétaires
+BUILOCSPA	BLS	 Emplacement du bâtiment
+BULCAL	BUL	 Feuillet de calendrier
+CAAUZ	CAZ	 Tableau des restrictions
+CACCE	CCE	 Dimensions
+CACCEDEF	CDE	 Dimensions par défaut
+CADIEDEF	CDI	 Types de dimensions par défaut
+CADIETPS	CDT	 Types de dimensions
+CADISTMP	DTP	 Codes de pondération budgétaire
+CADSP	DSP	 Allocations analytiques
+CAECOD	CAEC	 Code CAE
+CAISSE	PCA	 Fonds de contribution
+CALCDBG	CDG	 Calcul
+CALENDAFF	CLF	 Projet de produits vendus
+CALENDAR	CLD	 Calendriers
+CALIBRAT	CBT	 Étalonnage
+CALIGUIDES	CGD	 Guides d'étalonnage
+CALLATTEMP	CTT	 Tentative d'appel
+CALRUB	CRB	 Rubriques à calculer
+CALRUBHIS	CRH	 Rubriques à calculer
+CALVAR	CVR	 Variables à calculer
+CAPFLOTMP	CWT	 Flux de capitaux
+CAPVAR	CPV	 Variation de capacité
+CARAREA	CAA	 Régions porteuses
+CARPRICE	CAP	 Listes de prix des transporteurs
+CASHING	CAS	 Collections
+CASHPAYSPA	CPS	 Paiement en éspèces
+CBLOB	CBB	 Dossiers spéciaux
+CBNDET	CBD	 Détail du MRP
+CBNHEA	CBH	 Traitement MRP
+CBNWRK	CBW	 Fichier de travail MRP
+CCMACTION	CCMACT	 Actions
+CCMAPPROVER	CCMAPPR	 Approbateurs de demandes de changement
+CCMCHGREQ	CCMCR	 Changer de requête
+CCMCRDESC	CCMCRD	 Description de la demande de modification
+CCMCRNOTES	CCMCRN	 Pièces jointes à la demande de modification
+CCMCRORIGC	CCMCROC	 Créateurs de clients
+CCMCRORIGE	CCMCROE	 Créateurs externes
+CCMCRORIGI	CCMCROI	 Créateurs internes
+CCMCRORIGS	CCMCROS	 Créateurs de fournisseurs
+CCMIMPBOD	CCMIBOD	 Analyse d'impact-Lignes de nomenclature
+CCMIMPBOH	CCMIBOH	 Analyse d'impact-BOM
+CCMIMPFOD	CCMIFOD	 Analyse d'impact-Prévisions
+CCMIMPFOH	CCMIFOH	 Analyse d'impact-Prévisions
+CCMIMPITM	CCMIITM	 Analyse d'impact-Stock
+CCMIMPITMDET	CCMITMD	 Analyse d'impact-Sites de stockage
+CCMIMPMFGD	CCMMFGD	 Analyse d'impact-Bons de travail
+CCMIMPMFGH	CCMMFGH	 Analyse d'impact-Bons de travail
+CCMIMPPOD	CCMIPOD	 Analyse d'impact-Achats
+CCMIMPPOH	CCMIPOH	 Analyse d'impact-Achats
+CCMIMPPRD	CCMIPRD	 Analyse d'impact-Demande d'achat
+CCMIMPPRH	CCMIPRH	 Analyse d'impact-Demande d'achat
+CCMIMPROD	CCMROD	 Analyse d'impact-Lignes de routage
+CCMIMPROH	CCMROH	 Analyse d'impact-Routage
+CCMIMPSCD	CCMSCD	 Analyse d'impact-Sous-traitance
+CCMIMPSCH	CCMSCH	 Analyse d'impact-Sous-traitance
+CCMIMPSOD	CCMSOD	 Analyse d'impact-Commandes clients
+CCMIMPSOH	CCMSOH	 Analyse d'impact-Commandes clients
+CCMIMPSQD	CCMISQD	 Analyse d'impact-Devis de vente
+CCMIMPSQH	CCMISQH	 Analyse d'impact-Devis de vente
+CCMPLAND	CCMPD	 Détails du plan de demande de modification
+CCMPLANH	CCMPH	 Modifier l'en-tête du plan de demande
+CCMREJDSC	CCMREJ	 Description du rejet
+CCNCOE	COE	 Mettre à jour les coefficients
+CCNRPR	RPR	 Dispositions de renouvellement
+CDFCOD	CDC	 Encodage : codes
+CDFCPY	CDS	 Encodage : sélectionner la société
+CDFFCY	CDY	 Encodage : sélectionner le site
+CDFPAR	CDP	 Recodage : paramètre
+CDIADSP	DAD	 Allocations de dimensions
+CERTIFCCS	CCS	 Certificat de fonds de divertissement
+CFGABQ	CAB	 Tableaux de calcul simples
+CFGDEF	CDF	 Configuration. les valeurs par défaut
+CFGHIS	CFH	 Historique des configurations
+CFGHISHEA	CHH	 En-tête de l'historique de configuration
+CFGLNK	CLN	 Liens vers les symboles du configurateur
+CFGMAC	CFM	 Processus standards
+CFGMEMO	CME	 Mémo du configurateur
+CFGMENLOC	CML	 Menus locaux
+CFGOPTVAR	COV	 Options / variantes
+CFGQST	CQU	 Symboles du configurateur
+CFGSCE	CSC	 Scénarios du configurateur
+CFGSCELIN	CSL	 Lignes de scénario du configurateur
+CFGSEL	CSE	 Sélections du configurateur
+CFGSHA	CSH	 Formes et motifs
+CFGTEX	CFT	 Fichier de travail du configurateur
+CFODUDDATE	CFODD	 Gestion des prévisions de trésorerie
+CFOMANMVT	CFOMM	 Mouvements des prévisions de trésorerie
+CFOTYP	CFOT	 Types de prévisions de trésorerie
+CGVDET	CGVD	 Détail du changement de valeur
+CHEFWRK	CEW	 Gestion des signatures
+CHGVAL	CGV	 Changement de valeur
+CHQBOK	CHB	 Tableau des chèques
+CHQDEJHEA	CQH	 Ch??ques d?«jeuner
+CHQDEJLIG	HRCQL	 Ch??ques d?«jeuner
+CHQNUM	CHN	 Tableau des chèques
+CIGDEF	CIG	 IGS définition
+CIGFXDSOR	CIB	 Ajustement IGS : actifs émis
+CIGREX	CIR	 Paramètres IGS
+CIGREXSEL	CIS	 Sélection des actifs IGS
+CLACTR	HRCLC	 Clause relative aux documents
+CLASSCONV	HRCCV	 Classification des conventions collectives
+CMARKETING	CMG	 Campagne de marketing
+CNGCPY	CNG	 Périodes de congés annuels
+CNGEMP	CNE	 Congé annuel par salarié
+CNSSII	CSII	 Enquête SII
+COFAWRK	CAW	 Certificat d'analyse
+COMPANY	CPY	 Entreprise
+COMPETENCE	CPC	 Compétences
+COMPETENCED	CPD	 Compétences
+COMPEVAL	CEV	 Campagne d'entretiens
+COMREP	COM	 Commissions des commerciaux
+CONCESSION	CCN	 Concession
+CONTACT	CNT	 Contacts
+CONTACTCRM	AIN	 Relations de contact
+CONTACTSA	CNTSA	 Champs RSA supplémentaires
+CONTACTXT	CNTXT	 Contacts
+CONTAINER	CTRH	 Conteneur de fret
+CONTAINERD	CTRD	 Détail du conteneur de fret
+CONTAINERS	CTN	 Conteneurs
+CONTAMT	CAM	 Bases de données annuelles
+CONTAMTX	CAX	 Bases de données annuelles
+CONTCARE	CCA	 Plan de maintenance
+CONTCOV	CCV	 Couverture des contrats de service
+CONTEXT	CNX	 Contextes
+CONTIDX	CIX	 Valeurs d'index
+CONTITM	CIT	 Produit couvert
+CONTPBL	CPL	 Compétences couvertes
+CONTQUAL	CQL	 Contraintes de qualité
+CONTREW	CRE	 Renouvellements de contrats
+CONTREWX	CRX	 Renouvellements de contrats
+CONTSERV	CON	 Contrat de service
+CONTSERVX	COX	 Contrat de service
+CONTTEMPL	COT	 Modèle de contrat de service
+CORREP	COP	 Représentant responsable
+CORRESPOND	COR	 Contact Outlook
+COSTSTCB	STCB	 Structure des coûts - calendriers
+COSTSTCD	STCD	 Structure des coûts - documents
+COSTSTCF	STCF	 Structure des coûts - site
+COSTSTCH	STCH	 La structure des coûts
+COSTSTCL	STCL	 Structure des coûts - lignes
+COSTSTCR	STCR	 Correspondance des coûts
+COTISATION	HRCOT	 Contributions
+COURISLIG	CIL	 Lignes de programme individuelles
+COURSEI	CSI	 Programme individuel
+COURSEISA	CSISA	 Programme individuel
+COUT	COU	 Coût provisoire
+COUTFIN	COF	 Coût financier
+COUTREEL	HRCOR	 Prix ??actuel
+CPCEMP	CPE	 Compétences par employé
+CPTANALIN	CAL	 Lignes comptables analytiques
+CPTFOOTLNK	CFL	 Lignes comptables analytiques
+CRMCLOB	CRC	 Fichier texte CRM
+CRMTRS	CTR	 CRM de transaction d'entrée
+CRMTRSVAL	CTV	 Transaction de saisie de valeurs CRM
+CSFPARH	CWH	 Paramètres d'extraction d'en-tête
+CSFPARL	CWL	 Paramètres d'extraction de ligne
+CSFRES	CWR	 Résultat de l'extraction
+CSFRESD	CSRD	 Analyse des flux de trésorerie
+CSFRESH	CSRH	 Analyse des flux de trésorerie
+CSFRESL	CSRL	 Analyse des flux de trésorerie
+CSHWRT	DSIIC	 Table de travail caisse SII
+CSICPC	CIC	 Compétences du programme
+CSTAXUID	CSUID	 Identifiant fiscal
+CSVATDAA	CSDAA	 Données de soumission en ligne
+CSVATMAP	CSMAP	 Cartographie des soumissions en ligne
+CSVATMAPD	CSMAPD	 Cartographie des soumissions en ligne
+CTRLNIVW	CNW	 Lév. établi de contrôle
+CTRUKIRT	UKIRT	 Champs supplémentaires
+CTSWSP	CTSW	 Système de contrôle
+CUMUL	CUM	 Totaux
+CUNLISDET	CUD	 Comptes
+CUNLISTE	CUL	 Compter les feuilles de calcul
+CUNSERDET	CSD	 Le numéro de série compte
+CUNSESSION	CUN	 Séance d'inventaire
+DADCPY	DCP	 Société DASD
+DADDNA	DNA	 Employés de l'ADN
+DADDNA2	DNB	 Primes ADN
+DADDNA3	DNC	 ADN Allocations mensuelles
+DADDNA4	DND	 Avis ADN
+DADDNA5	DNE	 Allocations ADN
+DADDNA6	DNF	 Horaires de travail de l'ADN
+DADDNA7	DNG	 ADN Rémunération payée
+DADDNA8	DNH	 Rémunération de DNA Entertainment
+DADEMP	HRDAE	 Employés DADS-U
+DADEMP10	DAL	 Allocations GPEC DADS-U
+DADEMP11	DAM	 Heures supplémentaires DADS-U
+DADEMP12	DAQ	 Bien-être des bénéficiaires du DADS-U
+DADEMP121	DQE	 Bien-être DADS-U
+DADEMP2	DAS	 Employés DADS-U
+DADEMP3	DAP	 Bien-être DADS-U
+DADEMP31	DPE	 Bien-être des événements DADS-U
+DADEMP32	DPP	 Bien-être salarial DADS-U
+DADEMP33	DMU	 DADS-U comp. santé ins.
+DADEMP34	DME	 Comp. d'événements DADS-U. santé ins.
+DADEMP35	DMP	 Rémunération DADS-U comp. h. ins.
+DADEMP4	DAC	 Employés DADS-U
+DADEMP5	DAG	 Économies DAS-U
+DADEMP6	DAH	 Actions DADS-U
+DADEMP7	DAI	 Avantages DADS-U
+DADEMP8	DAJ	 Dispenses DADS-U
+DADEMP9	DAK	 Allocations DADS-U
+DADFCY	DFC	 Site DAS2
+DADFCY1	DFY	 Site DADS
+DADFCY2	DFP	 Site DADS Bien-être
+DADFCY3	DFR	 Retraite du site DADS
+DADFCY4	DFQ	 Site DADS Bien-être
+DATEVBPACC	DTB	 Affectation DATEV BP
+DATEVCHRONO	DTC	#VALEUR!
+DATEVGLACC	DTA	 Compte général DATEV. affectation
+DATEVTAX	DTT	 Attribution du code fiscal DATEV
+DCLCUSVATBE	DLCB	 Liste annuelle des clients
+DCLCUSVATBED	DLCBD	 Liste annuelle des clients
+DCLEECVATBE	DLEB	 Relevé de TVA UE (en-tête)
+DCLEECVATBED	DLEBD	 Relevé de TVA UE (détail)
+DCLINVNX3	DSIII	 Bâtiments SII
+DCLROE	LROE	 240 Forme espagnole
+DCLROEXT	LROEXT	 240 données externes du formulaire espagnol
+DCLROEXTC	LROEXC	 240 données du cadastre du formulaire espagnol
+DCLSII	DSII	 Moniteur SII
+DCLVAT	DLV	 Déclaration fiscale sur les débits
+DCLVATAGRB	VATAGR	 Livres agrégés TVA
+DCLVATBOXDBD	DLVBD	 Détail TVA
+DCLVATBOXH	DLVB	 En-tête TVA
+DCLVATBOXPYD	DLVBP	 Détail TVA
+DCLVATITA	DVI	 Déclaration détaillée de TVA italienne
+DCLVATITA2	DV2	 Déclaration totale de TVA italienne
+DCLVATITA3	DV3	 Déclaration annuelle de TVA italienne
+DCLVATPAY	DVP	 Déclaration / perception fiscale
+DCLVATPORB	DVPB	 Informations sur l'assiette TVA
+DCLVATPORF	DVPF	 Champs de déclaration de TVA
+DCLVATPORH	DVPH	 Déclaration de TVA
+DCLVATPORL	DVPL	 Lignes de déclaration de TVA
+DCLVATPORP	DVPP	 Paramètres TVA
+DCLVATPORT	DVPT	 Impôts
+DCLVATSPA	DVS	 Table de travail fiscale (SPA)
+DEB	DEB	 Déclaration d'échange UE
+DEBPAR	DER	 Paramètres de calcul Intrastat
+DEBREGNAT	DRN	 Règle et nature du mouvement
+déc-83	DEC	 2483 déclaration
+DECAT	DLA	 Déclaration WI
+DECCHARGE	DCH	 Déclarations de charges
+DEFVAL	DVA	 Valeurs par défaut complexes
+DEMANDE	DEM	 Demande de formation
+DEMCONGE	DCG	 Demandes de vacances
+DEMLIG	DML	 Lignes de demandes de formation
+DEMSPLITS	DCGSP	 Laisser les divisions de sous-types
+DEPREC	DEP	 Charge
+DEPRECARC	DEA	 Archives des frais
+DEPSIMU	DPS	 Charge
+DIAHOU	DIH	 Schémas d'horaires
+DICODAD	DDA	 Dictionnaire de terrain DADS-U
+DICODSN	DSN	 Dictionnaire de champs DSN
+DICOEMP	DIC	 Dictionnaire de domaine des employés
+DIETRS	DTR	 Transaction de saisie analytique
+DIETRSXX	DTX	 Transaction de saisie analytique
+DKSDATA	DKD	 Signatures électroniques
+DKSDATAFRA	DKF	 Signatures électroniques
+DKSDATAPOR	DKP	 Signatures électroniques
+DKSJAV	DKJ	 Paramètres de connexion
+DKSKEY	DKK	 Gestion des clés
+DKSLOG	DKL	 Journal des signatures
+DMWBPREXC	DMWBPE	 Exceptions en matière d'élimination des déchets
+DMWPAORD	DMWPAOR	 Gestion de l'élimination des déchets
+DMWPRODPACKD	DMWPPAD	 Mission d'emballage du produit
+DMWPRODPACKH	DMWPPAH	 Mission d'emballage du produit
+DMWQTY	DMWQTY	 Quantité de déchets éliminés
+DMWQUOTAD	DMWQUOD	 Quota de gestion des déchets
+DMWQUOTAH	DMWQUOH	 Quota de gestion des déchets
+DMWSCHEME	DMWSC	 Programme d'élimination des déchets
+DMWWEIGHT	DMWWEI	 Poids des déchets
+DNODEBNOT	DNO	 Bons d'intérêt
+DOCSIINX3	DSIID	 Documents externes SII
+DOOBPCINT	DBI	 Clients internes
+DOOBPCLNK	DBL	 Association donneuse d'ordre
+DPRMOD	DPM	 Méthodes d'amortissement
+DPRMODOPT	DMO	 Option méthode d'amortissement
+DPRMODRAT	DMR	 Taux de méthode d'amortissement
+DROITVOTE	DVT	 Droit de vote
+DUCS0	DCS	 DUCS
+DUCS1	DCL	 DUCS
+DUCS2	DCT	 DUCS Transports
+DUCS3	DCX	 Taxe de transport DUCS
+DUDLNK	DLN	 Liens d'articles ouverts
+DUEEMP	DUE	 Extraction DUE
+ECCNEND	E52	 Evt - fin de concession
+ECCNREV	E51	 Evt - ajout de concession. clause
+ECCSTA	ECS	 Statuts des versions majeures
+ECCVAL	EVL	 Versions
+EDIBPRCPY	EBC	 Flux EDI par tiers/société
+EDIBPRCPYD	EBCD	 Flux EDI par tiers/société
+EDIBPRPAR	EBP	 Partenaires EDI par BP
+EDICAT	ECA	 Catégorie EDI
+EDICATD	ECAD	 Catégorie EDI (filtres)
+EDICATK	ECAK	 Catégorie EDI (autorisations)
+EDICATL	ECAL	 Catégorie EDI (législations)
+EDICATREF	ECR	 Autorisation de catégorie réf.
+EDICPYPAR	ECP	 Partenaires EDI par entreprise
+EDICPYPARD	ECPD	 Partenaires EDI par entreprise
+EDICPYPARFLO	ECPDF	 Flux EDI par entreprise
+EDIDEB	EDB	 Déclaration d'échange UE
+EDIFCYPAR	EFP	 Partenaire EDI par site
+EDIFLO	EFL	 Couler
+EDIFLOA	EFLA	 Pièce jointe
+EDIFLOAP	EFLAP	 Paramètres
+EDIFLOD	EFLD	 Détail du flux
+EDIFRM	EDM	 Formules
+EDIMSG	EMS	 Mappage des messages
+EDIMSGA	EMSA	 Autorisations entrantes
+EDIMSGD	EMSD	 Détails du mappage des messages
+EDIPAR	EDP	 Configuration des messages
+EDIPARTNER	EPR	 Partenaires EDI
+EDIPARTNERD	EPRD	 Partenaires EDI
+EDIPTC	EPT	 Protocole
+EDIPTCD	EPTD	 Détail du protocole
+EDIPTCM	EPTM	 Détail du protocole
+EDIRUN	EDR	 Lancement du processus
+EDIRUND	EDRD	 Lancement du processus
+EDISEG	EDS	 Segments
+EDISEQFIL	ESF	 Fichier séquentiel
+EDISEQFILD	ESFD	 Détail du fichier séquentiel
+EDISEQFILF	ESFF	 Fichiers séquentiels
+EDISTO	EST	 Espace de stockage temporaire
+EDISTOC	ESTC	 Fichier texte (clob)
+EDISTOE	ESTE	 Événements
+EDISTOF	ESTF	 Détail du flux
+EDISTOJ	ESTJ	 Erreur
+EDISTOU	ESTU	 Stockage
+EDITMPDOC	ETC	 Documents
+EDITMPLOG	EDL	 Enregistrer
+EDITRBK	EBK	 Rapport de rapprochement bancaire
+EDITRKDOC	EDK	 Documents
+EDIXMLFIL	EXF	 Fichier XML
+EDIXMLFILD	EXFD	 Détails du fichier XML
+EDIXMLFILF	EXFF	 Fichiers XML
+EDIXMLFILP	EXFP	 Détails du fichier XML
+EDIXMLFILXSD	EXSD	 Fichiers XSD
+EDIXSDUPL	EXU	 Téléchargement EDI du fichier XSD
+EDIXSDUPLLOB	EXUL	 Champ de lobes
+EDTDADSU	EDU	 Impression du fichier DADSU
+EDTTDS	ETD	 Rapport de fichier TDS
+EECBIDWL	EWL	 Statut de la liste blanche
+EFASACT	E21	 Evt - mise à jour
+EFASAFFAGE	E22	 Evt - transfert analytique/géo
+EFASCCN	E53	 Evt - mise à jour des attributs de concession
+EFASCCNAGE	E34	 Evt - transfert de provision
+EFASCCNCNL	E32	 Evt – suppression d'éléments
+EFASCCNISS	E33	 Evt - provision pour cession d'actifs
+EFASCFS	E38	 Evt -Classement à vendre
+EFASCHGIMP	E23	 Evt - modifier l'allocation du compte
+EFASCHGPPL	E37	 Changement du plan de production Evt
+EFASCNL	E30	 Evt – suppression d'éléments
+EFASCRT	E24	 Evt - création d'actifs
+EFASIML	E25	 Evt - perte de valeur
+EFASISS	E26	 Evt - cession d'actifs
+EFASLNKCNL	E36	 Evt – suppression d'éléments
+EFASMTC	E27	 Evt - changement de méthode
+EFASPLMDR	K33	 Evt - Amélioration
+EFASREEVAL	E28	 Evt - réévaluation
+EFASRNW	E31	 Evt-renouvellement
+EFASRNWCNL	E35	 Evt – suppression d'éléments
+EFASRUCRT	K24	 Evt - création d'actifs
+EFASRURST	K32	 Evt - relancer l'amortissement
+EFASRUSTP	K31	 Evt - arrêter l'amortissement
+EFASVATREG	E29	 Evt - ajuster. taxe sur les ventes d'actifs
+EGRTCASH	E61	 Evt - transfert de subvention
+EGRTCNL	E64	 Evt - Suppression de subvention
+EGRTCRB	E63	 Evt- subvention réinsertion
+EGRTCRT	E62	 Evt - création de subvention
+EINVMAP	EINVMAP	 Cartographie
+EINVMAPD	EINVMD	 Détails
+EINVMAPNODES	EINVMND	 Nœud
+EINVMAPXSD	EINVMXS	 Fichiers XSD
+EINVOUT	EOUT	 Factures électroniques clients
+EINVWK	EIVW	 Table de travail de facturation électronique
+EINVWKD	EIVWD	 Table de travail de facturation électronique
+ELEAACTU	E41	 Evt - actualisation du contrat
+ELEACNL	E47	 Evt - suppression du contrat
+ELEACRT	E42	 Evt - création de contrat
+ELEAEND	E43	 Evt - fin de contrat
+ELEAPAY	E44	 Evt - frais de contrat
+ELEARPU	E45	 Evt - exercice d'option d'achat
+ELEATRM	E46	 Evt - résiliation du contrat
+ELOFCIM	E01	 Evt - modifier le compte de dépenses
+ELOFCNL	E03	 Evt - suppression des dépenses
+ELOFVATREG	E02	 Evt – Taxe de vente, ajustement des dépenses
+EMODELE	E00	 Evt - tableau modèle
+EMPCTR	ECT	 Contrat en cours
+EMPCTRUKIRT	CTRUR	 Champs supplémentaires
+EMPCTRUKISTG	CTRUSG	 Champs supplémentaires
+EMPLOAD	AD	 Informations administratives
+EMPLOCHD	CHD	 Enfants
+EMPLOCPT	CPT	 Information comptable
+EMPLOCTR	HRCTR	 Contracter
+EMPLOCTRAFR	CTRAFR	 Champs Afrique supplémentaires
+EMPLOCTRAUS	CTRAUS	 Champs supplémentaires pour l'Australie
+EMPLOCTRCPT	CPR	 Informations comptables contractuelles
+EMPLOCTREMP	CTE	 Contrat par salarié
+EMPLOCTRFRA	CTRFRA	 Champs France supplémentaires
+EMPLOCTRMID	CTRMID	 Champs supplémentaires au Moyen-Orient
+EMPLOCTRNA	CTRNA	 Champs supplémentaires
+EMPLOCTRPEN	CPN	 Positionner les cond dangereux en suite
+EMPLOCTRPOR	CTRPO	 Contracter
+EMPLOCTRSA	CTRSA	 Champs RSA supplémentaires
+EMPLOCTRSTG	HRCSG	 Contracter
+EMPLOCTRUKI	CTRUKI	 Champs supplémentaires
+EMPLOCUM	EPC	 Totaux
+EMPLODIRNUM	HREDM	 Numéros de directive
+EMPLOELC	ELC	 Listes électorales
+EMPLOEXM	HREXM	 Degrés
+EMPLOEXN	EXN	 Notes de dépenses
+EMPLOHAB	HAB	 Autorisations
+EMPLOID	ID	 État civil
+EMPLOIDAFR	EAF	 Champs Afrique supplémentaires
+EMPLOIDAFRRT	EAFR	 Champs Afrique supplémentaires
+EMPLOIDAUS	EAUS	 Champs supplémentaires pour l'Australie
+EMPLOIDESS	IDES	 État civil
+EMPLOIDMID	EMID	 Champs supplémentaires au Moyen-Orient
+EMPLOIDMIDRT	EMIR	 Champs supplémentaires au Moyen-Orient
+EMPLOIDNA	IDNA	 Champs supplémentaires
+EMPLOIDPOR	IDPOR	 État civil
+EMPLOIDRT	IDRT	 État civil
+EMPLOIDSA	ESA	 Champs RSA supplémentaires
+EMPLOIDSART	ESAR	 Champs RSA supplémentaires
+EMPLOIDSTG	IDSG	 État civil
+EMPLOIDUKI	IDUKI	 Champs supplémentaires
+EMPLOJNT	JNT	 Conjoints (>1)
+EMPLOMED	MED	 Examens médicaux
+EMPLOPAR	PAR	 En différé
+EMPLOPAS	EPA	 Tarifs personnalisés WHT
+EMPLOPOT	EPO	 Position
+EMPLORIB	RIB	 Relevé d'identification bancaire
+EMPLORIBSTG	RIBSG	 Relevé d'identification bancaire
+EMPLOSAL	SAL	 Gains de salaire
+EMPLOTAXAFR	ETA	 Informations fiscales
+EMPLOTAXREC	ETR	 Informations fiscales
+EMPLOTRY	TRY	 Expérience professionnelle
+EMPSBD	ESB	 Subalterne
+EMPUKISTG	IDUSG	 Champs supplémentaires
+ENTITE	ENT	 Entité
+ENVELOPPE	ENV	 Enveloppe
+ENVFIY	ENF	 Distribuer l'enveloppe/exercice financier
+EPAADDPAY	EPAADP	 Paiements supplémentaires
+EPADETAILS	EPADET	 Paiements externes
+EPAGENPAY	EPAGPP	 Générer des paiements externes
+EPAHEADER	EPAHEA	 Paiements externes
+EPARAT	EPARAT	 Tarifs standards
+EPARATD	EPARATD	 Taux de paiement externe
+EPASETVAR	EPASLV	 Variables
+EPASUSPEND	EPASPD	 Suspension
+EPATYP	EPATYP	 Taper
+EPHYAFFGEO	E82	 Évt - Phys. transfert géographique d'actifs
+EPHYCRT	E81	 Evt - Création d'actifs physiques
+EPHYISS	E83	 Evt - Cession d'actifs physiques
+ESCSRE	ECE	 Historique des escalades
+ESINVD	ESID	 Lignes de facture
+ESINVH	ESIH	 Factures
+ESINVNOT	ESIN	 Notes de facture
+ESINVTRDPTY	ESI3P	 Facturer à des tiers
+ESLSALTYP	ESTY	 Types de ventes CE
+ESLSALTYPD	ESTYD	 Types de ventes CE
+ESLTYPASS	ESTA	 Affectation par types de ventes EC
+ESLTYPASSD	ESTAD	 Affectation par types de ventes EC
+ESSDCG	ESDCG	 Demandes de vacances
+ESSDOCBLB	ESDL	 Génération de documents ESS
+ESSDOCGEN	ESDG	 Génération de documents ESS
+ESSDOCGENDET	ESDGD	 Génération de documents ESS
+ESSDOCTMP	ESSDT	 Génération de documents ESS
+ESSEMLBLB	ESBL	 Génération de fiche de paie ESS
+ESSEMLTMP	ESSMT	 Valeurs des employés
+ESSMGRLNK	ESML	 Lien du gestionnaire
+ESSMGRLNKDET	ESMLD	 Détail
+ESSTAXBLB	ESTL	 Génération de documents ESS
+ESSUSRTRK	ESUT	 Utilisateurs
+ESSWRKAFR	EWAF	 Champs Afrique supplémentaires
+ESSWRKCHD	EWCHD	 Enfants
+ESSWRKEMP	EWID	 État civil
+ESSWRKEXM	EWEXM	 Degrés
+ESSWRKFLWDET	ESWD	 Flux de travail
+ESSWRKJNT	EWJNT	 Conjoints (>1)
+ESSWRKMID	EWMID	 Champs supplémentaires au Moyen-Orient
+ESSWRKPOR	EWPOR	 État civil
+ESSWRKRIB	EWRB	 Relevé d'identification bancaire
+ESSWRKSA	EWSA	 Champs RSA supplémentaires
+ESSWRKTRY	EWTRY	 Expérience professionnelle
+ESSWRKUKI	EWUKI	 Champs supplémentaires
+EURSRVDCL	ESH	 Déclaration européenne de services
+EURSRVDCLD	ESD	 Déclaration européenne de services
+EVAEMP	EVE	 Entretien
+EVAEMPACT	EVI	 Entretien d'action
+EVAEMPCPC	EVC	 Compétences en entretien
+EVAEMPDET	EVD	 Performance des entretiens
+EVAEMPIND	EVIN	 Indicateur de responsabilité
+EVAEMPMIS	EVM	 Entretien de mission
+EVCRESULT	EVCR	 Résultat du contrôle du numéro de TVA intracommunautaire
+EVENTTRNP	EVT	 Incident de transport
+EXCEPTC	ECC	 Exceptions de calcul
+EXCEPTD	ECD	 Exceptions de calcul
+EXCEPTH	ECH	 Exceptions de calcul
+EXCEPTV	ECV	 Exceptions de calcul
+EXKWORD	EKW	 Mots-clés existants
+EXOPAY	EXO	 Exonération de salaire
+EXPARAM	EXM	 Paramètres
+EXPENSES	EXS	 Frais
+EXPENSESH	EXH	 Frais
+EXPENSESHEA	EXSH	 Notes de dépenses
+EXTRMPRODUCT	EXTRMPR	 Article vitrine
+EXTRMPROVIDE	EXTRMPV	 Fournisseur vitrine
+FACGROUP	FGR	 Regroupement de sites
+FACILITY	FCY	 Des sites
+FACTOR	FCT	 Facteurs
+FAEPAR	FAE	 Configuration d'ACCENTFIL
+FAMPB	PBL	 Groupe de compétences
+FAMPBQUE	PBQ	 Files d'attente correspondantes
+FAMPBREP	PBR	 Employés qualifiés
+FASFAM	FAM	 Groupes d'actifs
+FIEDIC	FID	 Critères de cible
+FIEDICFIE	FDF	 Champs de critères cibles
+FIFOCONVAR	FIFCV	 Calcul du taux FIFO
+FIFOCONVARD	FIFCVD	 Calcul du taux FIFO
+FILEDIH	FEH	 Structure du fichier EDI
+FILEDIL	FEL	 Liste des valeurs EDI
+FILTDS	FTD	 Structure du fichier DADS-U
+FILTDSLIS	FTL	 Liste des structures de fichiers N4DS
+FILTDSMSG	FTM	 Liste des structures de fichiers N4DS
+FISCALYEAR	FIY	 Années fiscales
+FISCYEAR	FIS	 Exercice fiscal
+FLXJOB	FJH	 Processus d'affaires
+FLXJOBRSP	FJR	 Flux de travail - Gestionnaires
+FONDS	FDS	 Fonds
+FORCTR	FOC	 Formule du document d'arrivée
+FRECST	FCS	 Coût
+FREFLD	FRF	 Champs libres
+FRTCLS	FRT	 Classe de fret
+FRTCOMCOD	FCC	 Code de marchandise de fret
+FUP	FUP	 Rappels effectués
+FUPGRP	FGP	 Groupes de rappel
+FUPTXT	FPT	 Textes de rappel
+FXBLOB	FBB	 Dossiers spéciaux
+FXDASSETS	FAS	 Actifs
+FXDLIFL	FLU	 Suivre les fonds
+FXDLOFGRP	LFG	 Regroupement de dépenses
+FXDMVT	FXM	 Import de mouvement - En-tête
+FXDMVTD	FXD	 Import de mouvement - Détail
+GACCAUZ	GCA	 Comptes compatibles
+GACCCLS	CLS	 Classes de comptes
+GACCCODE	CAC	 Codes comptables
+GACCCODLIG	CCL	 Lignes de code comptable
+GACCDEF	GCF	 Comptes par défaut
+GACCDENCOD	CDA	 Attribut de paiement
+GACCDIM	GCD	 Types de dimensions par défaut
+GACCDUDATE	DUD	 Éléments ouverts
+GACCENTRY	HAE	 Écritures comptables
+GACCENTRYA	DAA	 Ligne de comptabilité analytique
+GACCENTRYD	DAE	 Lignes d'écriture comptable
+GACCFIX	GAF	 Entrées récurrentes
+GACCFIYENA	FYA	 C/avant. Fichier temporaire
+GACCFIYEND	FYD	 C/avant. Fichier temporaire
+GACCGRUPYM	GRY	 Groupes de comptes
+GACCINTCPY	GIC	 Écriture de journal intersociétés
+GACCINTCPYA	GIA	 Lignes ana du journal intersociétés
+GACCINTCPYD	GID	 Lignes d'écriture de journal intersociétés
+GACCOUNT	GAC	 Comptes
+GACCOUNTA	GAA	 Comptes (tableau supplémentaire)
+GACCPYM	GYM	 Pyramides de comptes
+GACCPYMLIK	GYK	 Liens vers la pyramide des comptes
+GACCPYMPRT	GYP	 Imprimer des pyramides
+GACCTMP	HAT	 Écritures comptables
+GACCTMPA	AAT	 Ligne de comptabilité analytique
+GACCTMPD	DAT	 Lignes d'écriture comptable
+GACM	GCM	 Modèle de base du compte
+GAJOUSTA	JST	 Journaux - rapports par période
+GAPARBSE	PBS	 Codes de rapport par défaut
+GAPARDUM	PDM	 Transfert de solde de compte
+GAUTACE	GAU	 Journaux automatiques
+GAUTACED	GAD	 Pièces automatiques (lignes)
+GAUTACEF	GAG	 Formules de journal automatiques
+GAUTACEL	GALEG	 Législation sur les journaux automatiques
+GAUTRCTMP	GTT	 Tableau de traçabilité temporaire
+GAUTRCVCR	GAT	 Traçabilité automatique des journaux
+GBAGSCR	GBS	 Écran de balance âgée
+GCACCOA	GCO	 Compte. opérations de saisie de code
+GCCEGRUPYM	CRY	 Analyse de la pyramide des groupes
+GCCEPYM	CYM	 Pyramides dimensionnelles
+GCCEPYMLIK	CYK	 Liens vers la pyramide des dimensions
+GCCEPYMPRT	CYP	 Imprimer des pyramides
+GCLCACEPAR	CLC	 Écritures de journal calculées
+GCOA	COA	 Plan comptable
+GCOMMIT	CMM	 Engagements
+GCOMMITD	CMD	 Détails de l'engagement
+GCOMMITX	CMX	 Engagements (réf)
+GDIAACC	GDA	 En-tête du schéma de compte
+GDIAACCD	GDC	 Lignes du schéma de compte
+GDIAENTRY	GDE	 Opérations d'entrée
+GDIAENTRYD	GDD	 Opérations d'écriture de journal
+GDIE	DIE	 Types de dimensions
+GDPDUDUD	GDPDUD	 Éléments ouverts
+GDUDSCR	GDS	 Écrans d’éléments ouverts
+GENTLOT	LOT	 Lots de pièces comptables
+GENTLOTA	LOA	 Lignes de saisie des lots analytiques
+GENTLOTD	LOD	 Lignes de saisie de lots générales
+GENTLOTH	LOH	 En-tête de saisie de lot
+GFSATT	GFSATT	 Attribut
+GFSATTVAL	GFSATTV	 Valeur d'attribut
+GFSCALEXP	GFSCEP	 Exception de calendrier
+GFSCUSFLDS	GFSCF	 Les champs personnalisés
+GFSCUSVALS	GFSCV	 Valeurs personnalisées
+GFSITFATTV	GFSIAV	 Attribut produit-site
+GFSITMATT	GFSIA	 Attribut du produit
+GFSMRK	GFSMRK	 Marqueur
+GFSOBJ	GFSOBJ	 Objets
+GFSOPTLIN	GFSOL	 Lignes de la matrice d'optimisation
+GFSOPTMAT	GFSOM	 Matrice d'optimisation
+GFSPIN	GFSPIN	 Type de broche d'opération
+GFSSETEXC	GFSSTE	 Exceptions de temps de configuration
+GFSSETTIM	GFSST	 Matrice de temps de configuration
+GFSTAG	GFSTAG	 Étiqueter
+GFUPSCR	GFP	 Écran de rappels
+GGRILLE	RIL	 Grille d'entrée
+GJOUCOA	JCO	 Journaux - Plan comptable
+GJOURNAL	JOU	 Codes journaux
+GLCONSO	GLC	 Grand livre de consolidation
+GLED	LED	 registre
+GRANTS	GRT	 Subventions
+GRILLE	GRI	 Grille d'entrée
+GRPACEMTC	GRM	 Entrées de groupe correspondantes
+GRPAUTACE	GRA	 Groupe de journaux automatiques
+GRPCPC	GCP	 Groupe de compétences
+GRPCPCD	HRGCD	 Détail de l'ensemble des compétences
+GRPCUR	GCU	 Groupes de devises
+GRPDSP	GSP	 Groupes de distribution
+GRPSAC	GSC	 Groupes de contrôle
+GSTDTL	GDL	 Détail de la TPS
+GSTGRP	GSTGH	 En-tête du groupe TPS
+GSTGRPD	GSTGD	 Détails du groupe TPS
+GSTHDR	GHR	 En-tête de TPS
+GSTPER	GSTPH	 En-tête de la période de déclaration de la TPS
+GSTPERD	GSTPD	 Détails de la période de déclaration de la TPS
+GTABACC	GTC	 Écrans de demande
+GTABACC2	GT2	 Demandes de compte
+GTABACC3	GTC3	 Graphique du solde
+GTEGRP	GTEGH	 Groupes de types d'entrée
+GTEGRPD	GTEGD	 Groupes de types d'entrée
+GTMPMTC	GMT	 Table de correspondance temporaire
+GTYPACCENT	GTE	 Types de documents
+GVARCODPAR	GVA	 Paramètres des variables
+GVARGAU	GVG	 Variables de journal automatiques
+GVARPARGAU	GVP	 Paramètres des variables
+GVARPARVAL	GVV	 Valeurs des paramètres
+HABCODPOR	HRHAB	 Code d'habilitation
+HANDLING	HSH	 Instruction de traitement des stocks
+HANDLINGR	HSR	 Instruction du conteneur
+HD1CLOB	HD1	 Le service demande des fichiers texte
+HD2CLOB	HD2	 Fichiers texte d'actions
+HD3CLOB	HD3	 Fichiers texte de solutions
+HD4CLOB	HD4	 Commerl rapporte des fichiers texte
+HD5CLOB	HD5	 Fichiers texte marketing
+HD6CLOB	HD6	 Mini-fichiers texte CRM
+HD7CLOB	HD7	 Fichiers txt contre le srv arrière
+HD8CLOB	HD8	 Plombs en tête
+HDKTASK	HDT	 Service après-vente. consommation
+HDKTASKINV	HDI	 Consommations à facturer
+HDKTRS	HTR	 Transaction d'entrée HDK
+HDKTRSVAL	HTV	 Transaction de saisie de valeur HDK
+HISCTR	HISC	 Histoire
+HISPARMVT	HPM	 Histoire du mouvement
+HISPOA	HIP	 Historique des paiements anticipés
+HISTAXSPA	HTS	 Historique de l'extraction fiscale
+HISTOAMD	HAM	 Historique des modifications
+HISTOCRM	HST	 Histoire
+HISTOCTX	HIC	 Contexte d'archivage
+HISTODUD	HDU	 Archives des éléments ouverts
+HISTOMDT	HMDT	 Paiements effectués
+HISTOOMM	HIM	 Historique des envois
+HISTOPAYE	HSP	 Historique de paie
+HISTOREGUL	HRHSR	 Historique de paie
+HLYDAY	HLY	 Vacances publiques
+HON281	HHO	 281,5 frais (Belgique)
+HON281D	DHO	 Détails des frais 281,5
+HONLIN	HLN	 Lignes de frais
+HONPRV	PRV	 Fournisseurs de services
+HOROITM	HOI	 Articles horodatés
+HRAEDETAIL	HRAED	 Détail des gains attachables
+HRAEHEADER	HRAEH	 En-tête de gains attachable
+HRAESUSPEND	HRAES	 Suspension des gains pouvant être saisie
+HRAFRCLASS	HRAFRCL	 Contrat africain. classification
+HRAFRCLSOLD	HRCLSO	 Contrat africain. classification
+HRATTEARRAT	HRAER	 Taux de déduction AE
+HRATTEARTYP	HRAET	 Types de revenus pouvant être saisis
+HRCATACTION	HRCAN	 Catégorie d'action
+HRCATCSP	HRCSP	 Catégorie socioprofessionnelle
+HRCLLCVT	HRCLV	 Convention collective
+HRCOMPANYAFR	CPYAFR	 Entreprise
+HRCOMPANYAUS	CPYAUS	 Entreprise
+HRCOMPANYKSA	CPYKSA	 Entreprise
+HRCOMPANYMID	CPYMID	 Entreprise
+HRCOMPANYNA	CPYNA	 Données légales NA
+HRCOMPANYPO	CPYPO	 Entreprise
+HRCOMPANYUKI	CPYUKI	 Données juridiques britanniques
+HRCPYREC	CPYREC	 Rapport de rapprochement de l'entreprise
+HRCPYRECPAY	CPYRECP	 Rapport de rapprochement de l'entreprise
+HRCPYRECPM	CPYRECM	 Rapport de rapprochement de l'entreprise
+HRCPYRECTERM	CPYRECT	 Rapport de rapprochement de l'entreprise
+HRCPYUKALL	CUAL	 Indemnité d'entreprise
+HRCPYUKCAR	CUCA	 Avantages voitures/carburant
+HRCTRDOC	HRDOC	 Documents à générer
+HRCTRGRD	HRCGD	 Raison d'arrivée
+HRDCOMMIT	HRDCM	 les membres du comité
+HRDECEXO	HRDEXO	 Déclaration d'exonération
+HRDESCTRCOD	HRDTD	 Description du contrat de contribution
+HRDESCTRCOT	HRDTC	 Description du contrat de contribution
+HRDRECOUR	HRDRR	 Appel
+HRDSANCHEAD	HRDSNH	 En-tête de sanction
+HRDSANCTRANS	HRDST	 Transgression des sanctions
+HRDSANCWITN	HRDSW	 Témoin de sanction
+HRDSCFCY	HRCFY	 Déclaration du site DSN
+HRDSCFCY2	HRCFP	 Bien-être du site DSN
+HRDSCFCY3	HRCFV	 Paiements sur site DSN
+HRDSCFCY4	HRCFH	 Contributions du site DSN
+HRDSCFCY5	HRCFD	 Contributions détaillées du site DSN
+HRDSCFCY6	HRCDF	 Contributions du site
+HRDSCFCY7	HRCDD	 Détail de la contribution du site
+HRDSCFCY8	HRCFC	 Composants du site DSN
+HRDSFFCY	HRFFY	 Fiscalité du site DSN
+HRDSFFCY2	HRFFP	 Fiscalité du site DSN
+HRDSFFCY3	HRFFA	 Fiscalité du site DSN
+HRDSNAMT	HRDCV	 Fin du contrat de paiement DSN
+HRDSNAMT1	HRDCA	 Fin du contrat de rémunération DSN
+HRDSNAMT2	HRDCD	 Fin du contrat de quotas DSN
+HRDSNAMT3	HRDCU	 Fin du contrat d'activités DSN
+HRDSNAMT4	HRDCB	 Revenu brut DSN de fin de contrat
+HRDSNAYD	HRDAD	 Bénéficiaires de la DSN
+HRDSNAYD2	HRDAF	 Allocataires de la DSN
+HRDSNBNF	HRBNF	 Bénéficiaires de la DSN
+HRDSNBNFORA	HRBNO	 Allocataires de la DSN
+HRDSNCPY	HRDCP	 Entreprises DSN
+HRDSNCPYCNT	HRCCN	 Entreprises DSN - Contacts
+HRDSNCPYVLU	HRCPV	 Entreprises DSN
+HRDSNCTR	HRDCC	 Contr. mettre fin aux données du contrat DSN
+HRDSNDMC	HRDMC	 Contrats DSN mensuels
+HRDSNDMC1	HRDMO	 DSN mensuelle/ancien contrat
+HRDSNDMC2	HRDSS	 DSN/suspension mensuelle du contrat
+HRDSNDMC3	HRDMR	 Historique mensuel du bien-être DSN
+HRDSNDMT	HRDMT	 Cotisations mensuelles à la DSN
+HRDSNDMT1	HRDMJ	 Cotisations mensuelles à la DSN
+HRDSNDMT2	HRDMI	 Cotisations mensuelles à la DSN
+HRDSNDMT3	HRDMK	 Cotisations mensuelles à la DSN
+HRDSNDMT4	HRDME	 Cotisations mensuelles à la DSN
+HRDSNDMT5	HRDML	 Cotisations mensuelles DSN BS
+HRDSNDMV	HRDMV	 Paiements DSN mensuels
+HRDSNDMV1	HRDMS	 Rémunérations mensuelles DSN
+HRDSNDMV2	HRDMD	 Allocations DSN mensuelles
+HRDSNDMV3	HRDMA	 Activités DSN mensuelles
+HRDSNDMV4	HRDMB	 Revenu brut mensuel DSN
+HRDSNDMV5	HRDMF	 Actions gratuites
+HRDSNDMV6	HRDMG	 Les options d'achat d'actions
+HRDSNDMV7	HRDMN	 BSPCE
+HRDSNDMV8	HRDMP	 Ajustement DSN WHT
+HRDSNEMP	HRDMM	 Employés DSN mensuels
+HRDSNFCY	HRDFY	 Site DSN
+HRDSNFCY2	HRDFV	 Bien-être du site DSN
+HRDSNFCY3	HRDFA	 Anciennes données sociales du site DSN
+HRDSNFCYN	HRNIL	 Site DSN nul
+HRDSNFEE	HRFEE	 Bénéficiaires des frais
+HRDSNFEED	HRFED	 Lignes de frais
+HRDSNIND	HRIND	 Ancien salarié affilié
+HRDSNINDBAS	HRINDB	 Bases spécifiques
+HRDSNINDRIR	HRINDR	 Ajustements WHT
+HRDSNLOG	HRLOG	 Tableau des erreurs DSN
+HRDSNMTH	HRDMH	 Arrêts maladie des salariés de la DSN
+HRDSNORA	HRDMW	 Affiliation sociale à la DSN
+HRDSNPEN	HRDEP	 Conditions dangereuses DSN
+HRDSNWST	HRDWS	 Arrêts maladie des salariés de la DSN
+HRDSPDCS	HRDSC	 Déclaration de charges DSN
+HRDSPPEX	HRDSE	 Configuration de l'extraction DSN
+HRDSPPRM	HRDSR	 Configuration du DSN
+HRDSPPRMCNT	HRDCN	 Configuration DSN - Contacts
+HRDSPPRMVLU	HRDSV	 Configuration du DSN
+HREFFTOT	HREFT	 Total
+HREMPALO	EMPALO	 Allocation aux employés
+HREMPDLC	HREDC	 Déclaration
+HREQEEA2	HREEA2	 Détail EEE2
+HREQEEA4	HREEA4	 Détail de l'EEE4
+HREQEXCLEMP	HREXCL	 Salariés exclus
+HREQNUMDET	HREQDET	 Objectifs chiffrés d’équité
+HREQNUMGOAL	HREQGOA	 Objectifs chiffrés d’équité
+HREQUITY	HREQTY	 Extrait de capitaux propres
+HREQUITYTOT	HREQ	 Informations sur les capitaux propres
+HRESSATT	HRET	 Pièces jointes
+HRESUB	HRESUB	 Soumission électronique
+HRESUBREG	ESUBREG	 Inscription à la soumission électronique
+HRETIHIS	HRETI	 Historique de l'ETI
+HRETIHISOLD	HRETIO	 Historique ETI ancien
+HREXPENSES	HREXS	 Coût
+HREXSKMETRE	HREXK	 Frais kilométriques
+HREXTRACT	HREXT	 Extraire le modèle
+HREXTRACTDAT	HREXD	 Source
+HREXTRACTDEF	HREXL	 Définition
+HREXTRACTFIL	HREXF	 Filtres
+HREXTRACTGRP	HREXG	 Groupes
+HREXTRACTPAR	HREXP	 Paramètres
+HREXTRACTRES	HREXR	 Résultats
+HREXTRACTVAL	HREXV	 Validations
+HRFACILITYPO	FCYPO	 Des sites
+HRFACILITYSA	FCYSA	 Champs du site sud-africain
+HRFILDSN	HRDFS	 Structure du fichier DSN
+HRFILTDS	HRFTD	 Structure du fichier DADS-U/ADN
+HRFISCALNAT	HRFCN	 Caractère fiscal
+HRFRMPAY	HRFRM	 Bulletins de versement
+HRGRPRUB	HRGRB	 Regroupement de rubriques
+HRHONLIN	HRHLN	 Lignes de frais
+HRHONPRV	HRPRV	 Fournisseurs de services
+HRINCDLC	HRIDC	 Déclaration de revenus
+HRITAXEXT	HRITAX	 Extrait fiscal
+HRITAXRES	HRITXR	 Résultats de l'extrait d'impôt
+HRKENRPT	HRKNVAL	 Tableau des touches d'impression temporaire
+HRLDETAILS	HRLDET	 Détails du prêt
+HRLGENPAY	HRLGPP	 Générer un versement de prêt
+HRLHEADER	HRLHEA	 En-tête du prêt
+HRLICAUT	HRLIC	 Permis et autorisations
+HRLOAADDPAY	HRLADP	 Paiements supplémentaires
+HRLOAAMO	HRLAMO	 Prêt (amortissement)
+HRLOAEMPHEA	HRLEHEA	 Informations de paiement
+HRLOAEMPTOT	HRLETOT	 Informations de paiement
+HRLOARAT	HRLRAT	 Taux standards de prêt
+HRLOARATHEA	HRLRATH	 Taux standards de prêt
+HRLOASETHEA	HRLSHEA	 Informations de paiement
+HRLOASETTOT	HRLSTOT	 Informations de paiement
+HRLOASUSPEND	HRLSPD	 Paramètre de suspension de prêt
+HRLOATYP	HRLTYP	 Type de prêt
+HRLREQAMO	HRLLRA	 Demande de prêt (amortissement)
+HRLREQDET	HRLLRD	 Demande de prêt (détails)
+HRLREQUEST	HRLLR	 Demande de prêt
+HRLSETTING	HRLSET	 Configuration du prêt
+HRLSETVAR	HRLSLV	 Configuration des variables de prêt
+HRLSTPMT	HRLOP	 Paiements
+HRLVEACCRU	HRACCR	 Accumulation de congés
+HRLVEBAL	HRLBAL	 Laisser le solde
+HRLVEBALDET	HRLBALD	 Laisser le détail du solde
+HRLVERAT	HRPRAT	#VALEUR!
+HRLVEREA	HRLSE	 Laisser raison
+HRLVESUBDET	HRLSTD	 Laisser le sous-type
+HRLVESUBHEA	HRLSTH	 Laisser le sous-type
+HRMEDAPT	HRMDP	 Capacité
+HRMEDTYP	HRMDT	 Type de visite
+HRMGTDSN	HRMDM	 Gestion des données DSN
+HRMISCTAB	HRMISC	 Écran divers
+HRNATCON	HRNCT	 Nature du contrat
+HRNUMORDDSN	HRDNO	 Numéro de commande DSN
+HROIDRPT	HROID	 Tableau des touches d'impression temporaire
+HRPARVAREXP	HRPVE	 Variables à configurer
+HRPASR	HRPASR	 Ajustements WHT
+HRPAYTMP	HRPYE	 Paiements à comptabiliser
+HRPENINDD	HRPID	 Danger individuel. cond. enregistrer
+HRPENINDH	HRPIH	 Danger individuel. cond. enregistrer
+HRPEODET	HRPEOD	 Périodes d'extraction
+HRPEOHEA	HRPEOH	 Périodes d'extraction
+HRPERFORM	HRPERF	 Performance
+HRPOTPEN	HRPEN	 Positionner des conditions dangereuses
+HRRPLREN	HRRPL	 Raison du remplacement
+HRSAEQU	SAEQU	 Équité en matière d'emploi
+HRSCPCPIO	HRCPC	 Priorité aux compétences stratégiques
+HRSCRDSND	HRSDDT	 Écrans de contrôle DSN - Détail
+HRSCRDSNH	HRSDH	 Écrans de contrôle DSN
+HRSOCSECINC1	HRSIA	 Enregistrement
+HRSOCSECINC2	HRSIB	 Enregistrement
+HRSOCSECSET1	HRSSA	 Déclaration
+HRSOCSECSET2	HRSSB	 Enregistrement
+HRSOCSECSET3	HRSSC	 Enregistrement
+HRSOCSECSETS	HRSSS	 Enregistrement
+HRSOFOCOD	HROFO	 Code OFO
+HRSOFOSET	HROFOS	 Code OFO
+HRSTADCLBEN	HRSDB	 Bénéficiaire
+HRSTADCLBSP	HRSBP	 Déclaration
+HRSTADCLDOC	HRSDO	 Étudiant en médecine
+HRSTADCLSET	HRSDS	 Déclaration
+HRSTADCLTRA	HRSDT	 Stagiaire
+HRSTADLM	HRSDM	 Exportations légales
+HRSTDINDCLS	HRSIC	 Norme. classification industrielle
+HRSTRAINPER	HRTPER	 Les périodes de formation ajouter des informations
+HRSTRIKE	HRSTRK	 Grève
+HRSTRIKEDAT	HRSTRD	 Dates de grève
+HRSTRIKEREV	HRSTRV	 Réclamations
+HRSYSUSED	HRSUS	 Système
+HRTABDSD	HRDSD	 Correspondances des codes DSN
+HRTABDSH	HRDSH	 Correspondances des codes DSN
+HRTABEXPENS	HRTES	 Codes de dépenses
+HRTABFILBAN	HRTFB	 Définitions des fichiers bancaires
+HRTASSEDICSA	HRATSSA	 Attestation Pôle Emploi
+HRTAXCERT	HRTXCT	 Attestation fiscale SA
+HRTAXCERTDED	HRTXCTD	 Déductions
+HRTAXCERTINC	HRTXCTI	 Revenu reçu
+HRTAXCERTSUB	HRTXCTS	 Impôt retenu
+HRTAXEXT	HRTAX	 Extrait fiscal
+HRTAXMSG	HRMSG	 Messages fiscaux
+HRTAXRES	HRTXRES	 Résultats de l'extrait fiscal
+HRTAXVAL	HRTXVAL	 Validation des extraits fiscaux
+HRTMPDSD	HRTDSD	 Correspondances des codes DSN
+HRTOTPAY	HRTPY	 Total
+HRTRACSTREP	HRTCR	 Répartition des coûts de formation
+HRTRADECLASS	HRTCC	 Classement des métiers
+HRUKCTRCAR	CTCA	 Avantages automobiles des employés
+HRUKCTRPEN	CTRPEN	 Pension des employés
+HRUKCTRSTA	CTRSTA	 Statut de pension des employés
+HRVIEWPARAMS	HRVP	 Afficher les paramètres
+HRXITGRD	HRXGD	 Raison de l'élimination
+HTMMAITXT	HTMMAI	 Texte de l'e-mail CRM
+IDADDNA	IDN	 Importation des employés DN-AC
+IDADDNA2	ID2	 Bonus d'importation d'ADN
+IDADDNA3	ID3	 Allocations mensuelles d'importation d'ADN
+IDADDNA4	ID4	 Avis d’importation d’ADN
+IDADDNA5	ID5	 Allocations d’importation d’ADN
+IDADDNA6	ID6	 Importation d'ADN Horaires de travail
+IDADDNA7	ID7	 Importation d'ADN
+IDADDNA8	ID8	 Importation d'ADN Divertissement
+IDADEMP	IDA	 Déclaration annuelle d'importation des données des salariés
+IDADEMP10	IDL	 Déclaration annuelle des données sur les salariés et prévisionnelle des métiers et des compétences
+IDADEMP11	IDM	 Importation des heures supplémentaires DADS-U
+IDADEMP12	IDQ	 Importation des demandes d'aide sociale DADS-U
+IDADEMP121	IDE	 Déclaration annuelle d'importation des données sociales des salariés
+IDADEMP2	IDS	 Déclaration annuelle d'importation des données des salariés
+IDADEMP3	HRIDP	 Déclaration annuelle d'importation des données sociales des salariés
+IDADEMP31	IDF	 Importation de bien-être pour les événements DADS-U
+IDADEMP32	IDR	 Importation de prestations sociales de paiement DADS-U
+IDADEMP33	IDU	 Importation de complémentaire santé DADS-U
+IDADEMP34	IDV	 DADS-U évènementiel complémentaire santé import
+IDADEMP35	IDW	 DADS-U paiement complémentaire santé import
+IDADEMP4	IDC	 Déclaration annuelle d'importation des données des salariés
+IDADEMP5	IDG	 Importation d'épargne DADS-U
+IDADEMP6	IDH	 Import de parts DADS-U
+IDADEMP7	IDI	 Importation des avantages DADS-U
+IDADEMP8	IDJ	 Importation des exemptions DADS-U
+IDADEMP9	IDK	 Import de quotas DADS-U
+IDTCCE	IDTC	 Indice des dimensions
+ILOGIMG	ILO	 Images ilog
+IMCDETPRT	IMP	 Comparaison des coûts
+IMURANO	IPM	 Configuration de l'interface de paie espagnole
+IMURANOD	IPMD	 Configuration de l'interface de paie espagnole
+INCDCL	INC	 Déclaration de revenus
+INCOTERM	ICTH	 Incoterms
+INCOTERMD	ICTD	 Détail des Incoterms
+INSCRIPT	INS	 Inscriptions
+INSJOU	INJ	 Jours d'inscription
+INSJOUA	INA	 Jours d'absence
+INTCOFLO	ICF	 Opérations intersociétés
+INTERVEN	ITN	 Réponse du service
+INVDACPAR	IDP	 Paramètres de saisie des factures tiers
+INVENTD	INVD	 Comptes
+INVENTH	INV	 Comptes
+INVNUMSPA	ISP	 Document source
+IRCTCODPOR	HRIRCT	 Code IRCT
+IRP5RECONADD	IRPRECA	#VALEUR!
+IRP5RECONRES	IRPREC	#VALEUR!
+IRP5RECONVIS	IRPVIS	#VALEUR!
+ITCDET	ICD	 Coût détaillé pour l'impression
+ITCDETPRT	ICP	 Produits temporaires - coût
+ITCMAT	ICC	 Produits temporaires - coût
+ITCMATCH	IMC	 Comparaison des coûts
+ITCNAT	ICN	 Détail nature - coûts
+ITCPITTMP	ITCT	 Produits-coûts PIT
+ITCWST	IWC	 Produits temporaires - coût
+ITCWSTW	IWW	 Produits temporaires - coût
+ITMABCWRK	ITK	 Calcul de la classe ABC
+ITMACGGRP	ITA	 Produit
+ITMBOM	ITB	 Produits - Nomenclatures
+ITMBOMCFG	CFB	 Produits - Nomenclatures
+ITMBPC	ITU	 Produit client
+ITMBPS	ITP	 Produit fournisseur
+ITMBPSFCY	ITPF	 Site de produits du fournisseur
+ITMCATEG	ITG	 Catégorie de produit
+ITMCOMP	ICM	 Produits concurrents
+ITMCOST	ITC	 Produits-coûts
+ITMCOSTPIT	ITCP	 Produits-coûts PIT
+ITMCPPLNK	ILK	 Lien concurrent/produit
+ITMCPTVER	ICV	 Configuration du compteur de versions
+ITMCUSNOM	INO	 Nomenclature du produit NC8
+ITMFACILIT	ITF	 Produits-sites
+ITMMASTER	ITM	 Des produits
+ITMMVT	ITV	 Totaux produit-site
+ITMMVTHIS	ITH	 Produit total – historique du site
+ITMMVTPIT	ITVP	 Totaux produit-site PIT
+ITMSALES	ITS	 Produits - ventes
+ITMWRH	ITW	 Produits-entrepôts
+ITVPITTMP	ITVT	 Totaux produit-site PIT
+JOBTYP	JOT	 Emplois standards
+JOBTYPDEF	JOD	 Valeurs par défaut du type de travail
+JOBTYPKSA	JSA	 Champs RSA supplémentaires
+JSNX3DET	JXD	 Détail de la carte de transformation JSON-X3
+JSNX3HEAD	JXH	 Mappeur de transformation JSON-X3
+JSNX3TRAN	JXT	 Transport JSON-X3
+KCOEF	KCO	 Coefficients de perte de valeur
+KPYIMPDTL	KPD	 Détail de la paie Sage 50/Murano
+KPYIMPDTLA	KPA	 Ligne analytique
+KPYIMPHDR	KPH	 En-tête de paie Sage 50/Murano
+KPYIMPTRAN	KPT	 Transcription d'importation Sage 50
+KTEMPPOR	KTP	 Listes portugaises temporaires
+LABADCPRINT	LAP	 Configuration des étiquettes
+LABELPRN	LBP	 Impression d'étiquettes
+LASTCUSMVT	LCM	 Derniers mouvements clients
+LASTSUPMVT	LSM	 Derniers mouvements fournisseurs
+LAYOUTFAS	LOF	 Dépenses
+LEABILBOOK	LBB	 Calendriers des contrats de location
+LEAD	LDS	 Conduit
+LEASE	LEA	 Contrats de location
+LEGOBGSET	HRLOS	 Paramétrage des obligations légales
+LEGOBGSETD	HRLOD	 Paramétrage des obligations légales
+LIVREPAYE	LPA	 Journaux de paie
+LNKCPTABD	LCD	 Détail du lien ABELX3 acc
+LNKCPTABX3	LCA	 Lien acc ABELX3
+LPN	LPN	 Numéro de plaque d'immatriculation
+LTAPAR	LTP	 Connexion à la taxe de vente Sage
+LTAVCR	LTV	 Taxe locale par document de vente
+MACHINES	MAC	 Base installée
+MACITN	MAI	 Installations de machines
+MACWARREQ	MWR	 Archives des demandes de garantie
+MAILING	OMM	 Envoi de masse
+MAILXML	MXL	 Envoi de masse XML
+MAILXMLD	MXD	 Lignes de publipostage XML
+MALADIE	MAL	 Certificat de maladie/Maternité
+MANDATE	MDT	 Mandats
+MARASSDEF	MAD	 Contenu des secteurs
+MARASSREP	MAR	 Portefeuille représentatif
+MARDEF	MDF	 Définitions des secteurs
+MARDEFVAL	MDV	 Détails des critères
+MARREPSEC	MRS	 Répartition des secteurs
+MARSCT	MST	 Secteurs du marché
+MATCHCODE	MTC	 Associez les lettres à utiliser
+MATCHTOL	MAT	 Tolérance correspondante
+MATCSTW	MAW	 Calcul du matériau
+MAXBUILD	MAXB	 Quantité maximale de construction
+MDL10	M10H	 Modèle 10
+MDL10D	M10D	 Modèle 10
+MDL30	M30H	 Modèle 30
+MDL30D	M30D	 Modèle 30
+MEAEMP	MEA	 Attestation mensuelle de l'employeur
+MEDIA	OMN	 Campagne médiatique
+MEDWRK	MEW	 Santé au travail
+MEMFOR	FOG	 Mémos
+MESPAR	MPA	 Configuration du MES
+MFCDETPRT	MCP	 Détail du matériau
+MFCMAT	MCC	 Détail du matériau
+MFCNAT	MCN	 Détail nature - PC
+MFCSCRAP	MCS	 Coût de la ferraille
+MFCTYPREL	MTR	 Comparaison des coûts
+MFCWST	MCW	 Détail de l'opération
+MFGANL	MFA	 Analyse du bon de commande
+MFGCOST	MFC	 Prix ??de revient
+MFGHEAD	MFG	 Bon de travail - en-tête
+MFGHEADTRK	MTK	 Suivi de fabrication - en-tête
+MFGITM	MFI	 Bons de travail - produits
+MFGITMTRK	MKI	 Suivi de fabrication - produits
+MFGMAT	MFM	 Bon de travail - matériaux
+MFGMATREV	MMR	 Bon de travail - audit des matériaux
+MFGMATTRK	MKM	 Suivi de fabrication - matériel
+MFGOPE	MFO	 Bon de travail - opérations
+MFGOPEREV	MOR	 Bon de travail - audit des opérations
+MFGOPETRK	MKO	 Suivi de fabrication - opérati
+MFGPRN	MFP	 Bons de travail - documents
+MFGSERDET	MFSD	 WO - numéro de série. détail du lien
+MFGSERHDR	MFSH	 WO - numéro de série. en-tête du lien
+MFGTRS	MTS	 Transaction d'entrée en production
+MFGVERSION	MFV	 Changement de version MFG
+MFGWIP	MWH	 Valorisation des encours - en-tête
+MGTATCUD	ATCUD	 Gestion des ATCUD
+MGTWASTE	MGTW	 La gestion des déchets
+MIGX	MIGX	 Personnes X3 - Migration
+MIGXTBLCMP	MIGXTCP	 En-tête de comparaison du tableau de migration
+MIGXTBLDIF	MIGXTDF	 Différence de schéma de table de migration
+MIGXTBLMAP	MIGXTM	 Mappage de la table de migration
+MISIND	MID	 Indicateur de responsabilité
+MISJOTIND	MJI	 Responsabilité
+MISPOTIND	MPI	 Responsabilité
+MISSION	MIS	 Rôle
+MKGLEVEL	MKL	 Niveau
+MKGOPG	MOG	 Relations cible/opérations
+MKGQUR	MQR	 Cibles marketing
+MKGQURPPL	MQP	 Populations intermédiaires
+MMSDEFVAL	MMV	 Valeurs par défaut des MMS
+MMSPAR	MMS	 Configuration MMS
+MODSCALE	MODL	 Modèles de balance
+MOTENT	MOE	 Raison d'arrivée
+MSCALR	MSC	 Rubriques à calculer
+MSENTEML	MHE	 Hypothèse d’arrivée des employés TP
+MSFLDATM	HRMFA	 Champ initialisé pour RTP
+MSGGRIL	MRI	 Grilles d'entrée TP
+MSGRIL	MGR	 Grilles d'entrée TP
+MSHISTO	MHS	 Historique des TP
+MSHISTOH	MHH	 Suivi de l'historique TP
+MSHYPENP	MHP	 Hypothèse des elts non permanents
+MSHYPRUB	MHR	 Hypothèse de titre
+MSHYPTXAT	MHT	 Hypothèse du taux WI
+MSHYPVAD	MHD	 Hypothèses variables
+MSHYPVAH	MHV	 Hypothèses variables
+MSHYPVAL	MHL	 Hypothèses variables
+MSLIVREPAY	LPM	 Total des journaux de paie
+MSLRUB	MLR	 Liste des rubriques TP
+MSMODCTR	MHC	 Hypothèses de modification du contrat
+MSRUB	MSR	 Rubriques TP
+MSSCENAH	MCH	 Scénario
+MSSCENAL	MCL	 Scénario
+MSVALEUR	MHA	 Historique des valeurs variables TP
+MSXITEML	MHX	 Hypothèse de départ des employés de TP
+MTCAUTO	MTU	 Correspondance automatique
+MTCBATCH	MTB	 Correspondance par lots
+MTCGAUTMP	MGT	 Préparation du rapprochement des documents
+MTHTAXDCL	MTDH	 Déclaration mensuelle PAYE
+MTHTAXDCLD	MTDD	 Déclaration mensuelle PAYE
+MTKCRDASW	MTA	 Fiches techniques - réponses
+MTOHEAD	MTO	 Réseau MTO
+MTOLINK	MLK	 Affectations de demande/ressource
+MWMCRDASW	MWA	 Procédures en cabine - Réponses
+N4DSTABD	N4D	 Correspondances des codes N4DS
+N4DSTABH	N4H	 Correspondances des codes N4DS
+NAMETXTEMP	ETX	 IMPÔT mensuel des employés en Namibie
+NATACTIV	NAT	 Natures de l'activité
+NCSADES	NCSADE	 Description de la non-conformité
+NCSAPPROVER	NCSAPPR	 Approbateurs de non-conformité
+NCSBPC	NCSBPC	 Clients
+NCSBPS	NCSBPS	 Fournisseurs
+NCSDES	NCSDES	 Description de la non-conformité
+NCSDOCHDR	NCSDHD	 Documents de non-conformité
+NCSDOCLIN	NCSDLN	 Documents de non-conformité
+NCSDOCOPE	NCSDOP	 Informations sur les opérations de non-conformité
+NCSEXTUSR	NCSEU	 Utilisateur externe
+NCSINTUSR	NCSIU	 Les utilisateurs internes
+NCSRECENT	NCSRC	 Non-conformité
+NCSREJDES	NCSREJ	 Description du rejet
+NETAUTO	NTO	 Filets
+NICDET	NIC	 Catégorie NI
+NOTCATEG	NTG	 Catégorie de note
+NOTE	NTS	 Remarques
+NPICOMPONENT	NPIC	 Composants de conception de produits
+NPICOMPREF	NPICREF	 Références de conception de produits
+NPIHEADER	NPIH	 En-tête de conception de produit
+NPIPWU	NPIW	 A été utilisé
+NRYPAR	NRY	 Configuration ÉNERGIE
+NUMCAI	NCA	 Mission CAI
+OBJECTIFBI	OBI	 Objectifs BI
+OCPCODPOR	HROCP	 Code des métiers
+ODPAY	ODP	 MO de paie
+ODPAYA	ODA	 MO de paie analytique
+ODPAYE	ODE	 Payer l'en-tête MO
+OMMRESULT	MRE	 Fusionner les données
+OMMRPT	OMR	 Rapport d'envoi
+OPERATIONS	OPS	 Chargement en cours
+OPPOR	OPP	 Projet
+OPPORCPP	OCP	 Concurrent du projet
+OPPORCRM	OPPCRM	 Projet CRM
+OPPORI	OPPI	 Projet
+OPPORPJM	OPPPJM	 Projet PJM
+OPPORPJMI	OPJI	 Projet
+OPPORSBB	OBB	 Sous-projet
+OPPORSTA	OSA	 Étapes après-vente du projet
+OPPORSTB	OSB	 Étapes d'avant-vente du projet
+ORDCOMP	DOO	 Appelant du service
+ORDCOV	ORC	 Historique des considérations WIP
+ORDERS	ORD	 En-cours
+ORDOOPAR	ORO	 Configuration APS
+ORDOPPAR	ORP	 Paramètres PRÉACTEUR
+ORGAFFIL	ORA	 Adhésion à l'organisation
+ORGANISME	ORG	 Organisations
+ORGBAN	ORB	 Organisation
+ORGFINTRA	OFT	 Organismes de financement de la formation
+OVENAT	ONA	 Catégorie de frais généraux
+OVERHEAD	OVE	 Codes aériens
+PARADC	PDC	 Configuration de l'automatisation mobile
+PARCOL	PAC	 Schéma DPS collectif
+PARESC	PEC	 Paramètre d'escalade
+PAREVT	PVT	 Paramétrage des événements
+PAREVTD	PVD	 Paramétrage des événements
+PARFLUX	PFL	 Paramètres des fonds (en-tête)
+PARFLUXDET	PFD	 Paramètres des fonds (détail)
+PARIND	PAI	 Distribution individuelle
+PARJAL	PJA	 Paramètres de planification
+PARLDAP	LDA	 Paramètre de lien entre les actifs de dépenses
+PARMRP	PCB	 Paramètres des exigences
+PARMTO	PTO	 Règles d'affectation
+PARSTA1	PS1	 Déclencheurs statistiques
+PARSTA2	PS2	 Paramètres statistiques
+PARSTALIG	PSL	 Paramètres de ligne de rapport statistique
+PARSTOACC	PAS	 Configuration de l'interface boursière
+PARTAXUSA	PTU	 Paramètres fiscaux américains
+PARTRZL	TZL	 Paramètres des champs de transit
+PARTRZLDET	TZD	 Détails du paramètre Transit Flds
+PARVAR	PVR	 Variables à configurer
+PARVARAEM	PVA	 Variables à configurer
+PARVARIND	PVI	 Variables à configurer
+PARWIPACC	PWA	 Paramètre d'interface Wipcost
+PARWIPACCS	SWA	 Paramètre d'interface Wipcost
+PATCHPDP	HRPPP	 Suivi des correctifs du plan de paiement
+PATCHPDPOBJ	PPO	 Suivi des correctifs du plan de paiement
+PAYACCNUM	PAN	 Saisie comptable des paiements
+PAYACCNUMD	PMD	 Saisie comptable des paiements
+PAYFRM	FRM	 Bulletins de versement
+PAYLOT	PYL	 Lot d'entrée
+PAYMENTA	PYA	 Lignes de paiement analytiques
+PAYMENTD	PYD	 Lignes de paiement
+PAYMENTH	PYH	 En-tête de paiement
+PAYMENTPORD	PYPTD	 Lignes de paiement
+PAYMENTPORH	PYPTH	 En-tête de paiement
+PAYMTCTMP	PMP	 Tableau temporaire de correspondance des paiements
+PAYMTCTMP2	PM2	 Tableau temporaire de correspondance des paiements
+PAYORDER	PYO	 Paiements anticipés
+PAYPTD	PYP	 Lignes d'ordre de paiement/reçu
+PAYPTH	PAH	 En-tête/reçus d'ordre de paiement
+PAYPTHDOC	PAO	 Ordres de paiement/récépissés
+PAYPTHRIT	PRI	 Retenues
+PAYTMP	PTP	 Tableau des paiements temporaires
+PAYVAT	PYHV	 TVA en espèces (Portugal)
+PBDBPGRP	PBDBPG	 Raison économique/groupes BP
+PBDBPGRPD	PBDBPD	 Raison économique/groupes BP
+PBDCONFIG	PBDCNF	 Configuration du solde de paiement
+PBDCONFIGD	PBDCNFD	 Configuration du solde de paiement
+PBDECOCOD	PBDECO	 Code motif économique
+PBDECODITM	PBDEIT	 Raison économique par produit
+PBDGEN	PBDGEN	 Déclaration du solde des paiements
+PBDGEND	PBDGEND	 Détails du solde de paiement
+PBDUICONF	PBDUIC	 Paramètres du champ Solde des paiements
+PBDUICONFD	PBDUID	 Lignes du champ Solde des paiements
+PDPDET	PDD	 Détail du calcul MPS
+PDPHEA	PDH	 En-tête de calcul MPS
+PERIOD	PER	 Périodes
+PFLCATCODPOR	HRPFL	 Chat professionnel.
+PFOOTINV	PFI	 Éléments de facturation des achats
+PHONECALL	CLL	 Appel
+PHONING	OMP	 Campagne téléphonique
+PHYBUI	BUI	 Bâtiment
+PHYELT	PHY	 Actifs physiques
+PHYLCT	LCT	 Localisations
+PHYMVT	PMVT	 Actifs physiques - mouvements
+PIHRMEMPSET	PIES	 Employé
+PIHRMFAIR	PIFA	 Intégration des personnes
+PIHRMFAIRCFG	PICF	 Intégration des personnes
+PIHRMFAIRERR	PHFE	 Erreur
+PIHRMFAIRSET	PIFS	 Intégration des personnes
+PIMPL	PIM	 Lien du projet
+PIMPLSEL	PIS	 Lignes d'allocation temporaires
+PINVOICE	PIH	 Factures d'achat
+PINVOICED	PID	 Détail de la facture d'achat
+PINVOICEV	PIV	 Chiffrage des factures d'achat
+PITCOUNT	PCT	 Compteur de points
+PITDEB	PDB	 Débit de points
+PITDEBD	PBD	 Débits de points (ligne)
+PIVOTS	PIT	 Pivots
+PIVZON	PIZ	 Zones pivots
+PIWRK	PKW	 Traçabilité temporaire des journaux
+PJMAFF	PAF	 Affectation des employés
+PJMAUS	PAUS	 Utilisateurs du projet
+PJMAUSCAVA	PJCV	 Variation de capacité PJM
+PJMBUD	PJBU	 Budget du projet
+PJMBUDI	PJBUI	 Budget du projet
+PJMBUDLIG	PJLB	 Ligne budgétaire
+PJMBUDLIGI	PJLBI	 Ligne budgétaire
+PJMBUDTRQ	PJQ	 Requêtes d’aperçu financier
+PJMBUDTRS	PJS	 Structure de l'aperçu financier
+PJMCLOB	PJCB	 Dossiers spéciaux
+PJMCNSVTETM1	VT1	 Vérification du temps
+PJMCNSVTETM2	VT2	 Vérification du temps
+PJMCNSVTETMP	VTE	 Vérification du temps
+PJMCOSTCTR	PJCC	 Type de coût
+PJMCOSTDAT	PCD	 Tarif à une date donnée
+PJMCOSTGRP	PJCG	 Groupe de coûts
+PJMDE	PJE	 Dépense détaillée
+PJMFINCTORPT	PJMCTO	 Rapports sur les types de coûts
+PJMFINOVRRPT	PJMRPT	 Rapports sur la structure des coûts
+PJMMSTNEXINV	PJMST	 Prochaine étape de facturation
+PJMOPEAFF	PJOA	 Affectation des employés
+PJMOPEAFFI	PJOAI	 Affectation des employés
+PJMOPSNPD	PJSNPD	 Détails de l'instantané du projet
+PJMOPSNPH	PJSNPH	 Instantanés du projet
+PJMPRGBILD	PBILD	 Lignes du plan de facturation progressive
+PJMPRGBILH	PBILH	 Plan de facturation progressif
+PJMSALITMD	PSPLD	 Liste des produits vendables
+PJMSC	PJC	 Dépenses consolidées
+PJMSCCT	PJCCT	 Dépenses consolidées
+PJMSNPD	PSNPD	 Détail de l'instantané
+PJMSNPH	PSNPH	 Instantanés
+PJMSNPW0	PSW0	 Structure temporaire instantanée
+PJMSNPW1	PSW1	 Structure temporaire instantanée
+PJMSOLITMD	PSOD	 Liste des produits vendus
+PJMSOLITMH	PSOH	 Création de documents de vente
+PJMSOLITMO	PSOO	 Liste des produits vendus
+PJMTIMACT	PTEAT	 Modèle d'activité
+PJMTIMACTI	PTEATI	 Modèle d'activité
+PJMTIMCAT	PJTC	 Catégorie de temps
+PJMTIMEMP	PTE	 Résumé du temps
+PJMTIMEMPI	PTI	 Résumé du temps
+PJMTIMEMPRPT	PTER	 Rapport de saisie du temps
+PJMTIMEMPTMP	PTET	 Résumé du temps
+PJMTSK	PJTA	 Tâche de projet
+PJMTSKCAT	PTC	 Catégorie de tâche du projet
+PJMTSKCATOPE	PTCO	 Opérations de catégorie de tâches
+PJMTSKDEP	PKD	 Dépendances du projet
+PJMTSKI	PJTAI	 Tâche de projet
+PJMTSKITM	JTT	 Produit principal
+PJMTSKITMI	JTTI	 Produit principal
+PJMTSKLNK	PTLNK	 Lien de priorité des tâches
+PJMTSKOPE	PTKO	 Tâches - Opérations
+PJMTSKOPEI	PTKOI	 Tâches - Opérations
+PJMTSKOPELNK	OPLNK	 Lien de priorité des opérations
+PLANACT	PLAACT	 Actions
+PLANDET	PLADET	 Détail du forfait
+PLANEMP	PLE	 Planifications des employés
+PLANHDR	PLAHDR	 En-tête du plan
+PLANTYP	PLN	 Plans de référence
+PLGMKG	PLG	 Gestion du planning marketing
+PLGOPG	PLO	 Gestion du planning marketing
+PLMDEFVAL	PDV	 Valeurs par défaut du PLM
+PLMPAR	PPA	 Configuration PLM
+PLNBUD	HRPLB	 Budget du plan de formation
+PLNCOUT	PLC	 Coûts du plan de formation
+PLNFORM	PLF	 plan de formation
+POOL	POO	 Pool bancaire
+POPSCALEXP	CEP	 Exception de calendrier
+POPSCUSFLDS	PSCF	 Prod. Planifié. Les champs personnalisés
+POPSCUSVALS	PSCV	 Prod. Planifié. valeurs personnalisées
+POPSMRK	MRK	 Planificateur Un marqueur
+POPSOBJ	PSOBJ	 Objets dans PS
+POPSPIN	PIN	 Type de broche d'opération
+POPSTAG	TAG	 Planificateur Une balise
+POPUL	HRPOP	 Populations d'employés
+POPULA	HRPOA	 Populations d'employés
+POPULB	POB	 Populations d'employés
+PORDER	POH	 PO
+PORDERC	POC	 Bons de commande cumulés avant les retours
+PORDERP	POP	 Prix ??des bons de commande
+PORDERQ	POQ	 Quantités de bons de commande
+PORDITM	POI	 Bons de commande par produit
+PORQRC	PORQRC	 Données QR portugaises
+POSCOD	POS	 Codes postaux
+POSTE	POT	 Position
+POSTEDEF	POD	 Valeur par défaut de l'article
+POSTEHAB	PHA	 Autorisations
+POSTEKSA	PSS	 Champs RSA supplémentaires
+PPREASON	PPR	 Raisons du prix d'achat
+PPREQUESTD	HRPPD	 Prépayé - Demandes
+PPREQUESTH	HRPPH	 Prépayé - Demandes
+PPRICCONF	PPC	 Paramètres de tarification des fournisseurs
+PPRICFICH	PPF	 Prix ??des fournisseurs (enregistrements)
+PPRICLINK	PPK	 Recherche de liste de prix d'achat (lien)
+PPRICLIST	PPL	 Listes de prix des fournisseurs
+PPRIVARWRK	PPV	 Rapport sur les écarts de prix d'achat
+PPVRALISD	HRPVD	 Prépaiement - Liste des variables
+PPVRALISH	PVH	 Prépaiement - Liste des variables
+PQUOTAT	PQH	 Demandes d'offres
+PQUOTATD	PQD	 Détails du produit de la demande de prix
+PQUOTATF	PQF	 Détails du fournisseur de la demande de prix
+PRECEIPT	PTH	 Reçu
+PRECEIPTD	PTD	 Reçus détaillés
+PREPINVOICE	PREPI	 Facture de prépaiement
+PREPINVOICED	PREPID	 Détail de la facture de prépaiement
+PREPINVOICEF	PREPIDF	 Factures finales
+PREPINVOICEP	PREPIP	 Paiements de factures d’acompte
+PREQUIS	PSH	 Demandes d'achat
+PREQUISA	PSA	 Lier les demandes d'achat
+PREQUISD	PSD	 Détail de la demande d'achat
+PREQUISO	PSO	 Lier les demandes d'achat
+PREREPORT	PPP	 Calculer la devise du rapport Crystal
+PRESP	PPH	 Réponses aux appels d'offres
+PRESPD	PPD	 Détails des réponses à l'appel d'offres
+PRESTATION	PSN	 Prestation de services
+PRESTCOV	PCO	 Services couverts
+PRETURN	PNH	 Retour
+PRETURND	PND	 Retour détaillé
+PRICSTRUCT	PRS	 Structure des prix (client/supp)
+PRJFAS	PJF	 Actifs
+PRJLOT	PJL	 Parcelle
+PRMDADSU	PRM	 Paramétrage de l'extraction
+PRMDUCS	DUC	 Paramétrage de l'extraction
+PRMTDS0	TD0	 Paramétrage de l'extraction
+PRMTDS1	TD1	 Paramétrage de l'extraction
+PROFIL	PRF	 Profil de l'employé
+PROFILDEF	HRPFD	 Profil de l'employé Valeurs par défaut
+PROJET	PRJ	 Projet
+PROPLN	PLP	 Plan de production
+PROPLNH	PLH	 Plan de production
+PROROG	PRO	 Prolongation de la date d'échéance
+PROROGPCE	PRP	 Prolongation de la date d'échéance
+PRTSCRWRK	PSW	 Travail de sérigraphie
+PRVCLOB	HRPCB	 Textes de bordereaux provisoires
+PSEPLN	PSE	 Plan de saisonnalité
+PTDSTKVAL	PSV	 Ajustement
+PURTRS	PTR	 Transactions d'achat saisies
+PVCRFOOT	PVF	 Documents d'achat - pied de page elt
+PVCRVAT	PVV	 Documents d'achat - taxes
+PWRKORDERS	PWO	 Exigences prises en compte
+PWRKPND	PWR	 Détail de la ligne de retour temporaire
+PWRKPNH	PWE	 Retour temporaire
+PWRKPOC	PWC	 Contrat de produit temporaire
+PWRKPOP	PWP	 Contrat de produit temporaire
+PWRKPOQ	PWQ	 Détail de la commande temporaire
+PWRKPQF	PWF	 RFQ ADR fournisseur temporaire
+PWRKPTD	PWD	 Reçu détaillé temporaire
+PWRKPTH	PWH	 Reçu temporaire
+PWRKSTT	PWS	 Sous-traitance
+PYHCAS	PCH	 Interface Trésorerie
+PYRAPAR	PYRA	 Configuration de la paie NA du SIRH
+QLYCRD	QLC	 Fiches techniques
+QLYCRDASW	QLA	 Dossiers de qualité – réponses
+QLYCRDNQA	NQA	 Échantillonnage : critères AQL
+QLYCRDQST	QLQ	 Dossiers de qualité - questions
+QLYWRK	QLW	 Dossier de travail - réponses
+QUEUE	QUE	 File d'attente
+QURCRI	QCR	 Critères de cible
+QURCRIVAL	QCV	 Valeurs des critères
+QUREXTRACT	QTX	 Extraction de cibles
+QURTMP	QTP	 Processus cible
+RBKBELDET	RBD	 Détail du relevé bancaire belge
+RBKBELDUD	RBU	 Poste bancaire belge non soldé
+RBKBELHEA	RBH	 Relevé bancaire belge
+RBKBELTMP	RBW	 Poste bancaire belge non soldé
+RBKRUBBEL	RRB	 Rubriques CODA
+RCRINVOICE	RCH	 Factures récurrentes
+REACHPAR	RPA	 Configuration REACH
+REGUL	RGL	 Ajustements
+RELBANK	RBK	 relevé de compte bancaire
+RELBANKREM	RBR	 Commentaires sur le relevé bancaire
+RELMT940	RLT	 Fichier FMT940 (en-tête)
+RELMT940D	RLD	 Fichier FMT940 (lignes)
+REPART	HRREP	 Méthodes de distribution
+REPCUMTDS	RCT	 Récupération des totaux Dads-U
+REPLINDEF	RLI	 Gestion des TaxUID
+REPORTMPOR	RMPOR	 Tableau des touches d'impression temporaire
+REPSEC	RSE	 Contacts marketing secondaires
+RESOURCES	RSS	 Ressources
+RESRES	RRS	 Réservations de ressources
+RETRO	RET	 Dossier de remboursement
+RETROCAL	REC	 Back-pay - calculs
+RETROCTR	RCR	 Back-pay - Employés
+RETRORUB	RER	 Back-pay - Articles
+RETROSAL	RES	 Back-pay - Employés
+RETROVAL	RVL	 Back-pay - Variables
+RETROVRA	REV	 Back-pay - Variables
+REVREC	REVREC	 Règles de constatation des revenus
+REVRECD	RRCD	 Détail des règles de reconnaissance des révisions
+REVRECT	RRCT	 Constatation des revenus
+REVRECV	REVRECV	 En-tête de constatation des revenus
+REVRECVD	RRCVD	 Détails de la constatation des revenus
+RHSBONFAC	RHSBF	 En-tête d'impression de facture
+RITCUM	RCU	 Total de retenue
+RITDUD	RIU	 Retenues par poste non soldé
+RITENZIONE	RTZ	 Tableau des codes de retenue
+RITHIS	RTH	 Historique des retenues payées
+RITMVT	RTM	 Retenue des mouvements
+RLSBONFAC	RLSBF	 Lignes de rapport SBONFACFRA
+RLSBONFACI	RLSBFI	 Eléments de facturation SBONFACFRA
+RLSBONFACO	RLSBFO	 SBONFACFRA éléments ouverts
+RNWPREP	RWP	 Renouvellement
+ROUOPE	ROO	 Routage - opérations
+ROUOPESTD	ROT	 Opérations standards
+ROUSCD	ROS	 Routage - opération de planification
+ROUTING	ROH	 Routages - en-tête
+RPLWST	RPW	 Centres de travail alternatifs
+RPTDS	RDS	 Signaler les signatures électroniques
+RSLINESGER1	RSLG1	 État récapitulatif
+RSLINESGER2	RSLG2	 État récapitulatif
+RSSCPC	RCPC	 Compétences
+RSSCPCH	RCPH	 Compétences
+RSSCPCL	RCPCL	 Compétences
+RSSMNG	RSSM	 Ressource
+RSSMNGHR	RSSMH	 Ressource
+RSSMNGPIC	RSSP	 Ressource
+RSSMNGTYP	RSST	 Ressource
+RSSQLF	RQLF	 Qualification
+RSSQLFL	RQLFL	 Qualification
+RUBASSDEF	RDE	 Associations - définition
+RUBASSDEFP	RDP	 Associations - définition/plan
+RUBASSVAL	RVA	 Associations - valeurs
+RUBASSVALP	RVP	 Associations - valeurs/plan
+RUBGAC	RGA	 Comptes sur rubriques
+RUBHIS	RUH	 Titre
+RUBRIQUE	RUB	 Titre
+RVACOED	COD	 Réval. coefficient (détail)
+RVACOEH	COH	 Réval. coefficient (en-tête)
+RVMVAL	RVV	 Versions de routage
+SAFTPTTMP1	SAFTP	 SAF-T
+SAITRS	SAI	 Opération d'entrée
+SAITRSDET	DST	 Détail de la transaction d'entrée
+SALESREP	REP	 Représentant commercial
+SALESTAX	STB	 Rapport de taxe de vente
+SALTRS	SLT	 Opérations de vente saisies
+SBGEO	SBG	 Domaines de consultation des fournisseurs de services
+SBODLINK	SBK	 Quantité de composants. calcul (lien)
+SBPBL	SBP	 Compétences des fournisseurs de services
+SCALE	HRSCA	 Échelle de niveau
+SCALED	HRSDD	 Échelle de niveau de détail
+SCALENIV	SCN	 Échelle de niveau
+SCALES	SLE	 Balances
+SCHEDULING	SCH	 Planification des bons de travail
+SCHGD	SGD	 Ligne de changement de stock
+SCHGH	SGH	 En-tête de variation de stock
+SCMAPAR	SZP	 Configuration des prévisions APS
+SCMDPAR	SDP	 Configuration SCM n.skep
+SCOHEAD	SCO	 Commande de sous-traitance
+SCOITM	SCI	 Commande de sous-traitance
+SCOMAT	SCM	 Commander du matériel en sous-traitance
+SCOSRV	SCS	 Commander des services en sous-traitance
+SCOTRK	SCK	 Suivi des sous-traitances
+SCPASW	SCA	 Réponses du script d'appel
+SCPQST	SCQ	 Questions sur le script d'appel
+SCPQSTCND	SQC	 Conditions d'acheminement
+SCREMPD	HRSMD	 Écrans des employés
+SCREMPH	HRSMH	 Écrans des employés
+SCRIPT	SCP	 Script d'appel
+SCRMHCD	SCD	 Transaction d'hypothèse de modification
+SCRMHCH	HRSCH	 Transaction d'hypothèse de modification
+SCRMHED	SED	 Transaction d'hypothèse d'arrivée
+SCRMHEH	SEH	 Transaction d'hypothèse d'arrivée
+SCRMHXD	SXD	 Transaction d'hypothèse de départ
+SCRMHXH	SXH	 Transaction d'hypothèse de départ
+SCRPLFD	HRSPD	 Opérations d'entrée
+SCRPLFH	HRSPH	 Opérations d'entrée
+SCRTPSD	STD	 Opérations d'entrée
+SCRTPSH	STH	 Opérations d'entrée
+SCRVRA	SVR	 Écrans de saisie variables
+SDELIVERY	SDH	 En-tête de livraison
+SDELIVERYD	SDD	 Détail de livraison
+SDELIVERYNO	SDN	 Notification de livraison des ventes
+SDELIVERYNOD	SDND	 Notification de livraison des ventes
+SEARESULT	LUP	 Résultat de la recherche
+SEASON	SES	 Profils de tendance
+SEAUTH	SEU	 Autorisations de carte de crédit
+SEBPC	SEB	 Données client de la passerelle de paiement
+SECACT	SEA	 Secteur d'activité
+SECPST	SPT	 Secteur leader
+SECPSTSEL	SPS	 Sélection du secteur pilote
+SELACC	SACC	 Comptes sélectionnés
+SELCMG	SEC	 Liste des sélections marketing
+SELCMGLIS	SCL	 Guide de sélection marketing
+SELSSP	SSP	 Prise en charge des sélections
+SELSSPCPN	SSC	 Composants d'aide à la sélection
+SENTENCES	RSY	 Peines de risque pour la sécurité
+SEPAR	SEP	 Passerelles de paiement
+SEPRC	SER	 Configuration de la passerelle de paiement
+SERREQUEST	SRE	 Demandes de services
+SERVICE	SRV	 Prestations de service
+SESJOU	SEJ	 Jours de séance
+SESSIONS	HRSES	 Session
+SETMAC	SEM	 Base répertoriée dans le modèle demandé
+SETMACCPN	SEN	 Composants concernés
+SETXN	SEX	 Transactions par carte de crédit
+SFANAPAR	SFA	 Configuration des immobilisations Sage NA
+SFOOTINV	SFI	 Eléments de facturation
+SFTINDREF	SFTIR	 Références indirectes
+SFTSHIFT	SFTS	 Code de quart de travail
+SFTTEM	SFTTM	 Équipes
+SFTTEMH	SFTTH	 Historique de l'équipe
+SFTTXN	SFTX	 Transactions d'atelier
+SFTTXNH	SFTH	 Trans. histoire
+SHIPDOC	SHIPD	 Documents d'expédition
+SHIPMENT	SHH	 Expédition
+SHIPMENTD	SHD	 Détails de l'expédition
+SHIPTRACK	SHIPT	 Suivi logistique des expéditions
+SINCDET	SND	 Définition de la révision des prix de ligne
+SINCENT	SNE	 Définition de mise à jour des prix
+SINVOICE	SIH	 Factures des ventes
+SINVOICED	SID	 Détail de la facture de vente
+SINVOICEDLOC	SIDLOC	 Détail de la facture de vente
+SINVOICELOC	SIHLOC	 Factures des ventes
+SINVOICEV	SIV	 Facture de vente chiffrée
+SIPARJOU	SPJ	 Migration intégrale
+SIPARVAC	SPV	 Migration intégrale
+SIPARVACB	SVB	 Migration intégrale
+SIPARX3	SPX	 Migration intégrale
+SITEPAYE	HRSIT	 Des sites
+SITRACAR	SIC	 Transcodage
+SITRACOD	SIR	 Transcodage
+SITRAWRK	SIW	 Transcodage
+SIWRKX3	SWX	 Migration intégrale
+SKLMAP	SKM	 Nouvelle demande de personnel à SM
+SKLMAPC	SKMC	 test
+SLFPITTMP	SLFT	 PIT Lot-site
+SLOTMD	SLD	 Ligne de modification de lot
+SLOTMH	SLH	 En-tête de modification de lot
+SMPKIT	KIT	 SMP Restez en contact
+SMVTD	SMD	 Détail des mouvements de stock
+SMVTDVAL	SMV	 Prix ??du mouvement
+SMVTH	SMH	 En-tête de mouvement
+SNPAFF	SPAF	 Affectation des employés
+SNPBUD	SPJBU	 Budget du projet
+SNPBUDLIG	SPJLB	 Ligne budgétaire
+SNPMSTNEXINV	SPJMST	 Prochaine étape de facturation
+SNPOPEAFF	SPJOA	 Affectation des employés
+SNPOPPOR	SOPP	 Projet
+SNPOPPORPJM	SOPPPJM	 Projet PJM
+SNPPIMPL	SPIM	 Lien du projet
+SNPTSK	SPJTA	 Tâche de projet
+SNPTSKITM	SJTT	 Produit principal
+SNPTSKLNK	SPTLNK	 Lien de priorité des tâches
+SNPTSKOPE	SPTKO	 Tâches - Opérations
+SNPTSKOPELNK	SOPLNK	 Lien de priorité des opérations
+SOCACTRPT0	SAUR0	 Rapport unique sur l'activité sociale
+SOCACTRPT1	SAUR1	 Rapport unique sur l'activité sociale
+SOCACTRPT2	SAUR2	 Rapport unique sur l'activité sociale
+SOCACTRPTA	SAURA	 Rapport unique sur l'activité sociale
+SOCACTRPTB	SAURB	 Rapport unique sur l'activité sociale
+SOCACTRPTC	SAURC	 Rapport unique sur l'activité sociale
+SOCACTRPTC1	SAURC1	 Rapport unique sur l'activité sociale
+SOCACTRPTC2	SAURC2	 Rapport unique sur l'activité sociale
+SOCACTRPTD	SAURD	 Rapport unique sur l'activité sociale
+SOCACTRPTE	SAURE	 Rapport unique sur l'activité sociale
+SOCACTRPTEK	SAUREK	 Rapport unique sur l'activité sociale
+SOCACTRPTH	SAURH	 Rapport unique sur l'activité sociale
+SOI	SOI	 Création de relevé
+SOLDPAY	HRSDP	 Solde de paiement
+SOLRESULT	SOR	 Solutions trouvées
+SOLUTION	SOL	 Solutions
+SORDER	SOH	 Commandes clients - en-tête
+SORDERC	SOC	 Commandes clients - en avance / en retard
+SORDERP	SOP	 Commandes clients - prix
+SORDERQ	SOQ	 Commandes clients - quantités
+SPACK	SPH	 paquet de livraison
+SPACKD	SPD	 Détail du colis de livraison
+SPAMOD111	SPM111	 Formulaire espagnol 111
+SPAMOD115	SPM115	 Formulaire espagnol 115
+SPAMOD123	SPM123	 Formulaire espagnol 123
+SPAMOD180	SPM180	 Formulaire espagnol 180
+SPAMOD1801	SPM1801	 Formulaire espagnol 180
+SPAMOD190	SPM190	 Formulaire espagnol 190
+SPAMOD1901	SPM1901	 Détails du formulaire espagnol 190
+SPAMOD193	SPM193	 Formulaire espagnol 193
+SPAMOD1931	SPM1931	 Formulaire espagnol 193_1
+SPAMOD1932	SPM1932	 Formulaire espagnol 193_2
+SPAMOD216	SPM216	 Formulaire espagnol 216
+SPAMOD296	SPM296	 Formulaire espagnol 296
+SPAMOD2961	SPM2961	 Formulaire espagnol 296_1
+SPAMOD303	SPM303	 Formulaire espagnol 303
+SPAMOD347	SPM347	 Formulaire espagnol 347
+SPAMOD347D	SPM347D	 Formulaire espagnol 347
+SPAMOD349	SPM349	 Formulaire espagnol 349
+SPAMOD349D	SPM349D	 Détail du formulaire espagnol 349
+SPAMOD369	SPM369	 Formulaire espagnol 369
+SPAMOD3691	SPM3691	 Formulaire espagnol 369
+SPAMOD3692	SPM3692	 Formulaire espagnol 369
+SPAMOD390	SPM390	 Formulaire espagnol 390
+SPAMOD3901	SPM3901	 Formulaire espagnol 390 - détail 1
+SPAMOD3902	SPM3902	 Formulaire espagnol 390 - détail 2
+SPAMODCPY	SPMDC	 Formulaires espagnols par entreprise
+SPAMODDET	SPMDET	 Détails des formulaires espagnols
+SPAMODELS	SPMOD	 Formes espagnoles
+SPASENDINQ	SPSINQ	 Envoi en cours
+SPLIBREG	SPLREG	 Tenue de livre compte
+SPPRTCONF	SPP	 Définition du catalogue de prix
+SPREASON	SPR	 Motifs des tarifs de vente
+SPRICCONF	SPC	 Paramètres de tarification client
+SPRICFICH	SPF	 Prix ??clients (fiches)
+SPRICINCR	SPI	 Augmentation du prix
+SPRICLINK	SPK	 Recherche de tarifs de vente
+SPRICLIST	SPL	 Listes de prix clients
+SPRICPRTQ	SPQ	 Catalogue de prix de vente
+SQUOTE	SQH	 En-tête du devis
+SQUOTED	SQD	 Détail du devis
+SREMAC	SRM	 Base concernée
+SREMACCPN	SRN	 Composants concernés
+SRESAT	SRS	 Historique du statut de la demande
+SRESTAT	SST	 Statistiques demandées
+SRETEMPL	SET	 Modèle de demande de service
+SRETURN	SRH	 En-tête de retour de vente
+SRETURND	SRD	 Détail des retours sur ventes
+SSCNSSDCL	HRPSSC	 Sécurité sociale/Assurance
+SSCNSSDCLD	SSD	 Sécurité sociale/Assurance
+SSCNSSFIL	SSCF	 Sécurité sociale/Assurance
+STAGE	STG	 Période d'entraînement
+STAGEPRH	HRSTP	 Informations sur les périodes de formation
+STAGETRG	HRSTR	 Objectifs de formation
+STAT	SAT	 Statistiques
+STATION	STX	 Lieu de pesée
+STATIONBOX	SBX	 Configuration emplacement/stand
+STATPRV	SAP	 Prévisions statistiques
+STJTMP	SJT	 Interface - journal des stocks
+STKMVTADJ	SMA	 Ajustement des coûts
+STKMVTITC	SMI	 Mouvement avec valeur en attente
+STKREGWRK	SRW	 Ajustement des coûts
+STKTRS	SRT	 Opérations boursières
+STLPAY	HRSTL	 Paiements
+STOACCPAR	SAC	 Acteur. paramètre d'interface
+STOADCSEARCH	SAS	 Configuration de la recherche de titres
+STOALL	STA	 Allocations
+STOCK	STO	 Action
+STOCOST	STP	 Coût FIFO du stock
+STOCOSTPIT	STPP	 Coût FIFO du stock PIT
+STOJOU	STJ	 Journal des stocks
+STOJOUOVE	SJO	 Mouvements de stock Ovhds
+STOJOUVAL	SJV	 Valeurs de mouvement de stock
+STOLOC	STC	 Emplacements
+STOLOCAFF	STF	 Affectation des casiers
+STOLOCRES	SWL	 Travaux de localisation
+STOLOT	STL	 Numéros de lot
+STOLOTFCY	SLF	 Lots - emplacements
+STOLOTFCYPIT	SLFP	 PIT Lot-site
+STOMVTCOST	SMC	 Lier des documents / pile FIFO
+STOPAR	STE	 Paramètres des stocks
+STOPRED	PRE	 Détails du ticket de sélection
+STOPREH	PRH	 Choisir l'en-tête du ticket
+STOPRELIS	PRL	 Liste de préparation des expéditions
+STOPRELISW	PLW	 Listes de préparation du travail
+STOPREW	PRW	 Fiche de préparation du travail
+STOQLYD	QLD	 Détail du contrôle qualité
+STOQLYH	QLH	 En-tête de contrôle qualité
+STOQLYSMP	SMP	 Qual. échantillonnage de contrôle
+STOQUAL	STQ	 Contrôle de qualité
+STOREO	REO	 Réorganiser
+STOSER	STS	 Numéros de série
+STOSERW	SSW	 Séries en cours
+STOSRG	SRG	 Stockage
+STOSRGW	SGW	 Stockage (détails)
+STOSYNW	SYW	 Travaux de resynchronisation des stocks
+STOTRK	STR	 Traçabilité
+STOTRKWRK	SKW	 Dossier de traçabilité
+STOVALCUM	SVC	 Rapport sur les totaux de stocks valorisés
+STOVALWRK	STV	 Rapport de valorisation des actions
+STOWIPW	SWW	 Stock en cours de traitement
+STPPITTMP	STPT	 Coût FIFO du stock PIT
+SUBCONT	PRX	 Fournisseur de services
+SUCURSAL	SCU	 Bifurquer
+SVATCTL	SVAT	 Contrôler les règles SVAT
+SVCRFOOT	SVF	 Document de vente - pied de page el.
+SVCRFOOTLOC	SVFLOC	 Document de vente - pied de page el.
+SVCRINVCND	SVIC	 Facture planifiée
+SVCRINVCNDD	SVICD	 Facture planifiée
+SVCRVAT	SVV	 Document de vente - taxe
+SVCRVATLOC	SVVLOC	 Document de vente - taxe
+SWIEZAG	SWIEZ	 Tableau temporaire
+SWIIMPBVR	SWIIMP	 Importer un fichier ISR suisse
+SWIIMPTMP	SWITMP	 Importer un fichier ISR suisse (temp.)
+SWIQRC	SWIQRC	 Données QR suisses
+SWRKDLV	SWD	 Génération automatique de livraisons
+SWRKINV	SWI	 Facturation automatique
+SWRKINVCND	SWICND	 Facturation automatique
+SYNCDATA	SYD	 Données de synchronisation
+SYNCLINK	SYL	 Synchroniser les références croisées
+SYNCPAR	SYP	 Configuration de la synchronisation
+TAAAXXX	XXX	 Tableau modèle à copier
+TABACCINT	TCI	 Cartographie des comptes intersociétés
+TABACCLIK	TCK	 Comptes réciproques
+TABALLRUL	TRU	 Règles d'attribution et d'émission
+TABAT	HRTAT	 Certificat WI/Maladie professionnelle
+TABBOMALT	TBO	 Codes de nomenclature
+TABBUDTYP	TBU	 Opérations budgétaires
+TABCABCUT	CUT	 Règles de division en Colombie-Britannique
+TABCHANGE	TCH	 Tableau des taux de change
+TABCODEDT	TED	 Tableau des codes de rapport
+TABCOEFF	TCO	 Tableau des coefficients
+TABCONTAINER	TCTR	 Récipient
+TABCOSTMET	TCM	 Méthodes de valorisation
+TABCOSTMVT	TVM	 Valeurs de mouvement
+TABCOUAFF	TCA	 Séquence Aucune affectation
+TABCOUNTRY	TCY	 Tableau des pays
+TABCTL	TCT	 Tableau de réponse
+TABCUR	TCU	 Tableau des devises
+TABDEPAGIO	TDA	 Tableau des remises anticipées/facturations tardives
+TABEECNAT	TEC	 Tableau de nature des opérations intrastat
+TABEECSCH	TSC	 Tableau de règles statistiques
+TABEXPENS	TES	 Tableaux de dépenses
+TABFILBAN	TFB	 Définitions des fichiers bancaires
+TABFILCASH	TFC	 Dossier du Trésor
+TABFILTDS	TFT	 Dossier de déclaration d'honoraires
+TABFOR	TFO	 Tableau de formule
+TABFORLEG	TFOLEG	 Formules selon la législation
+TABGEOCOD	TGE	 Codes géographiques
+TABINVCND	INVCND	 Conditions de facturation
+TABINVCNDLIN	INVCNDD	 Conditions de facturation
+TABLAN	TLA	 Tableau des langues
+TABLINCFG	TLP	 Chaînes de production
+TABLOCTYP	TLO	 Tableau des types d'emplacement
+TABMAT	TMA	 Numéros d'identification
+TABMODELIV	TMD	 Tableau des modes de livraison
+TABMSG	TMS	 Tableau des messages
+TABPACKAGE	TPA	 Tableau d'emballage
+TABPAM	TAM	 Tableau des modes de paiement
+TABPAYTERM	TPT	 Tableau des conditions de paiement
+TABPAYTYP	TPY	 Opérations de paiement
+TABPIVTYP	TPV	 Tableau des types de factures supplémentaires
+TABPLACE	TPC	 Zone de transit
+TABPLACETIME	TPCT	 Délai de transport
+TABPNHTYP	TPN	 Tableau des types de retour
+TABPRECOD	PRC	 Code de préparation
+TABPRTMOD	TPM	 Imprimer le tableau des modèles
+TABRATVAT	TRA	 Les taux d'imposition
+TABREOPOL	TRP	 Tableau des règles de réorganisation
+TABROUALT	TRO	 Gammes de nomenclature
+TABROUND	TRN	 Arrondis
+TABSAFSTO	TSA	 Coefficients du stock de sécurité
+TABSCA	TSR	 Rejette
+TABSDHTYP	TSD	 Livraisons de types de tables
+TABSGHTYP	TSG	 Type de changement de stock
+TABSIVTYP	TSV	 Tableau des types de facture client
+TABSOHTYP	TSO	 Tableau des types de commande
+TABSQHTYP	TSQ	 Tableau des types de devis
+TABSRHTYP	TRE	 Tableau des types de retour
+TABSTASTO	TST	 Rapport sur l'état des stocks
+TABSTORUL	SRU	 Règles de gestion des stocks
+TABSUBDIV	ATU	 Subdivisions géographiques
+TABTNHTYP	TTN	 Type de bon de transport
+TABUNAVAIL	TUV	 Périodes indisponibles
+TABUNIT	TUN	 Tableau des unités de mesure
+TABUNNBR	TUNNB	 Tableau des numéros ONU
+TABVAC	TVC	 Table de détermination des taxes
+TABVACBPR	TVB	 Tableau des règles fiscales tiers
+TABVACITM	TVI	 Tableau des niveaux de taxe
+TABVAT	TVT	 Tableau des codes fiscaux
+TABVATEXE	TEX	 Tableau de défiscalisation
+TABWEEDIA	TWD	 Structures hebdomadaires
+TABWIPSTO	TWS	 Quantités de stock bloquées
+TABWRKCTR	TWC	 Groupes de postes de travail
+TACONTAINERC	TCTRC	 Clobs de conteneurs
+TANKS	TKS	 réservoirs
+TANKSGATES	TGT	 Affectations des réservoirs de porte
+TASK	TSK	 Tâche
+TASSEDIC	HRATS	 Attestation Pôle Emploi
+TASSEDIC2	HRAT2	 Attestation Pôle Emploi
+TASSEDIC3	HRAT3	 Attestation Pôle Emploi
+TAUTILIS	TAU	 Utilisateurs sécurisés de X3 WAS
+TAXLINK	TLK	 Calcul des taxes. calcul de base (lien)
+TBASKET	TBA	 Panier
+TBASKETD	TBD	 Ligne de panier d'achat
+TCBLOB	TBB	 Dossiers spéciaux
+TCCLOB	TBC	 Fichiers texte spéciaux
+TCOURLIG	TCL	 Lignes de programme standard
+TDSPRV	TPR	 Honoraires total/fournisseur de services
+TDUPDCLC	TUC	 N° de série - modification du calcul
+TEXCLOB	TXC	 Fichiers texte
+TEXCPT	TCC	 Compteur de texte par table
+TGRLIS	TGL	 Dictionnaire des cibles
+TGRLISFIE	TLF	 Demande de cible
+TGRLISLNK	TLL	 Tableaux liés
+TGRSSP	TGP	 Support de présentation
+TIKRESHEA	TRH	 Billets restaurant
+TIKRESLIG	TRL	 Billets restaurant
+TIMANA	TIA	 Temps analytique
+TIMCNG	TIC	 Durée des vacances
+TIMCOD	TIM	 Nature des événements
+TIMEADJUST	TAD	 Heure d'été
+TIMEMP	TIP	 Temps suivis
+TIMEMPDAT	TID	 Résumé du temps
+TIMETRANS	TTR	 Passer à l’heure d’été
+TIMEZONEINFO	TZI	 Fuseaux horaires
+TIMRECAP	TIR	 Résumé du temps
+TIMREGUL	TIG	 Ajustement du temps
+TITMLINK	TIK	 Éléments WAS liés
+TITMMASTER	TIT	 Éléments Web
+TMP2054	T54	 Relevé financier 2054 Tableau temporaire
+TMP2055	T55	 État fiscal. 2055 temp. tableau
+TMP2855	TVS	 Tableau temporaire Fisc. Stmt2855
+TMP28578	TVS2	 Fisc. Stmts 2857 2858
+TMPAED	HRFTMA	 Table temporaire d'impression DAE
+TMPARPT	TARPT	 Tableau des touches d'impression temporaire
+TMPARPTDET	TARPTD	 Tableau des touches d'impression temporaire
+TMPBLA	TBL	 Tableau des touches d'impression temporaire
+TMPCNSBAN	TCB	 Demande bancaire
+TMPCNSESL1	TESL1	 Liste des ventes CE
+TMPCNSESL2	TESL2	 Liste des ventes CE
+TMPCNVECAR	TCE	 Échange. tarif table temporaire
+TMPCPTDTA	TCD	 Interface comptable -données
+TMPCRPT	TCRPT	 Tableau des touches d'impression temporaire
+TMPCSRQ	TCR	 Besoins de trésorerie temporaires
+TMPDCH1	TM1	 Tableaux temporaires (frais)
+TMPDCH2	TM2	 Tableaux temporaires (frais)
+TMPDEMANDE	TDM	 Tableau du formulaire de demande temporaire
+TMPDERO	TDE	 Tableau temporaire
+TMPDFD	TDF	 Table temporaire DFDDPEreport
+TMPDUCS	TDU	 DUCS
+TMPDUCSEFF	HRTDE	 DUCS
+TMPEMPLO	HRTCT	 Importer un employé et un contrat
+TMPEMPLOPOR	TCTPO	 Contracter
+TMPEXPENSE	EXT	 Tableau temporaire - Dépenses
+TMPFAS1PAGE	T1PG	 Tmp. dépr. rapport d'une page
+TMPFAS246G	T246	 Tmp. rapport d'amortissement
+TMPFASLIST	TFL	 Tableau des touches d'impression temporaire
+TMPFASPHY	TPH	 Affectation des éléments de la table temporaire
+TMPFUP0	TF0	 Critères de campagne
+TMPFUP1	TF1	 BP à rappeler
+TMPFUP2	TF2	 Éléments ouverts à rappeler
+TMPFUPCMT	TCF	 Commentaires sur les éléments ouverts
+TMPGACCENTRD	TMPDAE	 Lignes d'écriture comptable
+TMPGACCENTRY	TMPHAE	 Écritures comptables
+TMPHISTO	TMP	 Historique de paie
+TMPHSR	THR	 Historique de paie
+TMPKRPT	TKRPT	 Tableau des touches d'impression temporaire
+TMPLEARNT	TLR	 Tableau temporaire
+TMPLISLOF	TLI	 Tableau des touches d'impression temporaire
+TMPLIVRE	HRTML	 Journaux de paie
+TMPLIVRESTD	HRTMD	 Journaux de paie
+TMPLOFGRP	TLG	 Tableau temporaire
+TMPLTAVCR	TLTV	 Barème temporaire des taxes locales
+TMPMASFA2	MF2	 Actions des actifs de table temporaires
+TMPMASFAS	MFS	 Actions des actifs de table temporaires
+TMPMASLCK	TML	 Verrouillage de table à action de masse
+TMPMASLEA	TLE	 Tableau temporaire des actions contractuelles
+TMPMASLOF	MLF	 Tableau temporaire
+TMPMASPHY	MPY	 Elément d'actions de table temporaire
+TMPMOB	TMO	 Table temporaire (mobilité)
+TMPMSLIVRE	TMM	 Total des journaux de paie
+TMPODPAY	TOD	 MO de paie
+TMPODPAYA	TOA	 MO de paie analytique
+TMPODPREP	TOR	 Imprimer Payer MO
+TMPORA	HRTPA	 Adhésion
+TMPORG	HRTPO	 Organisations
+TMPPAYDUD	TPD	 Proposition de paiement temporaire
+TMPPAYDUD2	TP2	 Proposition de paiement temporaire
+TMPPAYTOT	PYT	 Proposition de paiement temporaire
+TMPPLNFAS	TPF	 Actions de planification de table temporaire
+TMPPRPT	TPRPT	 Tableau des touches d'impression temporaire
+TMPREEVAL	TRV	 Rapport de table temporaire DEPREEVAL
+TMPSELCTR	TMC	 Sélection de contrat
+TMPSELMAT	TMT	 Sélection des employés
+TMPSES	TSE	 Table temporaire (session)
+TMPSIMDERO	TDS	 Tableau des touches d'impression temporaire
+TMPSITU	TSI	 Temp. tableau Rapport DEPSITU
+TMPSRPT	TRPT	 Tableau des touches d'impression temporaire
+TMPSRPTDET	TSRPTD	 Tableau des touches d'impression temporaire
+TMPSUIMAS	TSM	 Table temporaire (suivi TP)
+TMPTCHANGE	TCG	 Temp. des taux de change. tableau
+TRACKTPLD	TKTD	 Température de suivi logistique. détail
+TRACKTPLH	TKTH	 Modèle de suivi logistique
+TRADESHOW	OMT	 Salons professionnels
+TRAINER	HRTRN	 Formateur interne
+TRANNOTED	TND	 Remarque relative au transport
+TRANNOTEH	TNH	 Remarque relative au transport
+TRANSPORT	TRNP	 Transport
+TRCABX3	TAB	 Bûches Abel X3
+TRCVCRDOC	TVD	 Fichier journal des écritures comptables
+TRVACC	WAC	 Taux WA
+TRVACCRAT	WAR	 Taux WA
+TXSA	TXS	 Paramètres d'extraction de données financières
+TXSAC	TXA	 Configuration des colonnes de la grille
+TXSD	TXD	 Détail de l'extraction des données financières
+TXSM	TXM	 Les montants
+TXSP	TXP	 Paramètres de valeur/version
+TXSV	TXX	 Variables supplémentaires de données Fin
+TXSW	TXW	 Versions
+TXTBOL	TXB	 Fichiers texte
+TXTCTR	HRTXC	 Texte du document d'entrée
+TYPACE	TPE	 Types d'écritures comptables
+TYPACEINT	TPI	 Types d'écritures comptables
+TYPACELEG	TPL	 Types d'écritures comptables
+TYPCOMBEL	TYC	 Types de communications
+TYPCOURSE	TCS	 Programme standard
+TYPCOURSESA	TCSSA	 Programme standard
+TYPWEEK	WTY	 Semaines de référence
+UKAPPLEV	APPLEV	 Taxe d'apprentissage
+UKBACRDM	BACRDM	 BACS britannique aléatoire
+UKBACSER	BACSER	 Série BACS britannique
+UKSMPLVE	SMPLVE	 Congé SMP
+UKSPPLVE	SPPLVE	 Congé RPS
+UKSSPLVE	SSPLVE	 Congé PAS
+UNFILWRK	UNF	 Rapport sur les commandes en carnet
+UNITOFTIME	UOT	 Unité de temps
+UNPAID	UNP	 Saisie de reçu douteux
+UPORDER	UOH	 Historique du bon de commande
+UPORDERC	UOC	 Historique cumulé des bons de commande avant R
+UPORDERP	UOP	 Historique des prix des bons de commande
+UPORDERQ	UOQ	 Historique des quantités de bons de commande
+USERGUIDES	UGD	 Guides d'utilisation
+USRLEGSOA	USLS	 Législation
+VALANA	VAN	 Valeurs analytiques
+VALCPY	VCP	 Valeurs de l'entreprise
+VALEMP	VEP	 Valeurs des employés
+VALEUR	VLA	 Valeurs
+VALFCY	VFC	 Valeurs du site
+VALFDR	VFD	 Valeurs de la législation
+VALPRV	VPR	 Valeurs provisoires
+VALPRVH	VPH	 Valeurs provisoires
+VARIA	VRA	 Variables
+VARTEXT	VTX	 Texte des lignes de bordereau
+VATBOX	VTB	 Boîtes de TVA
+VATBOXD	VTD	 Boîtes de TVA
+VATCLS	VCL	 Classement fiscal
+VATENTFRM	VEF	 Formulaire TVA (définition)
+VATENTFRMD	VEFD	 Détail du formulaire TVA (définition)
+VATEXEREA	VER	 Raisons d'exonération de TVA
+VATFRMENT	VFE	 Formulaire TVA (valeurs)
+VATFRMENTA	VFEA	 Formulaire TVA
+VATFRMENTC	VFEC	 Formulaire TVA par entreprise
+VATFRMENTD	VFED	 Détail du formulaire TVA (valeurs)
+VATFRMENTI	VFEI	 Données du service de déclaration de TVA
+VATFRMENTN	VFEN	 Requêtes sur le formulaire TVA
+VATGRP	VATGH	 En-tête de l'entité TVA
+VATGRPD	VATGD	 Détails de l'entité TVA
+VATHIS	VAT	 Fiscalité - historique
+VATLINITMGER	VLI	 Éléments de campagne de TVA allemande
+VDGERRSP	RSP	 État récapitulatif. param.
+VDGERTRP	TRPG	 Paramètre de déclaration de revenus allemande
+VDSWITRP	TRSP	 Suisse
+VFEPSTTMP	VFEP	 Comptabilisation TVA
+VPJMSOLITMD	VPSOD	 Liste des produits vendus
+VPJMSOLITMH	VPSOH	 Création de documents de vente
+VPJMSOLITMO	VPSOO	 Liste des produits vendus
+VSORDER	VOH	 Historique des commandes clients - en-tête
+VSORDERC	VOC	 Historique cumulé des commandes clients
+VSORDERP	VOP	 Historique des commandes clients - prix
+VSORDERQ	VOQ	 Historique des commandes clients - Quantités.
+VSQUOTE	VQH	 Historique des offres de vente - en-tête
+VSQUOTED	VQD	 Historique des offres de vente - détails
+VXAMTTPY	VVXAMTP	 Sortie de matière temporaire
+WAREHOUSE	WRH	 Entrepôts
+WARFLYER	FLY	 Bons de garantie
+WARREQCPN	RCW	 Lignes de demande de garantie
+WARREQUEST	RQW	 Demandes de garantie
+WCUNLISDET	WCU	 Imprimer l'inventaire
+WEIGHING	WGG	 Pesée
+WEIGHPRT	WGP	 Impression d'étiquettes
+WHTDTL	WDL	 détail WHT
+WHTHDR	WHR	 en-tête WHT
+WIPCOST	MWI	 Valorisation du WIP
+WIPRESW	WRW	 Résumé WIPCOST à ??imprimer
+WIPSCPM	MSM	 Rejette le matériel temporaire
+WIPSCPO	MSO	 Rejette l'opération temporaire
+WIPTMP	MWT	 Interface Wipcost
+WIPWSTTMP	WWT	 Température détaillée de l'opération WIPCOST
+WORKCOST	MWC	 Dimension de calcul des coûts
+WORKLOAD	WKL	 Charge de production
+WORKSTATIO	MWS	 Postes de travail
+WPOHBLOB	WBB	 Objet blob de bon de commande temporaire
+WPOHWKT	WKT	 Imprimer les bons de commande à recevoir
+WRKPURFCS	WPF	 Rapport sur le coût d'achat
+WRKSTOCNS	WCN	 Demande de transfert de stock
+WRKSTOPER	WSP	 Demande de stock par date
+WSTANL	WSA	 Analyse du poste de travail
+WSTOALL	WSTA	 Allocations
+WSTOLOTFCY	WSL	 Lots - emplacements
+WSTOQLYD	WQL	 Détail du contrôle qualité
+WSTOREO	WREO	 Récommandes

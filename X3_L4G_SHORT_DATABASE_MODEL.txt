@@ -1,0 +1,48 @@
+#################### SORDER SOH - CUSTOMER ORDER
+
+SORDER[SOH]: This is the primary table for sales orders, containing header information for each order.
+
+BPCUSTOMER[BPC]: This table holds customer information, linked with [BPC]BPCNUM = [SOH]BPCORD. The join with SORDER ensures that customer details related to each sales order are accessible.
+[BPC]BPCNUM = [SOH]BPCORD
+
+BPARTNER[BPR]: Provides additional business partner details.
+[BPR]BPRNUM=[BPC]BPCNUM
+
+SORDERP[SOP]: Represents the sales order lines, detailing each item within the order.
+[SOP]SOHNUM=[SOH]SOHNUM
+
+SORDERQ[SOQ]: Contains quantity details for each sales order line, offering deeper insight into the quantities ordered, delivered, etc., 
+[SOQ]SOHNUM=[SOP]SOHNUM AND [SOQ]SOPLIN=[SOP]SOPLIN AND [SOQ]SOQSEQ=[SOP]SOPSEQ
+
+ITMMASTER[ITM]: The item master table, providing comprehensive details about each item listed in the sales order lines, linked with [ITM]ITMREF = [SOP]ITMREF.
+[ITM]ITMREF=[SOP]ITMREF
+
+ITMFACILIT[ITF]: Connects items to their respective facilities, indicating where the items in the orders are stored or which facility is responsible for them.
+[ITF]ITMREF=[ITM]ITMREF AND [ITF]STOFCY=[SOH]STOFCY
+
+MFGITM[MFI] and MFGHEAD[MFG]: Link sales order items to manufacturing details.
+[MFI]VCRNUMORI=[SOP]SOHNUM AND [MFI]VCRLINORI=[SOP]SOPLIN AND [MFI]VCRSEQORI=[SOP]SOPSEQ AND [MFI]ITMREF=[SOP]ITMREF AND [MFI]VCRTYPORI=2
+[MFG]MFGNUM=[MFI]MFGNUM
+
+	
+#################### PORDER POH - PURCHASE ORDER
+
+PORDER[POH]: This is the primary table for purchase orders, holding header information for each order.
+
+BPSUPPLIER[BPS]: Contains supplier information, linked with [BPS]BPSNUM = [POH]BPSNUM. Linked to each purchase order to detail who the order is made with.
+[BPS]BPSNUM = [POH]BPSNUM
+
+BPARTNER[BPR]: Provides additional details about the supplier, which is a type of business partner.
+[BPR]BPRNUM = [BPS]BPRNUM
+
+PORDERQ[POQ]: Breaks down the purchase orders into individual lines, providing item-level detail.
+[POQ]POHNUM = [POH]POHNUM
+
+PORDERP[POP]: Represents the purchase order lines, detailing each item within the order.
+[POP]POHNUM = [POQ]POHNUM AND [POP]POPLIN = [POQ]POPLIN AND [POP]POPSEQ = [POQ]POQSEQ
+
+ITMMASTER[ITM]: The item master table, providing comprehensive details about each item listed in the purchase order lines.
+[ITM]ITMREF = [POQ]ITMREF
+
+ITMFACILIT[ITF]: Connects items to their respective facilities, indicating where the items in the orders are stored or which facility is responsible for them.
+[ITF]ITMREF = [POQ]ITMREF AND [ITF]STOFCY = [POQ]POHFCY
