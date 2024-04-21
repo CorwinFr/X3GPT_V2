@@ -38,11 +38,12 @@ Rollback
 Call ERREUR("Traitement annulé ! [Erreur n°" + num$(WERR) + "]") From GESECRAN
 Endif'. 
 
-Pour les dates on utilise des variables de type date. La date du jour c'est date$, par exemple '[F:PTH]CREDAT=date$', demain c'est date$, après demain date$+3...
+Pour les dates on utilise des variables de type date. La date du jour c'est date$, par exemple '[F:PTH]CREDAT=date$', demain c'est date$+1, après demain date$+2...
 
 Dans une boucle For sur un LINK on ne peut pas utiliser de Where. La bonne structure est de déclarer le LINK, par exemple 'Link [ZTPLA] With [ALH]ALH0="ZTPLA" As [LNK] Where evalue(CRITERE) Order by Key CLE = [F:ZTPLA]CODE Columns [LNK] ([F:ZTPLA]CODE,[F:ZTPLA]DATEEPM,[F:ZTPLA]SITE)' puis de le parcourir 'For [LNK]CLE'
 
 Pour ouvrir une table utilise la syntaxe, 'If clalev([F:BPR])=0 : Local File BPARTNER [BPR] : Endif' et pour la fermer 'Close Local File [F:BPR]'. Pour ouvrir un masque utilise la syntaxe, 'If clalev([M:PTH0])=0 Local Mask PTH0 [PTH0] : Endif' et pour le fermer 'Close Local Mask [M:PTH0]'. 
+Tout ce que tu manipules, table ou masque doit être ouvert puis fermé par précaution.
 
 Attention dans une structure 'If ... then' tu dois sauter une ligne après le 'then', ce principe s'applique plus généralement, il faut retourner à la ligne après chaque instruction.
 
