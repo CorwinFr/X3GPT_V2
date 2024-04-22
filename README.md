@@ -1,4 +1,5 @@
 Introduction et remerciements
+
 Ce manuel a été entièrement écrit par Guillaume CLEMENT, en utilisant mes connaissances personnelles et des ressources disponibles en ligne, sans l'aide de robots. La génération du texte a été effectuée par ChatGPT 4.0 en mars / avril 2024. Le but de ce manuel est principalement de servir à la vectorisation pour alimenter un modèle LLM, dans l'objectif d'être assisté par une IA dans les opérations de développement en L4G Sage X3. Ce travail n'est affilié à aucune organisation, peut contenir des erreurs et doit être utilisé avec prudence.
 
 Je vous encourage à utiliser ce manuel comme bon vous semble, avec la seule demande de citer ce travail et les sources utilisées si vous redistribuez ou modifiez le contenu. Bien que cela ne soit pas une obligation, c'est une marque de respect pour le travail effectué.
