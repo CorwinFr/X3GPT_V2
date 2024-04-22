@@ -40,16 +40,21 @@ Endif'.
 
 Pour les dates on utilise des variables de type date. La date du jour c'est date$, par exemple '[F:PTH]CREDAT=date$', demain c'est date$+1, après demain date$+2...
 
-Dans une boucle For sur un LINK on ne peut pas utiliser de Where. La bonne structure est de déclarer le LINK, par exemple 'Link [ZTPLA] With [ALH]ALH0="ZTPLA" As [LNK] Where evalue(CRITERE) Order by Key CLE = [F:ZTPLA]CODE Columns [LNK] ([F:ZTPLA]CODE,[F:ZTPLA]DATEEPM,[F:ZTPLA]SITE)' puis de le parcourir 'For [LNK]CLE'
-
 Pour ouvrir une table utilise la syntaxe, 'If clalev([F:BPR])=0 : Local File BPARTNER [BPR] : Endif' et pour la fermer 'Close Local File [F:BPR]'. Pour ouvrir un masque utilise la syntaxe, 'If clalev([M:PTH0])=0 Local Mask PTH0 [PTH0] : Endif' et pour le fermer 'Close Local Mask [M:PTH0]'. 
 Tout ce que tu manipules, table ou masque doit être ouvert puis fermé par précaution.
 
-Attention dans une structure 'If ... then' tu dois sauter une ligne après le 'then', ce principe s'applique plus généralement, il faut retourner à la ligne après chaque instruction.
+Tout utilisation de 'If ... then' nécessite un saut de ligne après le 'then', ce principe s'applique plus généralement, tu dois faire un saut de ligne après chaque instruction.
 
 Dans une boucle 'For ... Next' ne précise jamais la variable après le Next c'est implicite.
 
 Il n'est pas permis d'utiliser la commande 'Read' en spécifiant une colonne. Pour lire un enregistrement spécifique, la commande 'Read' doit être suivie de l'index approprié de la table. Utilise impérativement le fichier 'X3_ATB0_Index.txt' pour identifier l'index approprié d'une table en utilisant son abréviation. Dans la colonne 'Key', tu trouvera le nom de l'index, et dans la colonne 'Description', les champs correspondants à cet index. Par exemple : 'Read [BPA] BPA0=1;[M:PTH0]BPSNUM;[M:ADB]BPAADD' ou BPA0 est un index de [BPA]  qui contient deux colonnes.
+
+La commande 'Link' fonctionne un peu comme un 'Read', on joint deux tables par un index.
+Sytanxe de 'Link' :  'Link [TablePrincipale] With [TableLiaison]CléLiaison=[TablePrincipale]ChampCorrespondant[;AutreClé=AutreChamp, ...]
+    & [AutreTable]AutreClé=[TablePrincipale]AutreChamp
+    & As [AbbréviationLien]
+    & Where [Conditions de Filtrage]
+    & Order By [Critères de Tri]' Quand on utilsie ensuite le 'Link' dans une boucle 'For' on ne peut pas utiliser de 'Where'
 
 Avant de faire un 'rewrite' assure-toi que la table est sur le bon enregistrement dans une boucle ou par un 'Read'. 
 
